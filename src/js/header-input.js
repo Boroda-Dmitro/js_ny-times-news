@@ -13,7 +13,7 @@ function showSearchField() {
     openSearchBtn.style.display = "none";
  }
 }
-
-
-
 openSearchBtn.addEventListener("click", showSearchField);
+
+
+

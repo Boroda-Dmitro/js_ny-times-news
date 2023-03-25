@@ -1,3 +1,4 @@
+
 .header {
     display: flex;
     align-items: center;
@@ -10,7 +11,11 @@
     @media screen and(min-width:1280px) {
         height: 113px;
     }
+    // &.theme-dark {
+    //     border-bottom: 1px solid rgba(244, 244, 244, 0.2);
+    // }
 }
+
 
 .header__container {
     display: flex;
@@ -28,15 +33,14 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Manrope';
-    font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 1.5;
-    color: #111321;
+    color:var(--color-black);
     text-decoration: none;
     margin-left: 0;
     margin-right: auto;
+    cursor: pointer;
 
     @media screen and(min-width:768px) {
         font-size: 32px;
@@ -73,12 +77,10 @@
 .nav-link {
     position: relative;
     text-decoration: none;
-    font-family: 'Manrope';
-    font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.38;
-    color: #111321;
+    color: var(--color-black);
 
     @media screen and(min-width:1280px) {
         font-size: 18px;
@@ -94,7 +96,7 @@
         position: absolute;
         height: 0px;
         top: 30px;
-        border: 1px solid #4440F7;
+        border: 1px solid var(--color-brand);
     }
 }
 
@@ -149,11 +151,13 @@
 
 .search-input {
     position: relative;
+    background-color: transparent;
     width: 173px;
     height: 31px;
-    border: 1px solid #111321;
+    border: 1px solid var(--color-black);
     border-radius: 20px;
     padding-left: 48px;
+
 
     @media screen and(min-width:768px) {
         width: 213px;
@@ -165,13 +169,14 @@
     }
 }
 
+
 .burger-icon {
     display: inline-block;
     width: 1em;
     height: 1em;
     stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
+    stroke: var(--color-black);
+    fill: var(--color-black);
 }
 
 .burger-button {
@@ -221,7 +226,7 @@
     height: 1em;
     stroke-width: 0;
     stroke: #5F6775;
-    fill: #FFFFFF;
+    fill: var(--color-white);
 
     @media screen and(min-width:1280px) {
         display: none;
@@ -242,6 +247,7 @@
         color: #4B48DB;
     }
 }
+
 
 .dark-word {
     display: none;
@@ -266,7 +272,7 @@
     height: 20px;
     margin: 0;
     vertical-align: top;
-    background: #ffffff;
+    background: var(--color-white);
     border: 1px solid #bbc1e1;
     border-radius: 30px;
     outline: none;
@@ -285,7 +291,7 @@
     top: 1.5px;
     width: 16px;
     height: 16px;
-    background-color: blue;
+    background-color: var(--color-brand);
     border-radius: 50%;
     transform: translateX(0);
     transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
@@ -293,15 +299,15 @@
 
 .toggle-button:checked::after {
     transform: translateX(calc(100% + 3px));
-    background-color: #fff;
+    background-color: var(--color-white);
 }
 
 .toggle-button:checked {
-    background-color: blue;
+    background-color: var(--color-brand);
 }
 
 .burger-menu {
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
     position: fixed;
     transform: translateY(-100%);
     transition: transform 0.2s;
@@ -372,10 +378,13 @@
 }
 
 .burger-item {
-    background-color: #4440F7;
     height: 44px;
     padding: 6px 10px 6px 16px;
 
+}
+.burger-item:focus,
+.burger-item:active{
+    background-color: var(--color-brand);
 }
 
 .burger-links {
@@ -395,12 +404,10 @@
 
 .link-text {
     padding-left: 14px;
-    font-family: 'Manrope';
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.38;
-    color: #F4F4F4;
+    color: var(--color-background-light);
 }
 
 .link-icon {
@@ -408,15 +415,15 @@
     height: 32px;
     padding: 6px;
     border-radius:50%;
-    border:1px solid #F4F4F4;
-    background-color: #4440F7;
-    fill: #FFFFFF;
+    border:1px solid var(--color-background-light);
+    background-color: var(--color-brand);
+    fill: var(--color-white);
 }
 
 .link-arrow {
     width: 24px;
     height: 24px;
-    fill: #FFFFFF;
+    fill: var(--color-white);
 }
 
 
@@ -427,8 +434,3 @@
     margin-left: 16px;
 }
 
-.is-hidden {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,7 +45,12 @@
             <use href="./images/icons.svg#icon-sun"></use>
           </svg>
           <span class="light-word">Light</span>
-          <input type="checkbox" id="toggle-button" class="toggle-button" />
+          <input
+            type="checkbox"
+            id="toggle-button"
+            class="toggle-button"
+            onclick="toggleTheme()"
+          />
           <label for="toggle-button" class="text"></label>
           <svg class="icon-moon" width="21" height="21">
             <use href="./images/icons.svg#icon-moon"></use>
@@ -60,7 +65,7 @@
         </button>
 
         <div class="burger-menu">
-          <div class="burger-container">
+          <div class="container burger__container">
             <div class="burger-header">
               <a href="./index.html" class="logo">News</a>
               <button class="burger-close" type="button">
@@ -127,6 +132,7 @@
                   type="checkbox"
                   id="toggle-button"
                   class="toggle-button"
+                  onclick="toggleTheme()"
                 />
                 <label for="toggle-button" class="text"></label>
                 <svg class="icon-moon" width="21" height="21">
@@ -148,5 +154,6 @@
     <script type="module" src="./index.js"></script>
     <script src="./js/burger-menu.js"></script>
     <script src="./js/header-input.js"></script>
+    <script src="./js/color-scheme.js"></script>
   </body>
 </html>
