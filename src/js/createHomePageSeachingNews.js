@@ -17,24 +17,8 @@ export const createHomePageSeachingNews = (seach) => {
           imgUrl = news.multimedia[0].url;
         }
 
-        //   console.log(news.multimedia);
-
-        return `<div class="card">
-                    <div class="img__box">
-                        <img src="http://www.nytimes.com/${imgUrl}" alt="${news}" />
-                        <span class="category">${news.section_name}</span>
-                        <button type="button">add to favofite</button>
-                        <div class="box">
-                        <h3 class="title">${news.headline.main}</h3>
-                        <p class="text">${news.abstract}</p>
-                        <span class="data">${publishedDate}</span>
-                    <a href="${news.web_url}" class="origin">link</a>
-                </div>
-                </div>
-                </div>`;
-      })
+        })
       .join('');
       container.innerHTML = markupArray
   });
 };
-
