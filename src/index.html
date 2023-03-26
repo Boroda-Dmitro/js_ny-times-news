@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News</title>
     <link rel="stylesheet" href="./sass/index.scss" />
+    <link rel="import" href="./partials/favorite.html">
   </head>
   <body>
     <header>
-      <div class="container"></div>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="./partials/favorite.html">Favorites</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
       <section class="news">
@@ -17,6 +25,7 @@
         </div>
       </section>
     </main>
+    <include src="./partials/favorite.html"></include>
     <script type="module" src="./index.js"></script>
   </body>
 </html>
