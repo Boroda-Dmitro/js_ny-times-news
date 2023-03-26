@@ -1,20 +1,12 @@
-// function to set a given theme/color-scheme
-function setTheme(themeName) {
-    localStorage.setItem('theme', themeName);
-    document.documentElement.className = themeName;
+
+const page = document.querySelector("body");
+const toggleBtn = document.querySelector(".toggle-button");
+
+toggleBtn.onclick = function () {
+    page.classList.toggle("light-theme");
+    page.classList.toggle("dark-theme");
 }
 
-function toggleTheme() {
-   if (localStorage.getItem('theme') === 'theme-dark'){
-       setTheme('theme-light');
-   } else {
-       setTheme('theme-dark');
-   }
-}
-(function () {
-   if (localStorage.getItem('theme') === 'theme-dark') {
-       setTheme('theme-dark');
-   } else {
-       setTheme('theme-light');
-   }
-})();
+
+
+
