@@ -20,9 +20,14 @@
     color:var(--color-background-light);
     border: 1px solid var(--color-background-light);
 }
+.dark .search-input::placeholder {
+    color: var(--color-background-light);
+    opacity: 0.4;
+}
 
 .dark .light-word{
     color: var(--color-background-light);
+    opacity: 0.4;
 }
 .dark .dark-word{
     color:#4440F7;
@@ -51,6 +56,15 @@
 }
 .dark .link-text{
     color:var(--color-background-light);
+}
+.dark .markup-unit_card-header{
+    color: var(--color-background-light);
+}
+.dark .markup-unit_card-text{
+    color: var(--color-background-light);
+}
+.dark .markup-unit .markup-unit_read{
+    background-color: #686868;
 }
 
 

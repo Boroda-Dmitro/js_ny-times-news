@@ -77,6 +77,7 @@
     font-size: 16px;
     line-height: 1.38;
     color: var(--color-black);
+    
 
     @media screen and(min-width:1280px) {
         font-size: 18px;
@@ -158,6 +159,7 @@
     padding-left: 48px;
     color: var(--color-black);
 
+
     @media screen and(min-width:768px) {
         width: 213px;
 
@@ -167,7 +169,11 @@
         width: 288px;
     }
 }
-
+.search-input::placeholder{
+    color:var(--color-black);
+    opacity: 0.4;
+    z-index: -1;
+}
 
 .burger-icon {
     display: inline-block;
@@ -344,8 +350,6 @@
     display: flex;
     justify-content: space-between;
     padding-top: 24px;
-    padding-left: 16px;
-    padding-right: 16px;
     margin-bottom: 74px;
 }
 .burger-button{
@@ -372,63 +376,60 @@
 .burger-body {
     display: flex;
     flex-direction: column;
-    width: 100%;
-
 }
 
-
-.burger-item {
-    height: 44px;
-    padding: 6px 10px 6px 16px;
-    
-
-}
-.burger-item:focus,
-.burger-item:active{
-    background-color: var(--color-brand);
-    color: var(--color-background-light);
+.burger-link--current {
+padding-left: 16px;
+color: var(--color-background-light);
+text-decoration: none;
+// margin: 0 -16px;
+background-color: var(--color-brand);
+    // padding: 6px 10px 6px 16px;
 }
 
 .burger-links {
     display: flex;
     flex-direction: column;
     list-style: none;
-    gap: 24px;
+    gap: 28px;
 }
 
+.burger-item {
+    position: relative;
+    display: flex;   
+}
 .burger-link {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     text-decoration: none;
-    cursor: pointer;
-
-}
-.link-sign{
-    align-items: center;
-}
-.link-text {
-    padding-left: 14px;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.38;
-    color: var(--color-black);
+    cursor: pointer;
+    margin: 0 -16px;
+    padding: 6px 10px 6px 16px;
+    align-items: center;
+    background-color: transparent;
+    color: var(--color-black); 
 }
 
 .link-icon {
     width: 32px;
     height: 32px;
     display: inline-block;    
-    padding: 3px;
+    padding: 5px;
+    margin-right: 14px;
     border-radius:50%;
     background-color: var(--color-brand);
     stroke:var(--color-background-light);
     border:1px solid var(--color-background-light);
-    border-color: var(--color-brand);
+    border-color: var(--color-white);
     fill: var(--color-brand);
 }
 
 .link-arrow {
+    display: inline-flex;
+    position: absolute;
+    right:0;
     width: 24px;
     height: 24px;
     fill: var(--color-white);
@@ -437,6 +438,8 @@
 
 .burger-switch {
     display: flex;
+    position:absolute;
+    bottom:18;
     width: 98px;
     height: 21px;
     margin-left: 16px;
