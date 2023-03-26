@@ -1,7 +1,7 @@
 import { fetchSeachNews } from './fetchSeachNews';
 import moment from 'moment';
 
-const LOCAL_STORAGE_INPUT_SEARCH_READ_KEY = 'have read';
+export const LOCAL_STORAGE_INPUT_SEARCH_READ_KEY = 'have read';
 const homePageNews = document.querySelector('.news__box');
 
 export const createHomePageSeachingNews = seach => {

@@ -1,0 +1,32 @@
+.default-picture {
+  margin-top: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 48px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-top: 60px;
+  }
+
+  &__text {
+    font-family: 'Manrope';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.35;
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    color: var(--color-black);
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 40px;
+      line-height: 1.375;
+    }
+  }
+
+  &__image {
+    margin: auto;
+  }
+}
