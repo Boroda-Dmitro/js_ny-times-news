@@ -7,6 +7,7 @@ function toggleMenu() {
     menu.classList.remove("show-menu");
     closeIcon.style.display = "none";
     hamburger.style.display = "block";
+
   } else {
     menu.classList.add("show-menu");
     closeIcon.style.display = "block";

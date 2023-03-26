@@ -210,7 +210,7 @@
     height: 1em;
     stroke-width: 0;
     stroke: #4B48DB;
-    fill: #4B48DB;
+    fill: transparent;
 
     @media screen and(min-width:1280px) {
         display: none;
@@ -348,7 +348,12 @@
     padding-right: 16px;
     margin-bottom: 74px;
 }
-
+.burger-button{
+    display:inline-block;
+@media screen and(min-width:768px) {
+        display: none;
+    }
+}
 
 .burger-close {
     background-color: transparent;
@@ -360,8 +365,8 @@
     width: 1em;
     height: 1em;
     stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
+    stroke: var(--color-black);
+    fill: var(--color-black);
 }
 
 .burger-body {
@@ -371,19 +376,17 @@
 
 }
 
-.burger-nav {
-    margin-bottom: 248px;
-
-}
 
 .burger-item {
     height: 44px;
     padding: 6px 10px 6px 16px;
+    
 
 }
 .burger-item:focus,
 .burger-item:active{
     background-color: var(--color-brand);
+    color: var(--color-background-light);
 }
 
 .burger-links {
@@ -398,6 +401,7 @@
     justify-content: space-between;
     align-items: center;
     text-decoration: none;
+    cursor: pointer;
 
 }
 .link-sign{
@@ -414,11 +418,14 @@
 .link-icon {
     width: 32px;
     height: 32px;
-    padding: 6px;
+    display: inline-block;    
+    padding: 3px;
     border-radius:50%;
-    border:1px solid var(--color-background-light);
     background-color: var(--color-brand);
-    fill: var(--color-white);
+    stroke:var(--color-background-light);
+    border:1px solid var(--color-background-light);
+    border-color: var(--color-brand);
+    fill: var(--color-brand);
 }
 
 .link-arrow {

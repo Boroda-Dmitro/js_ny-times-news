@@ -1,24 +1,12 @@
 
 
-// .dark{
-//         --color-black: #f4f4f4;
-//         --color-brand: #FFFFFF;
-//         --color-darkgray: #4440F6;
-//         --color-white: #5F6775;
-//     }
-
 .dark{
-<<<<<<< Updated upstream
-    background:#686868;
-=======
     background-color:#686868;
->>>>>>> Stashed changes
     
 }
 .dark .header{
     border-bottom: 1px solid rgba(244, 244, 244, 0.2);
 }
-<<<<<<< Updated upstream
 .dark .logo{
     color:var(--color-background-light);
 }
@@ -28,23 +16,41 @@
 .dark .search-button{
     fill:var(--color-background-light);
 }
-.dark .search-input {
-    border: 1px solid var(--color-background-light);
+.dark .search-input{
     color:var(--color-background-light);
-}
-.dark .search-field{
-    color: var(--color-background-light);
     border: 1px solid var(--color-background-light);
-=======
-.dark .burger-menu{
-    background-color: #686868;
->>>>>>> Stashed changes
 }
+
 .dark .light-word{
-    color: #F4F4F4
+    color: var(--color-background-light);
 }
 .dark .dark-word{
-    color:#4B48DB;
+    color:#4440F7;
+}
+.dark .burger-menu {
+    background-color: #686868;
+}
+.dark .burger-icon{
+    stroke:var(--color-background-light);
+    fill:var(--color-background-light);
+}
+.dark .open-search{
+    fill:var(--color-background-light);
+}
+.dark .icon-sun{
+    stroke:var(--color-background-light);
+    fill:#5F6775;
+}
+.dark .icon-moon{
+    stroke: #4B48DB;
+    fill:transparent;
+}
+.dark .close-icon{
+    stroke:var(--color-background-light);
+    fill:var(--color-background-light);
+}
+.dark .link-text{
+    color:var(--color-background-light);
 }
 
 
