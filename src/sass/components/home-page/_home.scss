@@ -115,7 +115,8 @@
 }
 
 .markup-unit__favorite-icon {
-    fill: none;
+    fill: var(--color-brand);
+    
     // padding-right: 6px;
     display: block;
 }
