@@ -2,7 +2,7 @@ const paginationContainer = document.querySelector('#pagination');
 const nextPageButton = document.querySelector('.next-page');
 const prevPageButton = document.querySelector('.prev-page');
 const isMobile = window.innerWidth <= 767;
-const isTablet = window.innerWidth >= 768;
+const isTablet = window.innerWidth < 1200;
 
 
 const valuePage = {
@@ -30,13 +30,12 @@ function handlePageNumberClick (e) {
 }
 function renderArticles(pageNumber) {
   const articles = document.querySelectorAll('.article');
-  let articlesPerPage = 8;
-  if (isMobile) { articlesPerPage = 4; } else if (isTablet) { articlesPerPage = 7; }
+  let articlesPerPage = 0;
+  if (isMobile) { articlesPerPage = 4; } else if (isTablet) { articlesPerPage = 7; } else {articlesPerPage = 8}
   const startIndex = (pageNumber - 1) * articlesPerPage; 
   const endIndex = startIndex + articlesPerPage - 1;
    
   articles.forEach((article, index) => {
-    article.style.display = 'none';
     if (index >= startIndex && index <= endIndex) {
       article.style.display = 'block';
     } else {

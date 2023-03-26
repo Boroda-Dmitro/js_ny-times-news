@@ -18,8 +18,7 @@ export const createHomePageSeachingNews = (seach) => {
         }
 
         console.log(news);
-
-        return `<li class="markup-unit markup-unit__read" name="card">
+return `<li class="markup-unit markup-unit__read article" name="card">
                   <p class="markup-unit__section">${news.section_name}</p>
                   <p class="markup-unit__already-read hidden">Already read
                     <svg class="markup-unit__icon-check" width="18" height="18" viewBox="0 0 37 32">
@@ -42,6 +41,6 @@ export const createHomePageSeachingNews = (seach) => {
                 </li>`;
       })
       .join('');
-      homePageNews.innerHTML = markupArray
+    homePageNews.innerHTML = markupArray;
   });
 };
