@@ -1,21 +1,29 @@
 
 
-
-
-:root .dark-theme{
+.dark{
         --color-black: #f4f4f4;
         --color-brand: #FFFFFF;
         --color-darkgray: #4440F6;
         --color-white: #5F6775;
     }
 
-.dark-theme.page{
-    background:#5F6775;
+.dark{
+    background:#686868;
     
 }
-.header.dark-theme{
-    border-bottom: 5px solid rgba(205, 240, 8, 0.918);
+.dark header{
+    border-bottom: 1px solid rgba(244, 244, 244, 0.2);
 }
+.dark .light-word{
+    color: #F4F4F4
+}
+.dark .dark-word{
+    color:#4B48DB;
+}
+.dark.search-input{
+    color:#F4F4F4;
+}
+
 
 
 

@@ -1,5 +1,4 @@
 
-
 .header {
     display: flex;
     align-items: center;
@@ -108,6 +107,7 @@
     margin-right: 14px;
     background-color: transparent;
     border: transparent;
+    fill: var(--color-black);
 
     @media screen and(min-width:768px) {
         top: 11;
@@ -137,6 +137,7 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    // color: #F4F4F4;
 
     @media screen and(min-width:768px) {
         display: flex;
@@ -154,7 +155,7 @@
     border: 1px solid var(--color-black);
     border-radius: 20px;
     padding-left: 48px;
-
+    color: var(--color-black);
 
     @media screen and(min-width:768px) {
         width: 213px;
@@ -398,13 +399,15 @@
     text-decoration: none;
 
 }
-
+.link-sign{
+    align-items: center;
+}
 .link-text {
     padding-left: 14px;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.38;
-    color: var(--color-background-light);
+    color: var(--color-black);
 }
 
 .link-icon {

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News</title>
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
-  <body class="page light-theme">
-    <header class="header light-theme">
+  <body id="app" class="light">
+    <header class="header">
       <div class="container header__container">
         <a href="./index.html" class="logo">News</a>
         <ul class="nav">
@@ -127,7 +127,6 @@
                   type="checkbox"
                   id="toggle-button"
                   class="toggle-button"
-                  onclick="toggleTheme()"
                 />
                 <label for="toggle-button" class="text"></label>
                 <svg class="icon-moon" width="21" height="21">
@@ -149,6 +148,6 @@
     <script type="module" src="./index.js"></script>
     <script src="./js/burger-menu.js"></script>
     <script src="./js/header-input.js"></script>
-    <script src="./js/color-scheme.js"></script>
+    <script src="./js/darkmode.js"></script>
   </body>
 </html>
