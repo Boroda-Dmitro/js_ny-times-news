@@ -1,6 +1,6 @@
 import moment from 'moment';
 import { fetchPopularNews } from './fetchPopularNews';
-import { onReadMoreClick } from './onReadMoreClick';
+import { onCardClick } from './onCardClick';
 import { createPopularCardMarkup } from './createPopularCardMarkup';
 
 const LOCAL_STORAGE_POPULAR_READ_KEY = 'already read';
@@ -12,7 +12,7 @@ export const createHomePageNews = () => {
       const publishedDate = moment(news.published_date).format('YY/MM/YYYY');
       const readMoreId = `${index}`;
       createPopularCardMarkup(news, publishedDate, readMoreId);
-      onReadMoreClick(readMoreId, news, LOCAL_STORAGE_POPULAR_READ_KEY);
+      onCardClick(readMoreId, news, LOCAL_STORAGE_POPULAR_READ_KEY);
     });
   });
 };

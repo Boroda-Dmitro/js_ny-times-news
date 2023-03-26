@@ -1,6 +1,6 @@
 import { addNewsToLocalStorage } from './addNewsToLocalStorage';
 
-export function onReadMoreClick(value, news, key) {
+export function onCardClick(value, news, key) {
   document
     .querySelector(`[data-id = "${value}"]`)
     .addEventListener('click', e => {
