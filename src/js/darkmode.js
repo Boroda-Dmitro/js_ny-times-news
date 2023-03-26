@@ -1,5 +1,5 @@
 
-const themeToggle = document.querySelector('toggle-button')
+const themeToggle = document.querySelector('.toggle-button');
 const app = document.getElementById('app');
     
     function chosenTheme() {
