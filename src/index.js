@@ -3,6 +3,3 @@ import { createHomePageSeachingNews } from "./js/createHomePageSeachingNews";
 
 
 createHomePageNews();
-// createHomePageSeachingNews('live');
-
-
