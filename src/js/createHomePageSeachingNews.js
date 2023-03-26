@@ -1,17 +1,15 @@
 import { fetchSeachNews } from './fetchSeachNews';
+import moment from 'moment';
 
+const LOCAL_STORAGE_INPUT_SEARCH_READ_KEY = 'have read';
 const homePageNews = document.querySelector('.news__box');
 
-export const createHomePageSeachingNews = (seach) => {
+export const createHomePageSeachingNews = seach => {
   fetchSeachNews(seach).then(({ response }) => {
     console.log(response);
     const markupArray = response.docs
       .map(news => {
-        const publishedDate = news.pub_date
-          .slice(0, 10)
-          .split('-')
-          .reverse()
-          .join('/');
+        const publishedDate = moment(news.pub_date).format('YY/MM/YYYY');
         let imgUrl = './images/desktop-no-news-601.png';
         if (news.multimedia.length > 0) {
           imgUrl = `http://www.nytimes.com/${news.multimedia[0].url}`;
