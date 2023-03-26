@@ -11,7 +11,7 @@ export const createHomePageNews = () => {
         .reverse()
         .join('/');
 
-      return `<div class="card">
+      return `<div class="card article">
                   <div class="img__box">
                       <img src="${news.media[0]['media-metadata'][2].url}" alt="${news.media[0].caption}" />
                       <span class="category">${news.subsection}</span>

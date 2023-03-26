@@ -1,0 +1,159 @@
+.page-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 60px;
+  margin-bottom: 150px;
+}
+
+.page-container button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+#pagination {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#pagination li,
+.next-page,
+.prev-page {
+  list-style: none;
+  cursor: pointer;
+  overflow: hidden;
+  background: #F4F4F4;
+  border: 1px solid #4440F6;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+
+#pagination li.active,
+.next-page:active,
+.prev-page:active {
+  background-color: #4440F7;
+}
+
+#pagination li.active a,
+.next-page:active,
+.prev-page:active {
+  color: #F4F4F4;
+  fill: #F4F4F4;
+}
+
+#pagination li a {
+  display: inline-block;
+  pointer-events: none;
+}
+
+#pagination li a,
+.next-page,
+.prev-page {
+  text-decoration: none;
+  padding: 4px 12px 5px 12px;
+  font-family: 'Manrope';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.375;
+  text-align: center;
+  color: #111321;
+}
+
+#pagination li:hover,
+.next-page:hover,
+.prev-page:hover {
+  background-color: #4440F7;
+}
+
+#pagination li:hover a,
+.next-page:hover,
+.prev-page:hover {
+  color: #F4F4F4;
+  fill: #F4F4F4;
+}
+
+.settings {
+  padding-top: 3rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.settings .form-input {
+  margin-bottom: 1rem;
+}
+
+.settings .form-input:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.settings .form-input>label {
+  margin-bottom: 10px;
+}
+
+.settings .form-input label {
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+}
+
+.settings .form-input>input {
+  width: 100%;
+}
+
+.settings .form-input input {
+  font-size: 18px;
+  outline: none;
+  padding: 10px 17px;
+  border-radius: 5px;
+  border: 1px solid #b6b6b6;
+}
+
+.settings .wrapper-form-check {
+  display: flex;
+}
+
+.settings .wrapper-form-check .form-check {
+  display: flex;
+  line-height: 1;
+  align-items: center;
+}
+
+.settings .wrapper-form-check .form-check:not(:last-child) {
+  margin-right: 10px;
+}
+
+.settings .wrapper-form-check label {
+  margin-left: 10px;
+}
+
+@media (max-width: 992px) {
+  .settings {
+    flex-direction: column;
+  }
+}
+
+.next-page {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px 3px 10px;
+  pointer-events: all;
+  background: #F4F4F4;
+  border: 1px solid #4440F6;
+  border-radius: 2px;
+  margin-right: 0;
+  gap: 2px
+}
+
+.prev-page {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

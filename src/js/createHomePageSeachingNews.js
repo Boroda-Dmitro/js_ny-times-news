@@ -19,7 +19,7 @@ export const createHomePageSeachingNews = (seach) => {
 
         //   console.log(news.multimedia);
 
-        return `<div class="card">
+        return `<div class="card article">
                     <div class="img__box">
                         <img src="http://www.nytimes.com/${imgUrl}" alt="${news}" />
                         <span class="category">${news.section_name}</span>
