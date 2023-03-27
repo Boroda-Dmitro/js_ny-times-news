@@ -1,10 +1,10 @@
 import moment from 'moment';
 import { fetchSeachNews } from './fetchSeachNews';
 import { onCardClick } from './onCardClick';
-import { createOnSeachCardMarkup } from './createOnSeachCardMarkup';
+import { createSeachCardMarkup } from './createSeachCardMarkup';
 
-export const LOCAL_STORAGE_POPULAR_READ_KEY = 'already read';
-export const LOCAL_STORAGE_FAVOURITE_KEY = 'favourite news';
+export const LOCAL_STORAGE_INPUT_SEARCH_READ_KEY = 'have read';
+export const LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY = 'favourite seach news';
 export const homePageNews = document.querySelector('.news__box');
 
 export const createHomePageSeachingNews = seach => {
@@ -17,12 +17,12 @@ export const createHomePageSeachingNews = seach => {
         imgUrl = `http://www.nytimes.com/${news.multimedia[0].url}`;
       }
       const readMoreId = `${index}`;
-      createOnSeachCardMarkup(news, publishedDate, readMoreId, imgUrl);
+      createSeachCardMarkup(news, publishedDate, readMoreId, imgUrl);
       onCardClick(
         readMoreId,
         news,
-        LOCAL_STORAGE_POPULAR_READ_KEY,
-        LOCAL_STORAGE_FAVOURITE_KEY
+        LOCAL_STORAGE_INPUT_SEARCH_READ_KEY,
+        LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY
       );
     });
   });

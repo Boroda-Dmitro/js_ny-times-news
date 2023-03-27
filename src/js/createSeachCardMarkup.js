@@ -1,6 +1,6 @@
 import { homePageNews } from './createHomePageNews';
 
-export function createOnSeachCardMarkup(data, publishedDate, id, imgUrl) {
+export function createSeachCardMarkup(data, publishedDate, id, imgUrl) {
 
   const markup = `<li class="markup-unit markup-unit__read" name="card" data-id = ${id}>
                     <p class="markup-unit__section">${data.section_name}</p>
@@ -20,7 +20,7 @@ export function createOnSeachCardMarkup(data, publishedDate, id, imgUrl) {
                       <p class="markup-unit__card-text" name="card_text">${data.abstract}</p>
                      <div class="markup-unit__card-info">
                        <p class="markup-unit__card-date">${publishedDate}</p>
-                       <a class="markup-unit__read-more" href="${data.web_url}"name="read_more">Read more</a>
+                       <a class="markup-unit__read-more" href="${data.web_url}"name="read_more"  target = "_blank">Read more</a>
                       </div>
                     </li>`;
 
