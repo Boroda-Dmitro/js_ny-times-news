@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="container header__container">
+      <div class="container container-header">
         <a href="./index.html" class="logo">News</a>
         <ul class="nav">
           <li class="nav-item">
@@ -45,7 +45,12 @@
             <use href="./images/icons.svg#icon-sun"></use>
           </svg>
           <span class="light-word">Light</span>
-          <input type="checkbox" id="toggle-button" class="toggle-button" />
+          <input
+            type="checkbox"
+            id="toggle-button"
+            class="toggle-button"
+            onclick="toggleTheme()"
+          />
           <label for="toggle-button" class="text"></label>
           <svg class="icon-moon" width="21" height="21">
             <use href="./images/icons.svg#icon-moon"></use>
@@ -60,7 +65,7 @@
         </button>
 
         <div class="burger-menu">
-          <div class="container burger__container">
+          <div class="container burger-container">
             <div class="burger-header">
               <a href="./index.html" class="logo">News</a>
               <button class="burger-close" type="button">
@@ -76,10 +81,7 @@
               <div class="burger-nav">
                 <ul class="burger-links">
                   <li class="burger-item">
-                    <a
-                      class="burger-link--current burger-link"
-                      href="./index.html"
-                    >
+                    <a class="burger-link" href="./index.html">
                       <svg class="link-icon" width="18" height="18">
                         <use
                           href="./images/icons.svg#icon-mobil-home"
@@ -95,9 +97,7 @@
                         <use
                           href="./images/icons.svg#icon-mobil-heart"
                         ></use></svg
-                      >Favorite<svg class="link-arrow" width="6" height="12">
-                        <use href="./images/icons.svg#icon-chevron-right"></use>
-                      </svg>
+                      >Favorite
                     </a>
                   </li>
                   <li class="burger-item">
@@ -106,9 +106,7 @@
                         <use
                           href="./images/icons.svg#icon-mobil-book"
                         ></use></svg
-                      >Read<svg class="link-arrow" width="6" height="12">
-                        <use href="./images/icons.svg#icon-chevron-right"></use>
-                      </svg>
+                      >Read
                     </a>
                   </li>
                 </ul>
@@ -121,6 +119,7 @@
                   type="checkbox"
                   id="toggle-button"
                   class="toggle-button"
+                  onclick="toggleTheme()"
                 />
                 <label for="toggle-button" class="text"></label>
                 <svg class="icon-moon" width="21" height="21">

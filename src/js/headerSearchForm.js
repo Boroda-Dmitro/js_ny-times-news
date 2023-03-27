@@ -1,16 +1,12 @@
-// import { fetchSeachNews } from './fetchSeachNews';
+import { createHomePageNews } from './createHomePageNews';
+import { fetchSeachNews } from './fetchSeachNews';
 
+const searchBtn = document.querySelector('.search-button');
+searchBtn.addEventListener("click", createHomePageNews);
+document.getElementById("search").addEventListener("input",fetchSeachNews);
 
-// const headerSearchForm = document.querySelector('.search-field');
-// const searchBtn = document.querySelector('.search-button');
-
-
-// headerSearchForm.addEventListener('submit', onSearchInput);
-// function onSearchInput(e) {
-//     const newsRes = e.target.value;
-
-//     if (newsRes === "") {
-        
-//         return;
-//     }
+// function myFunction() {
+//     // document.getElementById("").innerHTML = "";
+//     let val = this.value.trim();
 // }
+
