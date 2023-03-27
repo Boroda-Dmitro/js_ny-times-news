@@ -67,7 +67,7 @@ margin-right: 6px;
       font-size: 16px;
   }
 padding: 5px 8px 5px 8px;
-font-size: 14px;
+font-size: 12px;
   font-family: 'Manrope';
   font-weight: 500;
   line-height: 1.375;
@@ -91,7 +91,7 @@ font-size: 14px;
 .next-page {
   display: flex;
   align-items: center;
-padding: 5px;
+padding: 3px;
   @media screen and (min-width: 768px) {
       padding: 4px 12px 5px 12px;
   }
@@ -115,7 +115,7 @@ padding: 5px;
     margin-right: 8px;
   }
   @media screen and (max-width: 767px) {
-    padding: 5px;
+    padding: 3px;
   }
   display: flex;
   align-items: center;
