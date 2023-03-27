@@ -26,27 +26,21 @@
     font-size: 12px;
     line-height: 1.3;
 
-    // &:hover,
-    // &:focus,
-    // &:active,
-    // &-selected {
-    //   background-color: var(--color-brand);
-    //   color: var(--color-white);
-    //   cursor: pointer;
-    // }
+    &:hover,
+    &:focus,
+    &:active,
+    &-selected {
+      background-color: var(--color-brand);
+      color: var(--color-white);
+      cursor: pointer;
+    }
 
     &-dropdown {
       width: 112px;
       height: 31px;
       padding: 0 21px;
-      // background-color: var(--color-brand);
-      color: var(--color-white);
-    }
-
-    &-item {
-      margin-top: 200px;
       background-color: var(--color-brand);
-      color: orange;
+      color: var(--color-white);
     }
   }
 }

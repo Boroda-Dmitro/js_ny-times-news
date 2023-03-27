@@ -1,18 +1,17 @@
 import { fetchCategories } from './fetchCategories';
 
-let filtersToShow = 6;
+const TABLET_WIDTH = 768;
+const MOBILE_WIDTH = 320;
 
 function calcFilters() {
-  const TABLET_WIDTH = 768;
-  const MOBILE_WIDTH = 320;
   const screenWidth = window.screen.width;
 
   if (screenWidth > TABLET_WIDTH) {
-    return (filtersToShow = 6);
+    return 6;
   } else if (screenWidth <= TABLET_WIDTH && screenWidth > MOBILE_WIDTH) {
-    return (filtersToShow = 4);
-  } else if (screenWidth <= MOBILE_WIDTH) {
-    return (filtersToShow = 0);
+    return 4;
+  } else {
+    return 0;
   }
 }
 
@@ -38,7 +37,7 @@ fetchCategories()
 
 function createFilterMarkup(filters) {
   const array = filters.results;
-  for (i = 0; i < filtersToShow; i += 1) {
+  for (i = 0; i < calcFilters(); i += 1) {
     const category = array[i].display_name;
     const el = ` <li>
             <button class="categories__item">${category}</button>
@@ -50,7 +49,7 @@ function createFilterMarkup(filters) {
 
 function createOthersMarkup(filters) {
   const array = filters.results;
-  for (i = filtersToShow; i < array.length; i += 1) {
+  for (i = calcFilters(); i < array.length; i += 1) {
     const category = array[i].display_name;
     const el = `<option value="all" class="categories__item-dropdown-item">${category}</option>`;
     refs.filterDropdown.insertAdjacentHTML('beforeend', el);
