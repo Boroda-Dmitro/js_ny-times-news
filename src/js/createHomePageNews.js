@@ -23,7 +23,7 @@ export const createHomePageNews = () => {
   });
 };
 
-// Перевірка сховища
+// Перевірка  сховища
 // function checkLocalStorage(key1, key2, value, indexEl) {
 //   const popularKey = localStorage.getItem(key1);
 //   const inputSearchKey = localStorage.getItem(key2);
