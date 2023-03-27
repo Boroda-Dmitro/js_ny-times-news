@@ -4,7 +4,6 @@ export function onCardClick(value, news, key, key2) {
   document
     .querySelector(`[data-id = "${value}"]`)
     .addEventListener('click', e => {
-      console.log(e.target.innerHTML !== 'Add to favorite');
       if (
         e.target.nodeName !== 'A' &&
         e.target.nodeName !== 'BUTTON' &&
