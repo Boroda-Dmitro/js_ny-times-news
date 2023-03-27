@@ -19,8 +19,10 @@ button:disabled {
 
 #pagination {
   display: flex;
+  @media screen and (min-width: 768px) {
   align-items: center;
   flex-wrap: wrap;
+  }
 }
 
 #pagination li,
@@ -32,7 +34,10 @@ button:disabled {
   background: var(--color-background-light);
   border: 1px solid var(--color-brand);
   border-radius: 2px;
+margin-right: 6px;
+  @media screen and (min-width: 768px) {
   margin-right: 8px;
+  }
 }
 
 #pagination li.active,
@@ -57,10 +62,14 @@ button:disabled {
 .next-page,
 .prev-page {
   text-decoration: none;
-  padding: 4px 12px 5px 12px;
+  @media screen and (min-width: 768px) {
+      padding: 4px 12px 5px 12px;
+      font-size: 16px;
+  }
+padding: 5px 8px 5px 8px;
+font-size: 14px;
   font-family: 'Manrope';
   font-weight: 500;
-  font-size: 16px;
   line-height: 1.375;
   text-align: center;
   color: var(--color-black);
@@ -82,7 +91,10 @@ button:disabled {
 .next-page {
   display: flex;
   align-items: center;
-  padding: 4px 8px 3px 10px;
+padding: 5px;
+  @media screen and (min-width: 768px) {
+      padding: 4px 12px 5px 12px;
+  }
   pointer-events: all;
   background: var(--color-background-light);
   border: 1px solid var(--color-brand);
@@ -91,8 +103,20 @@ button:disabled {
   gap: 2px
 }
 
+.next-page__icon, .prev-page__icon {
+  @media screen and (max-width: 767px) {
+  width: 20px;
+  height: 20px;
+}}
+
 .prev-page {
-  margin-right: 8px;
+  margin-right: 6px;
+  @media screen and (min-width: 768px) {
+    margin-right: 8px;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 5px;
+  }
   display: flex;
   align-items: center;
   justify-content: center;

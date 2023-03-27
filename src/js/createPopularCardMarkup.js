@@ -1,7 +1,7 @@
 import { homePageNews } from './createHomePageNews';
 
 export function createPopularCardMarkup(data, publishedDate, id) {
-  const markup = `<li class="markup-unit markup-unit__read" name="card" data-id = ${id}>
+  const markup = `<li class="markup-unit markup-unit__read article" name="card" data-id = ${id}>
                 <p class="markup-unit__section">${data.subsection}</p>
                 <p class="markup-unit__already-read visually-hidden">Already read
                   <svg class="markup-unit__icon-check" width="18" height="18" viewBox="0 0 37 32">

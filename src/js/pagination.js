@@ -8,13 +8,14 @@ const isTablet = window.innerWidth < 1200;
 const valuePage = {
   curPage: 1,
   numLinksTwoSide: 1,
-  totalPages: 10,
+  totalPages: 5,
 };
 renderPagination();
 
 paginationContainer.addEventListener('click', handlePageNumberClick);
 nextPageButton.addEventListener('click', handleNextPageClick);
 prevPageButton.addEventListener('click', handlePrevPageClick);
+
   
 function handlePageNumberClick (e) {
   const ele = e.target;
@@ -31,17 +32,21 @@ function handlePageNumberClick (e) {
 function renderArticles(pageNumber) {
   const articles = document.querySelectorAll('.article');
   let articlesPerPage = 0;
-  if (isMobile) { articlesPerPage = 4; } else if (isTablet) { articlesPerPage = 7; } else {articlesPerPage = 8}
-  const startIndex = (pageNumber - 1) * articlesPerPage; 
+   articlesPerPage = isMobile ? 4 : isTablet ? 7 : 8;
+  const startIndex = (pageNumber - 1) * articlesPerPage;
   const endIndex = startIndex + articlesPerPage - 1;
+  const totalArticles = articles.length;
+ 
+  const totalPages = Math.ceil(totalArticles / articlesPerPage);
    
   articles.forEach((article, index) => {
     if (index >= startIndex && index <= endIndex) {
       article.style.display = 'block';
+      valuePage.totalPages = totalPages;
     } else {
       article.style.display = 'none';
     }
-  });
+  })
 }
 
 function renderPagination() {
@@ -86,13 +91,15 @@ function renderPagination() {
     }
   }
  if (renderTwoSide) {
-    renderTwoSide =
-      renderPage(1) + dot + renderTwoSide + dot + renderPage(totalPages);
-    paginationContainer.innerHTML = renderTwoSide;
+   paginationContainer.innerHTML = renderPage(1) + dot + renderTwoSide + dot + renderPage(totalPages);
   } else {
     paginationContainer.innerHTML = render;
   }
-  renderArticles(curPage);
+   renderArticles(curPage);
+
+
+  handlePrevPageClick();
+  handleNextPageClick();
 }
   
 function renderPage(index, active = '') {
@@ -125,3 +132,4 @@ function handlePrevPageClick() {
 function handleNextPageClick() {
   nextPageButton.disabled = valuePage.curPage === valuePage.totalPages ? true : false;
 }
+
