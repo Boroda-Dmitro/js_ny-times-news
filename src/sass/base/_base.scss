@@ -42,5 +42,6 @@ img {
 }
 
 .gradient {
-  background-color: var(--already-read-gradient);
+background-image: linear-gradient(rgba(244,244,244,0.4),
+      rgba(244, 244, 244, 0.4));
 }
