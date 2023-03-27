@@ -4,7 +4,7 @@ import { onCardClick } from './onCardClick';
 import { createSeachCardMarkup } from './createSeachCardMarkup';
 
 export const LOCAL_STORAGE_INPUT_SEARCH_READ_KEY = 'have read';
-export const LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY = 'favourite seach news';
+export const LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY = 'favourite search news';
 export const homePageNews = document.querySelector('.news__box');
 
 export const createHomePageSeachingNews = seach => {
