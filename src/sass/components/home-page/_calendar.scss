@@ -44,7 +44,7 @@
   top: -4px;
   transition: all .25s cubic-bezier(.4, 0, .2, 1);
   position: absolute;
-  left: 4 px;
+  left: -2px;
 }
 
 .calendar-form__icon-calendar.switchedColor {
@@ -71,6 +71,7 @@
     &.switched {
       fill: #ffffff;
       rotate: -180deg;
+      top: 7px;
     }
   }
   
@@ -258,7 +259,7 @@
   padding: 0;
 }
   
-.calendar .calendar-days__list li {
+.calendar .calendar-days-list li {
   z-index: 1;
   position: relative;
   margin-bottom: 12px;
@@ -271,15 +272,15 @@
   cursor: pointer;
 }
   
-.calendar .calendar-days__list li:nth-last-child(-n + 7) {
+.calendar .calendar-days-list li:nth-last-child(-n + 7) {
   margin-bottom: 0;
 }
   
-.calendar-days__list li.active {
+.calendar-days-list li.active {
   color: var(--color-white);
 }
   
-.calendar-days__list li::before {
+.calendar-days-list li::before {
   position: absolute;
   content: '';
   left: 50%;
@@ -292,11 +293,11 @@
   transform: translate(-50%, -50%);
 }
   
-.calendar-days__list li.active::before {
+.calendar-days-list li.active::before {
   background: var(--color-brand);
 }
   
-.calendar-days__list li.inactive {
+.calendar-days-list li.inactive {
   color: #a2a2a2;
   cursor: inherit;
 }

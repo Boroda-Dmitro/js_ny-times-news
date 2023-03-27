@@ -6,7 +6,7 @@ export function setDateApi(value) {
 }
 
 const calendarForm = document.querySelector('.calendar-form');
-const daysTag = document.querySelector('.calendar-days__list');
+const daysTag = document.querySelector('.calendar-days-list');
 const currentDate = document.querySelector('.calendar-switcher__current-date');
 const switchesMonth = document.querySelectorAll('.calendar-icons span');
 const selectedDate = document.getElementById('input-picker');
@@ -117,7 +117,7 @@ const render = () => {
   daysTag.innerHTML = liTag;
 
   // обробник події по кліку на день
-  const dayChange = document.querySelector('.calendar-days__list');
+  const dayChange = document.querySelector('.calendar-days-list');
   dayChange.addEventListener('click', e => {
     // перевіряємо чи є елемент неактивним
     if (e.target.classList.contains('inactive')) {
@@ -150,7 +150,7 @@ const render = () => {
 // --------  ФУНКЦІЯ ДЛЯ ВІДПРАВКИ ДАТИ НА API  --------
 let errorDisplayed = false; // для виводу помилки на екран
 const handleSelectedBeginDate = async () => {
-  const selectedDay = document.querySelector('.calendar-days__list .active').textContent,
+  const selectedDay = document.querySelector('.calendar-days-list .active').textContent,
     selectedMonth = (currentMonth + 1).toString(),
     selectedYear = currentYear,
     selectedDateStr = `${selectedYear}-${selectedMonth}-${selectedDay.padStart(
