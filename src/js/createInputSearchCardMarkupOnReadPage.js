@@ -2,7 +2,7 @@ import moment from 'moment';
 import { createSeachCardMarkup } from './createSeachCardMarkup';
 import { onCardClick } from './onCardClick';
 import { LOCAL_STORAGE_INPUT_SEARCH_READ_KEY } from './createHomePageSeachingNews';
-import { LOCAL_STORAGE_FAVOURITE_KEY } from './createHomePageNews';
+import { LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY } from './createHomePageSeachingNews';
 
 export function createInputSearchCardMarkupOnReadPage(parsedArray) {
   const cardArrayMarkup = parsedArray.map((element, index) => {
@@ -28,7 +28,7 @@ export function createInputSearchCardMarkupOnReadPage(parsedArray) {
       readMoreId,
       element,
       LOCAL_STORAGE_INPUT_SEARCH_READ_KEY,
-      LOCAL_STORAGE_FAVOURITE_KEY
+      LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY
     );
   });
 }

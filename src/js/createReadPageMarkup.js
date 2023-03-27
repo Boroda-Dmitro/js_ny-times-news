@@ -22,12 +22,14 @@ document.querySelectorAll('.markup-unit__already-read').forEach(el => {
 
 function createReadPageMarkup() {
   const popularData = localStorage.getItem(LOCAL_STORAGE_POPULAR_READ_KEY);
-  const inputSearch = localStorage.getItem(LOCAL_STORAGE_INPUT_SEARCH_READ_KEY);
+  const inputSearchData = localStorage.getItem(
+    LOCAL_STORAGE_INPUT_SEARCH_READ_KEY
+  );
 
-  if (popularData === null && inputSearch === null) {
+  if (popularData === null && inputSearchData === null) {
     picture.classList.remove('visually-hidden');
     return;
-  } else if (popularData !== null && inputSearch === null) {
+  } else if (popularData !== null && inputSearchData === null) {
     parsedArray = [...JSON.parse(popularData)];
 
     datesArray = parsedArray.map(element =>
@@ -36,8 +38,8 @@ function createReadPageMarkup() {
 
     createReadPageListMarkup(datesArray, accordion);
     createPopularCardMarkupOnReadPage(parsedArray);
-  } else if (inputSearch !== null && popularData === null) {
-    parsedArray = [...JSON.parse(inputSearch)];
+  } else if (inputSearchData !== null && popularData === null) {
+    parsedArray = [...JSON.parse(inputSearchData)];
 
     datesArray = parsedArray.map(element =>
       moment(element.pub_date).format('YY/MM/YYYY')
@@ -45,8 +47,8 @@ function createReadPageMarkup() {
 
     createReadPageListMarkup(datesArray, accordion);
     createInputSearchCardMarkupOnReadPage(parsedArray);
-  } else if (inputSearch !== null && popularData !== null) {
-    parsedArray = [...JSON.parse(popularData), ...JSON.parse(inputSearch)];
+  } else if (inputSearchData !== null && popularData !== null) {
+    parsedArray = [...JSON.parse(popularData), ...JSON.parse(inputSearchData)];
     let popularCardsArray = [];
     let inputSearchCardsArray = [];
 
