@@ -373,23 +373,31 @@
     }
     .burger-icon{
         display: inline-block;
-        width: 1em;
-        height: 1em;
-        stroke-width: 0;
+        width: 24px;
+        height: 24px;
+        // stroke-width: 2px;
+        // stroke: var(--color-black);
         fill: var(--color-black);
         }
     
 
     .burger-close {
+        display: inline-block;
         background-color: transparent;
         border: none;
         cursor: pointer;
+                width: 24px;
+                    height: 24px;
+                    // stroke-width: 2px;
+                    stroke: var(--color-black);
+                    fill: var(--color-black);
     }
 
     .close-icon {
-        width: 1em;
-        height: 1em;
-        stroke-width: 0;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        stroke-width: 2px;
         stroke: var(--color-black);
         fill: var(--color-black);
     }
