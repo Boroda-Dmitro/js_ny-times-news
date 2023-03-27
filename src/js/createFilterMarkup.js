@@ -17,7 +17,7 @@ function calcFilters() {
 
 const refs = {
   filterContainer: document.querySelector('.categories__container'),
-  filterDropdown: document.querySelector('[name="filterDropdown"]'),
+  filterDropdown: document.querySelector('.categories__dropdown-container'),
 };
 
 fetchCategories()
@@ -51,7 +51,7 @@ function createOthersMarkup(filters) {
   const array = filters.results;
   for (i = calcFilters(); i < array.length; i += 1) {
     const category = array[i].display_name;
-    const el = `<option value="all" class="categories__item-dropdown-item">${category}</option>`;
+    const el = `<li class="categories__dropdown-item">${category}</li>`;
     refs.filterDropdown.insertAdjacentHTML('beforeend', el);
   }
 }
