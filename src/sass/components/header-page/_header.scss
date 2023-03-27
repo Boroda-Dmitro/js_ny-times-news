@@ -165,6 +165,7 @@
         border-radius: 20px;
         padding-left: 48px;
         color: var(--color-black);
+        outline: none;
 
 
         @media screen and(min-width:768px) {
@@ -405,7 +406,6 @@
         margin-left: -16px;
         margin-right: -16px;
         padding: 0 16px;
-        color: var(--color-background-light);
     }
     .burger-link {
         display: flex;
@@ -419,6 +419,20 @@
         background-color: transparent;
         color: var(--color-black); 
         cursor: pointer;
+    }
+    .burger-link--current{
+        display: flex;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.38;
+        margin: 0 -16px;
+        padding: 6px 10px 6px 16px;
+        align-items: center;
+        background-color: transparent;
+        color: var(--color-black);
+        cursor: pointer;
+        color: var(--color-background-light);
     }
 
 

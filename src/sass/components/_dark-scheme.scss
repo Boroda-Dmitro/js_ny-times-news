@@ -60,13 +60,19 @@
 .dark .link-text{
     color:var(--color-background-light);
 }
-.dark .markup-unit_card-header{
+.dark .markup-unit__card-header{
     color: var(--color-background-light);
 }
-.dark .markup-unit_card-text{
+.dark .markup-unit__card-text{
     color: var(--color-background-light);
 }
-.dark .markup-unit .markup-unit_read{
+.dark .markup-unit__read.article{
+    background-color: #686868;
+}
+.dark .news__box{
+    background-color: #686868;
+}
+.dark .page-container{
     background-color: #686868;
 }
 
