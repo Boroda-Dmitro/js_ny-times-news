@@ -1,0 +1,123 @@
+.page-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--color-white);
+  border-radius: 5px;
+  margin-top: 60px;
+  margin-bottom: 150px;
+}
+
+.page-container button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+#pagination {
+  display: flex;
+  @media screen and (min-width: 768px) {
+  align-items: center;
+  flex-wrap: wrap;
+  }
+}
+
+#pagination li,
+.next-page,
+.prev-page {
+  list-style: none;
+  cursor: pointer;
+  overflow: hidden;
+  background: var(--color-background-light);
+  border: 1px solid var(--color-brand);
+  border-radius: 2px;
+margin-right: 6px;
+  @media screen and (min-width: 768px) {
+  margin-right: 8px;
+  }
+}
+
+#pagination li.active,
+.next-page:active,
+.prev-page:active {
+  background-color: var(--color-background-active-number);
+}
+
+#pagination li.active a,
+.next-page:active,
+.prev-page:active {
+  color: var(--color-background-light);
+  fill: var(--color-background-light);
+}
+
+#pagination li a {
+  display: inline-block;
+  pointer-events: none;
+}
+
+#pagination li a,
+.next-page,
+.prev-page {
+  text-decoration: none;
+  @media screen and (min-width: 768px) {
+      padding: 4px 12px 5px 12px;
+      font-size: 16px;
+  }
+padding: 5px 8px 5px 8px;
+font-size: 14px;
+  font-family: 'Manrope';
+  font-weight: 500;
+  line-height: 1.375;
+  text-align: center;
+  color: var(--color-black);
+}
+
+#pagination li:hover,
+.next-page:hover,
+.prev-page:hover {
+  background-color: var(--color-background-active-number);
+}
+
+#pagination li:hover a,
+.next-page:hover,
+.prev-page:hover {
+  color: var(--color-background-light);
+  fill: var(--color-background-light);
+}
+
+.next-page {
+  display: flex;
+  align-items: center;
+padding: 5px;
+  @media screen and (min-width: 768px) {
+      padding: 4px 12px 5px 12px;
+  }
+  pointer-events: all;
+  background: var(--color-background-light);
+  border: 1px solid var(--color-brand);
+  border-radius: 2px;
+  margin-right: 0;
+  gap: 2px
+}
+
+.next-page__icon, .prev-page__icon {
+  @media screen and (max-width: 767px) {
+  width: 20px;
+  height: 20px;
+}}
+
+.prev-page {
+  margin-right: 6px;
+  @media screen and (min-width: 768px) {
+    margin-right: 8px;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 5px;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
