@@ -1,5 +1,4 @@
 export const fetchSeachNews = (name, seachDate) => {
-
   const date = new Date();
   const todayDate = `${date.getFullYear()}${String(
     date.getMonth() + 1
@@ -24,4 +23,3 @@ export const fetchSeachNews = (name, seachDate) => {
     return response.json();
   });
 };
-

@@ -1,0 +1,25 @@
+.accordion {
+  margin-top: 40px;
+
+  &__container {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__label {
+    width: 100%;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+
+    color: var(--color-black);
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #929292;
+  }
+}
