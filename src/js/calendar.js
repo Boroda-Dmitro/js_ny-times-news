@@ -6,8 +6,8 @@ export function setDateApi(value) {
 }
 
 const calendarForm = document.querySelector('.calendar-form');
-const daysTag = document.querySelector('.days');
-const currentDate = document.querySelector('.current-date');
+const daysTag = document.querySelector('.calendar-days__list');
+const currentDate = document.querySelector('.calendar-switcher__current-date');
 const switchesMonth = document.querySelectorAll('.calendar-icons span');
 const selectedDate = document.getElementById('input-picker');
 
@@ -15,7 +15,7 @@ const calendar = {
   openModalBtn: document.querySelector('[data-modal-open]'),
   closeModalBtn: document.querySelector('body'),
   modal: document.querySelector('[data-modal]'),
-  inputField: document.querySelector('.calendar-input'),
+  inputField: document.querySelector('.calendar-form__input'),
   toggleBtn: document.querySelector('.calendar-form__button-down'),
   calendarBtn: document.querySelector('.calendar-form__icon-calendar'),
 };
@@ -42,7 +42,7 @@ const months = [
 // зміна розмітки при закритті
 const closeModalAndResetCalendar = () => {
   calendarForm.querySelector('[data-modal]').classList.add('hidden');
-  calendarForm.querySelector('.calendar-input').classList.remove('isActive');
+  calendarForm.querySelector('.calendar-form__input').classList.remove('isActive');
   calendarForm
     .querySelector('.calendar-form__button-down')
     .classList.remove('switched');
@@ -117,7 +117,7 @@ const render = () => {
   daysTag.innerHTML = liTag;
 
   // обробник події по кліку на день
-  const dayChange = document.querySelector('.days');
+  const dayChange = document.querySelector('.calendar-days__list');
   dayChange.addEventListener('click', e => {
     // перевіряємо чи є елемент неактивним
     if (e.target.classList.contains('inactive')) {
@@ -150,7 +150,7 @@ const render = () => {
 // --------  ФУНКЦІЯ ДЛЯ ВІДПРАВКИ ДАТИ НА API  --------
 let errorDisplayed = false; // для виводу помилки на екран
 const handleSelectedBeginDate = async () => {
-  const selectedDay = document.querySelector('.days .active').textContent,
+  const selectedDay = document.querySelector('.calendar-days__list .active').textContent,
     selectedMonth = (currentMonth + 1).toString(),
     selectedYear = currentYear,
     selectedDateStr = `${selectedYear}-${selectedMonth}-${selectedDay.padStart(

@@ -2,14 +2,14 @@
     <p class="calendar-text">Search date news</p>
   
     <div class="calendar-form">
-      <div class="form-container" data-modal-open data-modal-close>
-        <svg class="calendar-form__icon-calendar" width="17" height="17">
+      <div class="calendar-form__container" data-modal-open data-modal-close>
+        <svg class="calendar-form__icon-calendar" width="20" height="20">
           <use href="./images/icons.svg#icon-calendar"></use>
         </svg>
         <input
           readonly
           id="input-picker"
-          class="calendar-input datepicker-here dark-theme-border"
+          class="calendar-form__input datepicker-here dark-theme-border"
           placeholder="Виберіть дату..."
         />
         <svg class="calendar-form__button-down dark-theme-btn" width="14" height="14">
@@ -22,28 +22,28 @@
       <div class="calendar-wrapper hidden" data-modal>
         <div class="calendar-wrapper__container">
           <div class="calendar-switcher">
-            <div class="switches-years">
-              <span id="prev-years" class="switches-years__icon">
-                <svg width="16" height="12" class="switches-years__icon-right">
+            <div class="calendar-switcher__years">
+              <span id="prev-years" class="calendar-switcher__years-icon">
+                <svg width="16" height="12" class="calendar-switcher__icon-right">
                   <use href="./images/icons.svg#icon-down-arrow"></use>
                 </svg>
               </span>
-              <p class="current-date"></p>
-              <span id="next-years" class="icon-symbols__years">
-                <svg width="16" height="12" class="switches-years__icon-left">
+              <p class="calendar-switcher__current-date"></p>
+              <span id="next-years" class="calendar-switcher__icon-symbols">
+                <svg width="16" height="12" class="calendar-switcher__icon-left">
                   <use href="./images/icons.svg#icon-down-arrow"></use>
                 </svg>
               </span>
             </div>
   
             <div class="calendar-icons">
-              <span id="prev" class="icon-symbols">
-                <svg width="16" height="17" class="switches-years__icon-right">
+              <span id="prev" class="calendar-icons__symbols">
+                <svg width="16" height="17" class="calendar-switcher__icon-right">
                   <use href="./images/icons.svg#icon-down-arrow"></use>
                 </svg>
               </span>
-              <span id="next" class="icon-symbols">
-                <svg width="16" height="17" class="switches-years__icon-left">
+              <span id="next" class="calendar-icons__symbols">
+                <svg width="16" height="17" class="calendar-switcher__icon-left">
                   <use href="./images/icons.svg#icon-down-arrow"></use>
                 </svg>
               </span>
@@ -59,8 +59,8 @@
               <li class="calendar-weeks__item">Sa</li>
               <li class="calendar-weeks__item">Su</li>
             </ul>
-            <ul class="days">
-              <li class="calendar-days"></li>
+            <ul class="calendar-days__list">
+              <li class="calendar-days__item"></li>
             </ul>
           </div>
         </div>

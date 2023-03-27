@@ -23,27 +23,14 @@
   
 .calendar-form {
   position: relative;
-
-    &__button-down {
-      margin-left: 12px;
-      display: flex;
-      position: absolute;
-      z-index: 1;
-      fill: #a2a2a2;
-      right: 12px;
-      cursor: pointer;
-    
-      transition: rotate 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-        fill 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-  }
+}
 
 .calendar-form.switched {
   fill: var(--color-white);
   rotate: -180deg;
 }
   
-.form-container {
+.calendar-form-container {
   position: relative;
   
   display: flex;
@@ -52,11 +39,12 @@
 }
 
 .calendar-form__icon-calendar {
-  position: absolute;
   fill: var(--color-brand);
-  margin:6px 12px;
-
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  margin: 12px;
+  top: -4px;
+  transition: all .25s cubic-bezier(.4, 0, .2, 1);
+  position: absolute;
+  left: 4 px;
 }
 
 .calendar-form__icon-calendar.switchedColor {
@@ -67,25 +55,26 @@
   
   // Іконка стрілочки на інпуті
   
-.calendar-form__button-down {
-  margin-left: 12px;
-  display: flex;
-  position: absolute;
-  z-index: 1;
-  fill: #a2a2a2;
-  right: 12px;
-  cursor: pointer;
+  .calendar-form__button-down {
+    margin-left: 12px;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    fill: #a2a2a2;
+    cursor: pointer;
+    top: 11px;
+    right: 12px;
   
-  transition: rotate 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-    fill 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: rotate 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+      fill 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   
-  &.switched {
-    fill: var(--color-white);
-    rotate: -180deg;
+    &.switched {
+      fill: #ffffff;
+      rotate: -180deg;
+    }
   }
-}
   
-.calendar-input {
+.calendar-form__input {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -137,18 +126,18 @@
   align-items: center;
 }
   
-.icon-symbols {
+.calendar-icons__symbols {
   cursor: pointer;
   fill: var(--color-brand);
 }
   
-.switches-years {
+.calendar-switcher__years {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
   
-.current-date {
+.calendar-switcher__current-date {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.38;
@@ -157,16 +146,18 @@
   color: hsl(0, 0%, 0%);
 }
   
-.switches-years__icon {
-  color: var(--color-brand);
+.calendar-switcher__years-icon {
+  fill: var(--color-brand);
 }
   
-.switches-years__icon-right {
+.calendar-switcher__icon-right {
   transform: rotate(90deg);
+  fill: var(--color-brand);
 }
   
-.switches-years__icon-left {
+.calendar-switcher__icon-left {
   transform: rotate(270deg);
+  fill: var(--color-brand);
 }
   
 .calendar-wrapper {
@@ -267,7 +258,7 @@
   padding: 0;
 }
   
-.calendar .days li {
+.calendar .calendar-days__list li {
   z-index: 1;
   position: relative;
   margin-bottom: 12px;
@@ -280,15 +271,15 @@
   cursor: pointer;
 }
   
-.calendar .days li:nth-last-child(-n + 7) {
+.calendar .calendar-days__list li:nth-last-child(-n + 7) {
   margin-bottom: 0;
 }
   
-.days li.active {
+.calendar-days__list li.active {
   color: var(--color-white);
 }
   
-.days li::before {
+.calendar-days__list li::before {
   position: absolute;
   content: '';
   left: 50%;
@@ -301,11 +292,11 @@
   transform: translate(-50%, -50%);
 }
   
-.days li.active::before {
+.calendar-days__list li.active::before {
   background: var(--color-brand);
 }
   
-.days li.inactive {
+.calendar-days__list li.inactive {
   color: #a2a2a2;
   cursor: inherit;
 }
