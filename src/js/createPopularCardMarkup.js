@@ -1,6 +1,10 @@
-import { homePageNews } from './createHomePageNews';
-
-export function createPopularCardMarkup(data, publishedDate, id) {
+export function createPopularCardMarkup(
+  data,
+  publishedDate,
+  id,
+  targetElement,
+  insertMethod
+) {
   const markup = `<li class="markup-unit markup-unit__read" name="card" data-id = ${id}>
                 <p class="markup-unit__section">${data.subsection}</p>
                 <p class="markup-unit__already-read visually-hidden">Already read
@@ -22,5 +26,6 @@ export function createPopularCardMarkup(data, publishedDate, id) {
                   <a class="markup-unit__read-more" href="${data.url}" name="read_more"  target = "_blank">Read more</a>
                 </div>
               </li>`;
-  homePageNews.insertAdjacentHTML('beforeend', markup);
+
+  targetElement.insertAdjacentHTML(insertMethod, markup);
 }
