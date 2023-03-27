@@ -34,13 +34,32 @@
       color: var(--color-white);
       cursor: pointer;
     }
+  }
 
-    &-dropdown {
-      width: 112px;
-      height: 31px;
-      padding: 0 21px;
-      background-color: var(--color-brand);
-      color: var(--color-white);
+  &__dropdown {
+    width: 112px;
+    height: 31px;
+    padding: 0 21px;
+    background-color: var(--color-brand);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 100;
+
+    &-container {
+      max-width: 168px;
+      min-height: 380px;
+      overflow-y: auto;
+      border: 1px solid var(--color-brand);
+      padding: 14px 24px;
+      border-radius: 20px;
+      font-size: 12px;
+      line-height: 1.33;
+      letter-spacing: 0.01em;
+      background-color: var(--color-white);
+      color: #4440f7;
     }
   }
 }
