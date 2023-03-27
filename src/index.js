@@ -7,5 +7,5 @@ import { Calendar } from './js/calendar';
 
 
 
-createHomePageSeachingNews('cars')
+createHomePageSeachingNews('car')
 

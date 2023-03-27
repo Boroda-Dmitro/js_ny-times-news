@@ -1,0 +1,1177 @@
+@charset "UTF-8";
+/*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+/*
+Document
+========
+*/
+/**
+Use a better box model (opinionated).
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+1. Correct the line height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size (opinionated).
+*/
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+}
+
+/*
+Sections
+========
+*/
+/**
+1. Remove the margin in all browsers.
+2. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+*/
+body {
+  margin: 0;
+  /* 1 */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  /* 2 */
+}
+
+/*
+Grouping content
+================
+*/
+/**
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+*/
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+}
+
+/*
+Text-level semantics
+====================
+*/
+/**
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+abbr[title] {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/**
+Add the correct font weight in Edge and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+/**
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+}
+
+/*
+Forms
+=====
+*/
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+button,
+select {
+  text-transform: none;
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+Remove the inner border and padding in Firefox.
+*/
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+Restore the focus styles unset by the previous rule.
+*/
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+Remove the additional ':invalid' styles in Firefox.
+See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+*/
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+legend {
+  padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Interactive
+===========
+*/
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
+
+body {
+  font-family: "Manrope", "Poppins";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  margin: -1px;
+}
+
+:root {
+  --color-background-light: #f4f4f4;
+  --color-background-dark: #2e2e2e;
+  --color-background-card-category: rgba(68, 64, 247, 0.7);
+  --color-black: #111321;
+  --color-white: #ffffff;
+  --color-gray: #a8a8a8;
+  --color-brand: #4440f6;
+  --color-green: #00dd73;
+  --color-background-active-number: #4440F7;
+  --already-read-gradient: rgba(244, 244, 244, 0.4);
+}
+
+/* manrope-regular - cyrillic */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/manrope-v13-cyrillic-regular.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/manrope-v13-cyrillic-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/manrope-v13-cyrillic-regular.woff2") format("woff2"), url("../fonts/manrope-v13-cyrillic-regular.woff") format("woff"), url("../fonts/manrope-v13-cyrillic-regular.ttf") format("truetype"), url("../fonts/manrope-v13-cyrillic-regular.svg#Manrope") format("svg"); /* Legacy iOS */
+}
+/* manrope-500 - cyrillic */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/manrope-v13-cyrillic-500.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/manrope-v13-cyrillic-500.eot?#iefix") format("embedded-opentype"), url("../fonts/manrope-v13-cyrillic-500.woff2") format("woff2"), url("../fonts/manrope-v13-cyrillic-500.woff") format("woff"), url("../fonts/manrope-v13-cyrillic-500.ttf") format("truetype"), url("../fonts/manrope-v13-cyrillic-500.svg#Manrope") format("svg"); /* Legacy iOS */
+}
+/* manrope-700 - cyrillic */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/manrope-v13-cyrillic-700.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/manrope-v13-cyrillic-700.eot?#iefix") format("embedded-opentype"), url("../fonts/manrope-v13-cyrillic-700.woff2") format("woff2"), url("../fonts/manrope-v13-cyrillic-700.woff") format("woff"), url("../fonts/manrope-v13-cyrillic-700.ttf") format("truetype"), url("../fonts/manrope-v13-cyrillic-700.svg#Manrope") format("svg"); /* Legacy iOS */
+}
+/* roboto-regular - cyrillic */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/roboto-v30-cyrillic-regular.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/roboto-v30-cyrillic-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-v30-cyrillic-regular.woff2") format("woff2"), url("../fonts/roboto-v30-cyrillic-regular.woff") format("woff"), url("../fonts/roboto-v30-cyrillic-regular.ttf") format("truetype"), url("../fonts/roboto-v30-cyrillic-regular.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/poppins-v20-latin-regular.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/poppins-v20-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins-v20-latin-regular.woff2") format("woff2"), url("../fonts/poppins-v20-latin-regular.woff") format("woff"), url("../fonts/poppins-v20-latin-regular.ttf") format("truetype"), url("../fonts/poppins-v20-latin-regular.svg#Poppins") format("svg"); /* Legacy iOS */
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+@media screen and (min-width: 320px) {
+  .container {
+    width: 320px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1280px;
+  }
+}
+
+.default-picture {
+  margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  .default-picture {
+    margin-top: 48px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .default-picture {
+    margin-top: 60px;
+  }
+}
+.default-picture__text {
+  font-family: "Manrope";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.35;
+  text-align: center;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .default-picture__text {
+    font-size: 40px;
+    line-height: 1.375;
+  }
+}
+.default-picture__image {
+  margin: auto;
+}
+
+@media (min-width: 320px) {
+  .news__box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    gap: 28px;
+    margin: 0 auto;
+    margin-top: 119px;
+    padding: 0px;
+    background-color: var(--color-background-light);
+  }
+}
+@media (min-width: 768px) {
+  .news__box {
+    gap: 30px;
+  }
+}
+@media (min-width: 1280px) {
+  .news__box {
+    gap: 32px;
+  }
+}
+
+@media (min-width: 320px) {
+  .markup-unit {
+    flex-direction: column;
+    position: relative;
+  }
+}
+@media (min-width: 768px) {
+  .markup-unit {
+    width: calc((100% - 64px) / 2);
+  }
+}
+@media (min-width: 1280px) {
+  .markup-unit {
+    width: calc((100% - 64px) / 3);
+  }
+}
+
+.markup-unit__section {
+  position: absolute;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-background-light);
+  padding: 8px 4px;
+  background: var(--color-background-card-category);
+  border-radius: 0px 4px 4px 0px;
+  width: -moz-fit-content;
+  width: fit-content;
+  top: 40px;
+  z-index: 9;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 320px) {
+  .markup-unit__already-read {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--color-green);
+    position: absolute;
+    margin: 0;
+    align-items: center;
+    top: 20px;
+    left: 167px;
+  }
+}
+@media (min-width: 768px) {
+  .markup-unit__already-read {
+    left: 225px;
+  }
+}
+@media (min-width: 1280px) {
+  .markup-unit__already-read {
+    left: 270px;
+  }
+}
+
+.markup-unit__icon-check {
+  margin-left: 5px;
+}
+
+.markup-unit__card-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: auto;
+  height: 395px;
+  border-radius: 10px;
+}
+
+@media (min-width: 320px) {
+  .markup-unit__add-favorite {
+    position: absolute;
+    top: 355px;
+    left: 154px;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-left: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 15px;
+    border-style: none;
+    cursor: pointer;
+  }
+}
+@media (min-width: 768px) {
+  .markup-unit__add-favorite {
+    left: 215px;
+  }
+}
+@media (min-width: 1280px) {
+  .markup-unit__add-favorite {
+    left: 256px;
+  }
+}
+
+.markup-unit__favorite-icon {
+  fill: var(--color-brand);
+  display: block;
+}
+
+.markup-unit__favorite-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 0;
+  color: var(--color-black);
+  margin: 0 auto;
+}
+
+@media (min-width: 320px) {
+  .markup-unit__card-header {
+    font-size: 24px;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.38;
+    letter-spacing: -0.01em;
+    color: var(--color-black);
+    margin-top: 20px;
+    margin: 0;
+    padding: 0;
+    height: 132px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media (min-width: 768px) {
+  .markup-unit__card-header {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 320px) {
+  .markup-unit__card-text {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--color-black);
+    padding: 0;
+    margin: 0px;
+    height: 66px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media (min-width: 768px) {
+  .markup-unit__card-text {
+    font-size: 16px;
+  }
+}
+
+.markup-unit__card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 320px) {
+  .markup-unit__card-date {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--color-gray);
+    margin: 0;
+    margin-top: 20px;
+    display: inline-block;
+    padding: 0;
+  }
+}
+@media (min-width: 768px) {
+  .markup-unit__card-date {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 320px) {
+  .markup-unit__read-more {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--color-brand);
+    text-decoration: none;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .markup-unit__read-more {
+    font-size: 16px;
+    color: var(--color-brand);
+  }
+}
+@media (max-width: 1281px) {
+  .markup-unit__read-more {
+    color: var(--color-brand);
+  }
+}
+
+.weather-placeholder {
+  width: 394.66px;
+  height: 711px;
+  background-color: var(--color-black);
+}
+
+.accordion {
+  padding-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  .accordion {
+    padding-top: 48px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .accordion {
+    padding-top: 60px;
+  }
+}
+.accordion__container:not(:nth-child(1)) {
+  margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  .accordion__container:not(:nth-child(1)) {
+    margin-top: 48px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .accordion__container:not(:nth-child(1)) {
+    margin-top: 60px;
+  }
+}
+.accordion__label {
+  position: relative;
+  width: 100%;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  color: var(--color-black);
+  padding-bottom: 12px;
+  border-bottom: 1px solid #929292;
+}
+.accordion__label::before {
+  content: "❯";
+  position: absolute;
+  left: 90px;
+  font-size: 20px;
+  transform: translateY(-15%) rotate(90deg);
+}
+@media screen and (min-width: 1280px) {
+  .accordion__label::before {
+    left: 95px;
+  }
+}
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: 1s;
+}
+.accordion__content.news__box--accordion {
+  margin: 0;
+}
+.accordion__container.active .accordion__content.news__box--accordion {
+  margin-top: 28px;
+}
+@media screen and (min-width: 768px) {
+  .accordion__container.active .accordion__content.news__box--accordion {
+    margin-top: 30px !important;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .accordion__container.active .accordion__content.news__box--accordion {
+    margin-top: 40px !important;
+  }
+}
+.accordion__container.active .accordion__label::before {
+  transform: translateY(-15%) rotate(-90deg);
+}
+
+.filter-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-text {
+  display: none;
+}
+@media (min-width: 1280px) {
+  .calendar-text {
+    margin: 0;
+    padding: 0;
+    margin-right: 37px;
+    display: block;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-black);
+  }
+}
+
+.calendar-form {
+  position: relative;
+}
+
+.calendar-form.switched {
+  fill: var(--color-white);
+  rotate: -180deg;
+}
+
+.calendar-form-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-form__icon-calendar {
+  fill: var(--color-brand);
+  margin: 12px;
+  top: -4px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  left: -2px;
+}
+
+.calendar-form__icon-calendar.switchedColor {
+  z-index: 51;
+  fill: var(--color-white);
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
+
+.calendar-form__button-down {
+  margin-left: 12px;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  fill: #a2a2a2;
+  cursor: pointer;
+  top: 11px;
+  right: 12px;
+  transition: rotate 0.6s cubic-bezier(0.4, 0, 0.2, 1), fill 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.calendar-form__button-down.switched {
+  fill: #ffffff;
+  rotate: -180deg;
+  top: 7px;
+}
+
+.calendar-form__input {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 13px;
+  width: 152px;
+  height: 31px;
+  padding: 5px 12px;
+  border: 1px solid #4440f6;
+  border-radius: 20px;
+  font-size: 12px;
+  line-height: 21px;
+  text-align: center;
+  color: var(--color-black);
+  background-color: transparent;
+  cursor: pointer;
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
+@media (min-width: 768px) {
+  .calendar-form__input {
+    width: 168px;
+    height: 31px;
+    font-size: 14px;
+    line-height: 1.5;
+    gap: 18px;
+  }
+}
+.calendar-form__input.isActive::-moz-placeholder {
+  -moz-transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  color: var(--color-white);
+}
+.calendar-form__input.isActive::placeholder {
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  color: var(--color-white);
+}
+.calendar-form__input.isActive {
+  background-color: var(--color-brand);
+  color: var(--color-white);
+  border-color: var(--color-brand);
+  border: 1px solid #4440f7;
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
+
+.current-date-container {
+  display: flex;
+  align-items: center;
+}
+
+.calendar-icons__symbols {
+  cursor: pointer;
+  fill: var(--color-brand);
+}
+
+.calendar-switcher__years {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.calendar-switcher__current-date {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.38;
+  letter-spacing: -0.408px;
+  font-feature-settings: "case" on;
+  color: hsl(0, 0%, 0%);
+}
+
+.calendar-switcher__years-icon {
+  fill: var(--color-brand);
+}
+
+.calendar-switcher__icon-right {
+  transform: rotate(90deg);
+  fill: var(--color-brand);
+}
+
+.calendar-switcher__icon-left {
+  transform: rotate(270deg);
+  fill: var(--color-brand);
+}
+
+.calendar-wrapper {
+  position: absolute;
+  overflow: hidden;
+  z-index: 2;
+  display: block;
+  width: 250px;
+  height: 350px;
+  right: 0px;
+  pointer-events: auto;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.calendar-wrapper__container {
+  cursor: default;
+  z-index: 50;
+  position: absolute;
+  overflow: hidden;
+  margin-left: 0;
+  padding: 16px 16px 20px 16px;
+  width: 250px;
+  background: var(--color-white);
+  box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
+
+.calendar-switcher {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 0px;
+  margin-bottom: 2px;
+  align-items: center;
+}
+
+.calendar-wrapper.hidden {
+  pointer-events: none;
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
+
+.calendar-wrapper.hidden > .calendar-wrapper__container {
+  transform: translateY(-104%);
+  box-shadow: 0px 10px 60px rgba(0, 0, 0, 0);
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
+
+.calendar-icons {
+  display: flex;
+  gap: 18px;
+  color: var(--color-brand);
+}
+
+.calendar-icons span {
+  margin: 0 1px;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  border-radius: 50%;
+  fill: var(--color-brand);
+  display: flex;
+}
+
+.calendar-icons span:last-child {
+  margin-right: 7px;
+}
+
+.calendar-icons span:hover {
+  background: var(--color-white);
+}
+
+.calendar ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+
+.calendar li {
+  width: 14.2857142857%;
+  margin-bottom: 14px;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: -0.078px;
+  color: rgba(60, 60, 67, 0.3);
+  padding: 0;
+}
+
+.calendar .calendar-days-list li {
+  z-index: 1;
+  position: relative;
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.79;
+  letter-spacing: 0.38px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.calendar .calendar-days-list li:nth-last-child(-n+7) {
+  margin-bottom: 0;
+}
+
+.calendar-days-list li.active {
+  color: var(--color-white);
+}
+
+.calendar-days-list li::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 28px;
+  width: 28px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.calendar-days-list li.active::before {
+  background: var(--color-brand);
+}
+
+.calendar-days-list li.inactive {
+  color: #a2a2a2;
+  cursor: inherit;
+}
+
+.calendar-weeks__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--color-white);
+  border-radius: 5px;
+  margin-top: 60px;
+  margin-bottom: 150px;
+}
+
+.page-container button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+#pagination {
+  display: flex;
+}
+@media screen and (min-width: 768px) {
+  #pagination {
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+#pagination li,
+.next-page,
+.prev-page {
+  list-style: none;
+  cursor: pointer;
+  overflow: hidden;
+  background: var(--color-background-light);
+  border: 1px solid var(--color-brand);
+  border-radius: 2px;
+  margin-right: 6px;
+}
+@media screen and (min-width: 768px) {
+  #pagination li,
+  .next-page,
+  .prev-page {
+    margin-right: 8px;
+  }
+}
+
+#pagination li.active,
+.next-page:active,
+.prev-page:active {
+  background-color: var(--color-background-active-number);
+}
+
+#pagination li.active a,
+.next-page:active,
+.prev-page:active {
+  color: var(--color-background-light);
+  fill: var(--color-background-light);
+}
+
+#pagination li a {
+  display: inline-block;
+  pointer-events: none;
+}
+
+#pagination li a,
+.next-page,
+.prev-page {
+  text-decoration: none;
+  padding: 5px 8px 5px 8px;
+  font-size: 14px;
+  font-family: "Manrope";
+  font-weight: 500;
+  line-height: 1.375;
+  text-align: center;
+  color: var(--color-black);
+}
+@media screen and (min-width: 768px) {
+  #pagination li a,
+  .next-page,
+  .prev-page {
+    padding: 4px 12px 5px 12px;
+    font-size: 16px;
+  }
+}
+
+#pagination li:hover,
+.next-page:hover,
+.prev-page:hover {
+  background-color: var(--color-background-active-number);
+}
+
+#pagination li:hover a,
+.next-page:hover,
+.prev-page:hover {
+  color: var(--color-background-light);
+  fill: var(--color-background-light);
+}
+
+.next-page {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  pointer-events: all;
+  background: var(--color-background-light);
+  border: 1px solid var(--color-brand);
+  border-radius: 2px;
+  margin-right: 0;
+  gap: 2px;
+}
+@media screen and (min-width: 768px) {
+  .next-page {
+    padding: 4px 12px 5px 12px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .next-page__icon, .prev-page__icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.prev-page {
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .prev-page {
+    margin-right: 8px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .prev-page {
+    padding: 5px;
+  }
+}/*# sourceMappingURL=index.css.map */
