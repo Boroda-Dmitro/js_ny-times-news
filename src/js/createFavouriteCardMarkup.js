@@ -2,7 +2,8 @@ export function createFavouriteCardMarkup(
     data,
     id,
     targetElement,
-    insertMethod) {
+    insertMethod,
+    image) {
   const markup = `
     <div class="card">
       <img src="${data.image}" alt="${data.title}" class="card__img" />
