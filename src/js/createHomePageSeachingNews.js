@@ -1,40 +1,36 @@
+import moment from 'moment';
 import { fetchSeachNews } from './fetchSeachNews';
+import { onCardClick } from './onCardClick';
+import { createSeachCardMarkup } from './createSeachCardMarkup';
 
-const container = document.querySelector('.container');
-export const createHomePageSeachingNews = (seach) => {
+export const LOCAL_STORAGE_INPUT_SEARCH_READ_KEY = 'have read';
+export const LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY = 'favourite seach news';
+export const homePageNews = document.querySelector('.news__box');
+
+export const createHomePageSeachingNews = seach => {
+  homePageNews.innerHTML = '';
   fetchSeachNews(seach).then(({ response }) => {
-    console.log(response);
-
-    const markupArray = response.docs
-      .map(news => {
-        const publishedDate = news.pub_date
-          .slice(0, 10)
-          .split('-')
-          .reverse()
-          .join('/');
-        let imgUrl = '';
-        if (news.multimedia.length > 0) {
-          imgUrl = news.multimedia[0].url;
-        }
-
-        //   console.log(news.multimedia);
-
-        return `<div class="card">
-                    <div class="img__box">
-                        <img src="http://www.nytimes.com/${imgUrl}" alt="${news}" />
-                        <span class="category">${news.section_name}</span>
-                        <button type="button">add to favofite</button>
-                        <div class="box">
-                        <h3 class="title">${news.headline.main}</h3>
-                        <p class="text">${news.abstract}</p>
-                        <span class="data">${publishedDate}</span>
-                    <a href="${news.web_url}" class="origin">link</a>
-                </div>
-                </div>
-                </div>`;
-      })
-      .join('');
-      container.innerHTML = markupArray
+    const markupArray = response.docs.map((news, index) => {
+      const publishedDate = moment(news.pub_date).format('YY/MM/YYYY');
+      let imgUrl = './images/desktop-no-news-601.png';
+      if (news.multimedia.length > 0) {
+        imgUrl = `http://www.nytimes.com/${news.multimedia[0].url}`;
+      }
+      const readMoreId = `${index}`;
+      createSeachCardMarkup(
+        news,
+        publishedDate,
+        readMoreId,
+        imgUrl,
+        homePageNews,
+        'beforeend'
+      );
+      onCardClick(
+        readMoreId,
+        news,
+        LOCAL_STORAGE_INPUT_SEARCH_READ_KEY,
+        LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY
+      );
+    });
   });
 };
-

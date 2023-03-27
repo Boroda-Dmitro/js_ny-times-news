@@ -4,7 +4,9 @@ import { createHomePageSeachingNews } from "./js/createHomePageSeachingNews";
 
 
 
-createHomePageNews();
-// createHomePageSeachingNews('live');
+// createHomePageNews();
 
+
+
+createHomePageSeachingNews('cars')
 
