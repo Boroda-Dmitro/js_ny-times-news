@@ -1,13 +1,28 @@
 .accordion {
-  margin-top: 40px;
+  padding-top: 40px;
 
-  &__container {
-    &:not(:last-child) {
-      margin-bottom: 40px;
+  @media screen and (min-width: 768px) {
+    padding-top: 48px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 60px;
+  }
+
+  &__container:not(:nth-child(1)) {
+    margin-top: 40px;
+
+    @media screen and (min-width: 768px) {
+      margin-top: 48px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      margin-top: 60px;
     }
   }
 
   &__label {
+    position: relative;
     width: 100%;
     font-family: 'Poppins';
     font-weight: 400;
@@ -21,5 +36,44 @@
     padding-bottom: 12px;
 
     border-bottom: 1px solid #929292;
+
+    &::before {
+      content: '\276F';
+      position: absolute;
+      left: 90px;
+      font-size: 20px;
+
+      transform: translateY(-15%) rotate(90deg);
+
+      @media screen and (min-width: 1280px) {
+        left: 95px;
+      }
+    }
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 1s;
+  }
+
+  &__content.news__box--accordion {
+    margin: 0;
+  }
+
+  &__container.active .accordion__content.news__box--accordion {
+    margin-top: 28px;
+
+    @media screen and (min-width: 768px) {
+      margin-top: 30px !important;
+    }
+
+    @media screen and (min-width: 1280px) {
+      margin-top: 40px !important;
+    }
+  }
+
+  &__container.active .accordion__label::before {
+    transform: translateY(-15%) rotate(-90deg);
   }
 }
