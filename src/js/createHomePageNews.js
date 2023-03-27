@@ -27,7 +27,7 @@ export const createHomePageNews = () => {
       );
     });
   });
-};
+}
 
 // Перевірка сховища
 // function checkLocalStorage(key1, key2, value, indexEl) {
