@@ -4,7 +4,7 @@ import { onCardClick } from './onCardClick';
 import { createPopularCardMarkup } from './createPopularCardMarkup';
 
 export const LOCAL_STORAGE_POPULAR_READ_KEY = 'already read';
-export const LOCAL_STORAGE_FAVOURITE_KEY = 'favourite news';
+export const LOCAL_STORAGE_POPULAR_FAVOURITE_KEY = 'favourite news';
 export const homePageNews = document.querySelector('.news__box');
 
 export const createHomePageNews = () => {
@@ -12,12 +12,18 @@ export const createHomePageNews = () => {
     const markupArray = results.map((news, index) => {
       const publishedDate = moment(news.published_date).format('YY/MM/YYYY');
       const readMoreId = `${index}`;
-      createPopularCardMarkup(news, publishedDate, readMoreId);
+      createPopularCardMarkup(
+        news,
+        publishedDate,
+        readMoreId,
+        homePageNews,
+        'beforeend'
+      );
       onCardClick(
         readMoreId,
         news,
         LOCAL_STORAGE_POPULAR_READ_KEY,
-        LOCAL_STORAGE_FAVOURITE_KEY
+        LOCAL_STORAGE_POPULAR_FAVOURITE_KEY
       );
     });
   });
