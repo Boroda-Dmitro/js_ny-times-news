@@ -15,5 +15,3 @@ export function createReadPageListMarkup(datesArray, targetElement) {
     .join('');
   targetElement.innerHTML = containerArrayMarkup;
 }
-
-//перевірка

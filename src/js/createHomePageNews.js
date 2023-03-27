@@ -4,7 +4,7 @@ import { onCardClick } from './onCardClick';
 import { createPopularCardMarkup } from './createPopularCardMarkup';
 
 export const LOCAL_STORAGE_POPULAR_READ_KEY = 'already read';
-export const LOCAL_STORAGE_FAVOURITE_KEY = 'favourite news';
+export const LOCAL_STORAGE_POPULAR_FAVOURITE_KEY = 'favourite news';
 export const homePageNews = document.querySelector('.news__box');
 
 export const createHomePageNews = () => {
@@ -23,11 +23,11 @@ export const createHomePageNews = () => {
         readMoreId,
         news,
         LOCAL_STORAGE_POPULAR_READ_KEY,
-        LOCAL_STORAGE_FAVOURITE_KEY
+        LOCAL_STORAGE_POPULAR_FAVOURITE_KEY
       );
     });
   });
-}
+};
 
 // Перевірка сховища
 // function checkLocalStorage(key1, key2, value, indexEl) {
