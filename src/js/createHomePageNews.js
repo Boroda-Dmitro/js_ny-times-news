@@ -12,7 +12,13 @@ export const createHomePageNews = () => {
     const markupArray = results.map((news, index) => {
       const publishedDate = moment(news.published_date).format('YY/MM/YYYY');
       const readMoreId = `${index}`;
-      createPopularCardMarkup(news, publishedDate, readMoreId);
+      createPopularCardMarkup(
+        news,
+        publishedDate,
+        readMoreId,
+        homePageNews,
+        'beforeend'
+      );
       onCardClick(
         readMoreId,
         news,
@@ -21,7 +27,7 @@ export const createHomePageNews = () => {
       );
     });
   });
-};
+}
 
 // Перевірка сховища
 // function checkLocalStorage(key1, key2, value, indexEl) {
