@@ -26,12 +26,6 @@
     flex-direction: column;
     position: relative;
   }
-  @media (min-width: 768px) {
-    width: calc((100% - (32px * 2)) / 2);
-  }
-  @media (min-width: 1280px) {
-    width: calc((100% - (32px * 2)) / 3);
-  }
 }
 .markup-unit__section {
 
@@ -47,7 +41,7 @@
     width: fit-content;
     top: 40px;
     // z-index: 9;
-   }
+}
 
 
 .hidden {

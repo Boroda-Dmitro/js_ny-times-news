@@ -26,10 +26,10 @@ function success(pos) {
             <div class="weather-conloc">
               <h3 class="weather-condition">${main}</h3>
             <p class="weather-location">
-              <svg class="weather-location__icon">
-                  <path fill="#fff" style="fill: var(--color1, #fff)" d="M16 2c-6.072 0.008-10.992 4.929-10.999 11v0.001c0 0.005 0 0.011 0 0.016 0 2.485 0.833 4.776 2.234 6.609l-0.019-0.026s0.3 0.395 0.348 0.452l8.436 9.948 8.439-9.954c0.044-0.053 0.345-0.446 0.345-0.446v-0.004c1.382-1.806 2.215-4.097 2.215-6.582 0-0.005 0-0.010 0-0.015v0.001c-0.007-6.072-4.927-10.993-10.998-11.001h-0.001zM16 17.001c-2.209 0-4-1.791-4-4s1.791-4 4-4v0c2.209 0 4 1.791 4 4s-1.791 4-4 4v0z"></path>
+              <svg class="weather-location__icon" width="18" height="18">
+                <use href="#icon-location"></use>
               </svg>
-              ${name}
+              <span class="weather-location__text">${name}</span>
             </p>
             </div>
           </div>
