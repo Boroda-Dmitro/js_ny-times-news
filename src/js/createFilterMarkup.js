@@ -11,8 +11,9 @@ const refs = {
 };
 
 refs.filterDropdown.addEventListener('click', dropdownHandler);
-refs.filterList.addEventListener('click', dropdownHandler);
-refs.filterContainer.addEventListener('click', filterSearch);
+refs.filterList.addEventListener('click', filterSearch, dropdownHandler);
+// refs.filterContainer.addEventListener('click', filterSearch);
+
 // refs.filterItem.addEventListener('click', filterSearch());
 
 function calcFilters() {
@@ -64,7 +65,7 @@ try {
     const section = array[i].section;
     for (i = calcFilters(); i < array.length; i += 1) {
       const category = array[i].display_name;
-      const el = `<li class="categories__dropdown-item" value="${section}">${category}</li>`;
+      const el = `<button class="categories__dropdown-item" value="${section}">${category}</button>`;
       refs.filterList.insertAdjacentHTML('beforeend', el);
     }
   }
@@ -75,5 +76,6 @@ try {
 // filterItem.addEventListener('click', filterSearch);
 
 function filterSearch(e) {
-  console.log(e.currentTarget);
+  const target = e.target.value;
+  console.log(target);
 }
