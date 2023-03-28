@@ -1,0 +1,2 @@
+var menu=document.querySelector(".burger-menu"),hamburger=document.querySelector(".burger-button"),closeIcon=document.querySelector(".burger-close");function toggleMenu(){menu.classList.contains("show-menu")?(menu.classList.remove("show-menu"),closeIcon.style.display="none",hamburger.style.display="block"):(menu.classList.add("show-menu"),closeIcon.style.display="block",hamburger.style.display="none")}hamburger.addEventListener("click",toggleMenu),closeIcon.addEventListener("click",toggleMenu);
+//# sourceMappingURL=index.b2ba593f.js.map
