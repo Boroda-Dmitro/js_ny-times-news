@@ -15,7 +15,7 @@ const refs = {
 refs.filterDropdown.addEventListener('click', dropdownHandler);
 refs.filterList.addEventListener('click', filterSearch, dropdownHandler);
 refs.filterContainer.addEventListener('click', filterSearch);
-window.addEventListener('resize', debounce(calcFilters, 1000));
+window.addEventListener('resize', debounce(calcFilters, 500));
 
 calcFilters();
 
@@ -42,8 +42,6 @@ function calcFilters() {
     return;
   }
 }
-
-function cleanFilters() {}
 
 function dropdownHandler() {
   refs.filterList.classList.toggle('categories__dropdown-container-hidden');
@@ -94,6 +92,14 @@ function filtersAPICall(filtersToShow) {
 
 function filterSearch(e) {
   const target = e.target.value;
+  // const item = document.querySelector('.categories__item');
+
+  // item.classList.add('categories__item-selected');
+  if (
+    !refs.filterList.classList.contains('categories__dropdown-container-hidden')
+  ) {
+    refs.filterList.classList.add('categories__dropdown-container-hidden');
+  }
   try {
     createHomePageSeachingNews(target);
   } catch (error) {
