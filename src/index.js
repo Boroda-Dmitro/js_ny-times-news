@@ -5,15 +5,18 @@ import { Calendar } from './js/calendar';
 createHomePageNews();
 
 const searchBtn = document.querySelector('.search-button svg');
-
-searchBtn.addEventListener('click', () => {
-  createHomePageSeachingNews('batman');
-});
-
 const input = document.querySelector('.search-input');
 
-console.log(input);
+searchBtn.addEventListener('click', () => {
 
-input.addEventListener('input', e => {
-  console.log(e);
-});
+    createHomePageSeachingNews(input.value);
+    input.value = '';
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.code !== "Enter") {
+        return
+    }
+    createHomePageSeachingNews(input.value);
+    input.value = '';
+  });
