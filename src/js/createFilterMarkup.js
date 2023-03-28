@@ -15,10 +15,10 @@ const refs = {
 refs.filterDropdown.addEventListener('click', dropdownHandler);
 refs.filterList.addEventListener('click', filterSearch, dropdownHandler);
 refs.filterContainer.addEventListener('click', filterSearch);
-window.addEventListener('resize', debounce(calcFilters, 300));
+window.addEventListener('resize', debounce(calcFilters, 1000));
 
-const screenWidth = window.screen.width;
 function calcFilters() {
+  const screenWidth = window.screen.width;
   if (
     screenWidth < MOBILE_WIDTH ||
     (screenWidth >= MOBILE_WIDTH && screenWidth < TABLET_WIDTH)
@@ -75,8 +75,6 @@ try {
 } catch (error) {
   console.log(error);
 }
-
-// filterItem.addEventListener('click', filterSearch);
 
 function filterSearch(e) {
   const target = e.target.value;
