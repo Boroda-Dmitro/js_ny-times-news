@@ -5,7 +5,9 @@
     
 }
 .dark .header {
-    border-bottom: 1px solid rgba(244, 244, 244, 0.2);
+    // border-bottom: 1px solid rgba(244, 244, 244, 0.2);
+    border-bottom: 1px solid #F4F4F4 0.2;
+
 }
 .dark .logo {
     color:var(--color-background-light);
@@ -79,6 +81,9 @@
     background-color: var(--color-background-dark);
 }
 .dark .default-picture__text {
+    color: var(--color-background-light);
+}
+.dark .accordion__label {
     color: var(--color-background-light);
 }
 
