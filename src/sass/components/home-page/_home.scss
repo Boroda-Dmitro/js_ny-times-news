@@ -1,5 +1,5 @@
 .news__box {
-    @media (min-width: 320px){
+  @media (min-width: 320px) {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -10,51 +10,51 @@
     padding: 0px;
     background-color: var(--color-background-light);
     // background: var(--already-read-gradient);
-    }
+  }
 
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
     gap: 30px;
-    }
-    
-    @media (min-width: 1280px) {
+  }
+
+  @media (min-width: 1280px) {
     gap: 32px;
-    }
+  }
 }
 
 .markup-unit {
-    @media (min-width: 320px){
+  @media (min-width: 320px) {
     flex-direction: column;
-    position: relative; 
-    }
-    @media (min-width: 768px) {
+    position: relative;
+  }
+  @media (min-width: 768px) {
     width: calc((100% - (32px * 2)) / 2);
-    }
-    @media (min-width: 1280px) {
+  }
+  @media (min-width: 1280px) {
     width: calc((100% - (32px * 2)) / 3);
-    }
+  }
 }
 .markup-unit__section {
-    position: absolute;
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    color: var(--color-background-light);
-    padding: 8px 4px;
-    background: var(--color-background-card-category);
-    border-radius: 0px 4px 4px 0px;
-    width: fit-content;
-    top: 40px;
-    z-index: 9;
-   }
+  position: absolute;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-background-light);
+  padding: 8px 4px;
+  background: var(--color-background-card-category);
+  border-radius: 0px 4px 4px 0px;
+  width: fit-content;
+  top: 40px;
+  z-index: 9;
+}
 
-   .hidden {
-    display: none;
-   }
+.hidden {
+  display: none;
+}
 
 .markup-unit__already-read {
-    @media (min-width: 320px){
+  @media (min-width: 320px) {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
@@ -67,34 +67,34 @@
     align-items: center;
     top: 20px;
     left: 167px;
-    }
-    @media (min-width: 768px){
+  }
+  @media (min-width: 768px) {
     left: 225px;
-    }
-    @media (min-width: 1280px) {
+  }
+  @media (min-width: 1280px) {
     left: 270px;
-    }
+  }
 }
 
 .markup-unit__icon-check {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .markup-unit__card-image {
-    object-fit: cover;
-    width: auto;
-    height: 395px;
-    // background-image: url(/src/images/background_image.png);
-    border-radius: 10px;
-    // margin-right: auto;
-    // margin-left: auto;
+  object-fit: cover;
+  width: auto;
+  height: 395px;
+  // background-image: url(/src/images/background_image.png);
+  border-radius: 10px;
+  // margin-right: auto;
+  // margin-left: auto;
 }
 
 .markup-unit__add-favorite {
-    @media (min-width: 320px){
+  @media (min-width: 320px) {
     position: absolute;
     top: 355px;
-    left: 154px;
+    right: 8px;
     z-index: 9;
     display: flex;
     align-items: center;
@@ -105,20 +105,17 @@
     border-radius: 15px;
     border-style: none;
     cursor: pointer;
-    }
-    @media (min-width: 768px) {
-    left: 215px;
-    }
-    @media (min-width: 1280px) {
-    left: 256px;
-    }
+  }
+  @media (min-width: 768px) {
+    right: 12px;
+  }
 }
 
 .markup-unit__favorite-icon {
-    fill: var(--color-brand);
-    
-    // padding-right: 6px;
-    display: block;
+  fill: var(--color-brand);
+
+  // padding-right: 6px;
+  display: block;
 }
 
 // .markup-unit__favorite-icon.markup-unit__favorite-icon--active {
@@ -126,17 +123,17 @@
 // }
 
 .markup-unit__favorite-text {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    padding: 0;
-    color:var(--color-black);
-    margin: 0 auto;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 0;
+  color: var(--color-black);
+  margin: 0 auto;
 }
 
 .markup-unit__card-header {
-    @media (min-width: 320px){
+  @media (min-width: 320px) {
     font-size: 24px;
     font-family: 'Manrope';
     font-style: normal;
@@ -150,14 +147,14 @@
     height: 132px;
     overflow: hidden;
     text-overflow: ellipsis;
-    }
-    @media (min-width: 768px) {
+  }
+  @media (min-width: 768px) {
     font-size: 32px;
-    }
- }
+  }
+}
 
 .markup-unit__card-text {
-    @media (min-width: 320px){
+  @media (min-width: 320px) {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;
@@ -169,18 +166,18 @@
     height: 66px;
     overflow: hidden;
     text-overflow: ellipsis;
-    }
-    @media (min-width: 768px) {
+  }
+  @media (min-width: 768px) {
     font-size: 16px;
-    }
+  }
 }
 .markup-unit__card-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .markup-unit__card-date {
-    @media (min-width: 320px){
+  @media (min-width: 320px) {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;
@@ -191,14 +188,14 @@
     margin-top: 20px;
     display: inline-block;
     padding: 0;
-    }
+  }
   @media (min-width: 768px) {
     font-size: 16px;
   }
 }
 
 .markup-unit__read-more {
-    @media (min-width: 320px){
+  @media (min-width: 320px) {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;
@@ -212,18 +209,18 @@
     text-decoration: none;
     color: inherit;
     display: block;
-    }
-    @media (min-width: 768px) {
+  }
+  @media (min-width: 768px) {
     font-size: 16px;
     color: var(--color-brand);
-    }
-    @media (max-width: 1281px) {
+  }
+  @media (max-width: 1281px) {
     color: var(--color-brand);
-    }
+  }
 }
 
 .weather-placeholder {
-    width: 394.66px;
-    height: 711px;
-    background-color: var(--color-black);
+  width: 394.66px;
+  height: 711px;
+  background-color: var(--color-black);
 }
