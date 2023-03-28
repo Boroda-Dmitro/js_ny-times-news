@@ -1,3 +1,5 @@
+// Header
+@import'./header-page/header';
 // Home page
 @import './home-page/home';
 
@@ -6,6 +8,8 @@
 
 // Read page
 @import './read-page/read';
+//Theme-color
+@import'./dark-scheme';
 
 // Calendar
 @import './home-page/calendar';
