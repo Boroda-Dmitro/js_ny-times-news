@@ -83,3 +83,7 @@ function filterSearch(e) {
     createPopularCardMarkup(response);
   });
 }
+
+window.addEventListener('resize', function () {
+  console.log(window.innerWidth);
+});
