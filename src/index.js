@@ -20,3 +20,4 @@ searchBtn.addEventListener('click', () => {
     createHomePageSeachingNews(input.value);
     input.value = '';
   });
+    
