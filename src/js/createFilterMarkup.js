@@ -3,6 +3,15 @@ import { fetchCategories } from './fetchCategories';
 const TABLET_WIDTH = 768;
 const MOBILE_WIDTH = 320;
 
+const refs = {
+  filterContainer: document.querySelector('.categories__container'),
+  filterDropdown: document.querySelector('.categories__dropdown-header'),
+  filterList: document.querySelector('.categories__dropdown-container'),
+};
+
+refs.filterDropdown.addEventListener('click', dropdownHandler);
+refs.filterList.addEventListener('click', dropdownHandler);
+
 function calcFilters() {
   const screenWidth = window.screen.width;
 
@@ -15,10 +24,10 @@ function calcFilters() {
   }
 }
 
-const refs = {
-  filterContainer: document.querySelector('.categories__container'),
-  filterDropdown: document.querySelector('.categories__dropdown-container'),
-};
+function dropdownHandler() {
+  refs.filterList.classList.toggle('categories__dropdown-container-hidden');
+  console.log('open');
+}
 
 fetchCategories()
   .then(response => {
@@ -52,6 +61,6 @@ function createOthersMarkup(filters) {
   for (i = calcFilters(); i < array.length; i += 1) {
     const category = array[i].display_name;
     const el = `<li class="categories__dropdown-item">${category}</li>`;
-    refs.filterDropdown.insertAdjacentHTML('beforeend', el);
+    refs.filterList.insertAdjacentHTML('beforeend', el);
   }
 }
