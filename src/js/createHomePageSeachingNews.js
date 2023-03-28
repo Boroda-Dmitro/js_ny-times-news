@@ -2,17 +2,20 @@ import moment from 'moment';
 import { fetchSeachNews } from './fetchSeachNews';
 import { onCardClick } from './onCardClick';
 import { createSeachCardMarkup } from './createSeachCardMarkup';
-import { noNewsFromSearch } from './noNewsFromSearch';
 
 export const LOCAL_STORAGE_INPUT_SEARCH_READ_KEY = 'have read';
 export const LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY = 'favourite search news';
 export const homePageNews = document.querySelector('.news__box');
+const picture = document.querySelector('.default-picture');
+const pagination = document.querySelector('.page-container');
 
 export const createHomePageSeachingNews = seach => {
   homePageNews.innerHTML = '';
   fetchSeachNews(seach).then(({ response }) => {
     if (response.docs.length === 0) {
-      noNewsFromSearch(homePageNews);
+      picture.classList.remove('visually-hidden');
+      pagination.classList.add('visually-hidden');
+
       return;
     }
     const markupArray = response.docs.map((news, index) => {
