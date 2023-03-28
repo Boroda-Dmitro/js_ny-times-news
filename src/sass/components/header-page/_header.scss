@@ -17,7 +17,6 @@ header {
   justify-content: space-between;
   height: 33px;
   min-width: 320px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   @media screen and(min-width:768px) {
     height: 46px;
   }
@@ -356,12 +355,6 @@ header {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  width: 24px;
-  height: 24px;
-  stroke-width: 0;
-  stroke: var(--color-black);
-  fill: var(--color-black);
-
   @media screen and(min-width:768px) {
     display: none;
   }
@@ -370,9 +363,11 @@ header {
   display: inline-block;
   width: 24px;
   height: 24px;
-  stroke-width: 2px;
   stroke: var(--color-black);
   fill: var(--color-black);
+  @media screen and(min-width:768px) {
+    display: none;
+  }
 }
 
 .burger-close {
@@ -431,9 +426,11 @@ header {
 .burger-link--current {
   display: flex;
   background-color: var(--color-brand);
-  cursor: pointer;
-  color: var(--color-background-light);
   margin-left: -16px;
+  padding-left: 32px;
+  fill: var(--color-background-light);
+  color: var(--color-background-light);
+  cursor: pointer;
 }
 
 .link-icon {
@@ -451,11 +448,15 @@ header {
 }
 
 .link-arrow {
+  z-index: 10;
   display: inline-flex;
   position: absolute;
-  right: 10;
+  right: 20;
   width: 24px;
   height: 24px;
+  fill: transparent;
+}
+.burger-link--current .link-arrow {
   fill: var(--color-white);
 }
 
