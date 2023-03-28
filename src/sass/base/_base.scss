@@ -44,3 +44,14 @@ img {
   clip-path: inset(50%);
   margin: -1px;
 }
+
+.gradient {
+  background-image: linear-gradient(
+    rgba(244, 244, 244, 0.4),
+    rgba(244, 244, 244, 0.4)
+  );
+}
+
+.light {
+  background-color: var(--color-background-light);
+}

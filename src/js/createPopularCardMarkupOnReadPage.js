@@ -2,7 +2,7 @@ import moment from 'moment';
 import { createPopularCardMarkup } from './createPopularCardMarkup';
 import { onCardClick } from './onCardClick';
 import { LOCAL_STORAGE_POPULAR_READ_KEY } from './createHomePageNews';
-import { LOCAL_STORAGE_FAVOURITE_KEY } from './createHomePageNews';
+import { LOCAL_STORAGE_POPULAR_FAVOURITE_KEY } from './createHomePageNews';
 
 export function createPopularCardMarkupOnReadPage(parsedArray) {
   const cardArrayMarkup = parsedArray.map((element, index) => {
@@ -10,7 +10,9 @@ export function createPopularCardMarkupOnReadPage(parsedArray) {
     const accordion__label = document.querySelectorAll('.accordion__label');
     const readMoreId = `${index}`;
 
-    review = [...accordion__label].find(el => el.textContent === publishedDate);
+    const review = [...accordion__label].find(
+      el => el.textContent === publishedDate
+    );
 
     createPopularCardMarkup(
       element,
@@ -24,7 +26,7 @@ export function createPopularCardMarkupOnReadPage(parsedArray) {
       readMoreId,
       element,
       LOCAL_STORAGE_POPULAR_READ_KEY,
-      LOCAL_STORAGE_FAVOURITE_KEY
+      LOCAL_STORAGE_POPULAR_FAVOURITE_KEY
     );
   });
 }
