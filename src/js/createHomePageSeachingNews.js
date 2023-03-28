@@ -6,10 +6,18 @@ import { createSeachCardMarkup } from './createSeachCardMarkup';
 export const LOCAL_STORAGE_INPUT_SEARCH_READ_KEY = 'have read';
 export const LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY = 'favourite search news';
 export const homePageNews = document.querySelector('.news__box');
+const picture = document.querySelector('.default-picture');
+const pagination = document.querySelector('.page-container');
 
 export const createHomePageSeachingNews = seach => {
   homePageNews.innerHTML = '';
   fetchSeachNews(seach).then(({ response }) => {
+    if (response.docs.length === 0) {
+      picture.classList.remove('visually-hidden');
+      pagination.classList.add('visually-hidden');
+
+      return;
+    }
     const markupArray = response.docs.map((news, index) => {
       const publishedDate = moment(news.pub_date).format('YY/MM/YYYY');
       let imgUrl = './images/desktop-no-news-601.png';
