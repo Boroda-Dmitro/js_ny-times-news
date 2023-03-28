@@ -449,9 +449,11 @@
     .burger-link--current {
         display: flex;
         background-color: var(--color-brand);
-        cursor: pointer;
-        color: var(--color-background-light);
         margin-left: -16px;
+        padding-left: 32px;
+        fill: var(--color-background-light);
+        color: var(--color-background-light);
+        cursor: pointer;
     }
 
 
@@ -470,10 +472,10 @@
         fill: var(--color-brand);
     }
 
-    .link-arrow {
+.link-arrow {
         display: inline-flex;
         position: absolute;
-        right:10;
+        right:20;
         width: 24px;
         height: 24px;
         fill: var(--color-white);
