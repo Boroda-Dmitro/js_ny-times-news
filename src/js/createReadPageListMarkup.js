@@ -8,7 +8,7 @@ export function createReadPageListMarkup(datesArray, targetElement) {
   const containerArrayMarkup = uniqueDates
     .map(element => {
       return `<div class="accordion__container">
-                  <p class="accordion__label">${element}</p>
+                  <button class="accordion__label">${element}</button>
                   <ul class="accordion__content news__box news__box--accordion"></ul>
                 </div>`;
     })
