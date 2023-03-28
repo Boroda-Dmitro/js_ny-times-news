@@ -21,26 +21,41 @@ calcFilters();
 
 function calcFilters() {
   const screenWidth = window.screen.width;
-  let filterAmount = 0;
-  refs.filterContainer.innerHTML = '';
-  refs.filterList.innerHTML = '';
+  let filterAmount = 6;
 
   if (
     screenWidth < MOBILE_WIDTH ||
-    (screenWidth >= MOBILE_WIDTH && screenWidth < TABLET_WIDTH)
+    (screenWidth >= MOBILE_WIDTH && screenWidth < TABLET_WIDTH) ||
+    screenWidth !== 0
   ) {
+    cleanFilters();
     filterAmount = 0;
     filtersAPICall(filterAmount);
     return;
-  } else if (screenWidth >= TABLET_WIDTH && screenWidth < DESKTOP_WIDTH) {
+  } else if (
+    (screenWidth >= TABLET_WIDTH && screenWidth < DESKTOP_WIDTH) ||
+    screenWidth !== 4
+  ) {
+    cleanFilters();
     filterAmount = 4;
     filtersAPICall(filterAmount);
     return;
+  } else if (screenWidth !== 6) {
+    cleanFilters();
+    filterAmount = 6;
+    filtersAPICall(filterAmount);
+    return;
   } else {
+    cleanFilters();
     filterAmount = 6;
     filtersAPICall(filterAmount);
     return;
   }
+}
+
+function cleanFilters() {
+  refs.filterContainer.innerHTML = '';
+  refs.filterList.innerHTML = '';
 }
 
 function dropdownHandler() {
