@@ -1,4 +1,6 @@
 import { fetchCategories } from './fetchCategories';
+import { fetchPopularNews } from './fetchPopularNews';
+import { createPopularCardMarkup } from './createPopularCardMarkup';
 
 const TABLET_WIDTH = 768;
 const MOBILE_WIDTH = 320;
@@ -7,14 +9,11 @@ const refs = {
   filterContainer: document.querySelector('.categories__container'),
   filterDropdown: document.querySelector('.categories__dropdown-header'),
   filterList: document.querySelector('.categories__dropdown-container'),
-  // filterItem: document.querySelector('.categories__item'),
 };
 
 refs.filterDropdown.addEventListener('click', dropdownHandler);
 refs.filterList.addEventListener('click', filterSearch, dropdownHandler);
-// refs.filterContainer.addEventListener('click', filterSearch);
-
-// refs.filterItem.addEventListener('click', filterSearch());
+refs.filterContainer.addEventListener('click', filterSearch);
 
 function calcFilters() {
   const screenWidth = window.screen.width;
@@ -62,9 +61,9 @@ try {
 
   function createOthersMarkup(filters) {
     const array = filters.results;
-    const section = array[i].section;
     for (i = calcFilters(); i < array.length; i += 1) {
       const category = array[i].display_name;
+      const section = array[i].section;
       const el = `<button class="categories__dropdown-item" value="${section}">${category}</button>`;
       refs.filterList.insertAdjacentHTML('beforeend', el);
     }
@@ -77,5 +76,10 @@ try {
 
 function filterSearch(e) {
   const target = e.target.value;
-  console.log(target);
+  const date = 20150101;
+
+  fetchPopularNews(target, date).then(response => {
+    console.log(response);
+    createPopularCardMarkup(response);
+  });
 }
