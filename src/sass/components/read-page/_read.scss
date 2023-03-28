@@ -30,11 +30,13 @@
     line-height: 1.71;
     letter-spacing: 0.02em;
     cursor: pointer;
+    text-align: left;
 
+    background-color: inherit;
     color: var(--color-black);
 
-    padding-bottom: 12px;
-
+    padding: 0 0 12px 0;
+    border: none;
     border-bottom: 1px solid #929292;
 
     &::before {
