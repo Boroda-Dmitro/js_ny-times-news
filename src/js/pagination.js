@@ -4,19 +4,18 @@ const prevPageButton = document.querySelector('.prev-page');
 const isMobile = window.innerWidth <= 767;
 const isTablet = window.innerWidth < 1200;
 
-
 const valuePage = {
   curPage: 1,
   numLinksTwoSide: 1,
   totalPages: 5,
 };
+
 renderPagination();
 
 paginationContainer.addEventListener('click', handlePageNumberClick);
 nextPageButton.addEventListener('click', handleNextPageClick);
 prevPageButton.addEventListener('click', handlePrevPageClick);
 
-  
 function handlePageNumberClick (e) {
   const ele = e.target;
 
@@ -96,8 +95,6 @@ function renderPagination() {
     paginationContainer.innerHTML = render;
   }
    renderArticles(curPage);
-
-
   handlePrevPageClick();
   handleNextPageClick();
 }
