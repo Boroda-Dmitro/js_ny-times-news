@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,128 +8,128 @@
     <link rel="stylesheet" href="../sass/index.scss" />
   </head>
   <body>
-      < class="header">
-        <div class="container container-header">
-          <a href="./index.html" class="logo">News</a>
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./partials/favorite.html">Favorite</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-link--current" href="./partials/read.html"
-                >Read</a
-              >
-            </li>
-          </ul>
+    <header class="header">
+      <div class="container container-header">
+        <a href="./index.html" class="logo">News</a>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./partials/favorite.html">Favorite</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link--current" href="./partials/read.html"
+              >Read</a
+            >
+          </li>
+        </ul>
 
-          <label class="search-field" for="search">
-            <button class="search-button" type="submit">
-              <svg width="20" height="20">
-                <use href="./images/icons.svg#icon-search"></use>
-              </svg>
-            </button>
-            <input
-              class="search-input"
-              id="search"
-              type="text"
-              placeholder="Search"
-            />
-          </label>
-          <button class="open-search" type="button">
+        <label class="search-field" for="search">
+          <button class="search-button" type="submit">
             <svg width="20" height="20">
               <use href="./images/icons.svg#icon-search"></use>
             </svg>
           </button>
-          <div class="switch">
-            <svg class="icon-sun" width="21" height="21">
-              <use href="./images/icons.svg#icon-sun"></use>
-            </svg>
-            <span class="light-word">Light</span>
-            <input
-              type="checkbox"
-              id="toggle-button"
-              class="toggle-button"
-              onclick="toggleTheme()"
-            />
-            <label for="toggle-button" class="text"></label>
-            <svg class="icon-moon" width="21" height="21">
-              <use href="./images/icons.svg#icon-moon"></use>
-            </svg>
-            <span class="dark-word">Dark</span>
-          </div>
+          <input
+            class="search-input"
+            id="search"
+            type="text"
+            placeholder="Search"
+          />
+        </label>
+        <button class="open-search" type="button">
+          <svg width="20" height="20">
+            <use href="./images/icons.svg#icon-search"></use>
+          </svg>
+        </button>
+        <div class="switch">
+          <svg class="icon-sun" width="21" height="21">
+            <use href="./images/icons.svg#icon-sun"></use>
+          </svg>
+          <span class="light-word">Light</span>
+          <input
+            type="checkbox"
+            id="toggle-button"
+            class="toggle-button"
+            onclick="toggleTheme()"
+          />
+          <label for="toggle-button" class="text"></label>
+          <svg class="icon-moon" width="21" height="21">
+            <use href="./images/icons.svg#icon-moon"></use>
+          </svg>
+          <span class="dark-word">Dark</span>
+        </div>
 
-          <button class="burger-button" type="button">
-            <svg class="burger-icon" width="24" height="24">
-              <use href="./images/icons.svg#icon-menu-1"></use>
-            </svg>
-          </button>
+        <button class="burger-button" type="button">
+          <svg class="burger-icon" width="24" height="24">
+            <use href="./images/icons.svg#icon-menu-1"></use>
+          </svg>
+        </button>
 
-          <div class="burger-menu">
-            <div class="container burger-container">
-              <div class="burger-header">
-                <a href="./index.html" class="logo">News</a>
-                <button class="burger-close" type="button">
-                  <svg class="close-icon" width="24" height="24">
-                    <use href="./images/icons.svg#icon-x"></use>
-                  </svg>
-                </button>
+        <div class="burger-menu">
+          <div class="container burger-container">
+            <div class="burger-header">
+              <a href="./index.html" class="logo">News</a>
+              <button class="burger-close" type="button">
+                <svg class="close-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-x"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="burger-body">
+              <div class="burger-nav">
+                <ul class="burger-links">
+                  <li class="burger-item">
+                    <a class="burger-link--current" href="./index.html">
+                      <svg class="link-icon" width="18" height="18">
+                        <use
+                          href="./images/icons.svg#icon-mobil-home"
+                        ></use></svg
+                      >Home<svg class="link-arrow" width="24" height="24">
+                        <use href="./images/icons.svg#icon-right-arrow"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="burger-item">
+                    <a class="burger-link" href="./partials/favorite.html">
+                      <svg class="link-icon" width="18" height="18">
+                        <use
+                          href="./images/icons.svg#icon-mobil-heart"
+                        ></use></svg
+                      >Favorite
+                    </a>
+                  </li>
+                  <li class="burger-item">
+                    <a class="burger-link" href="./partials/read.html">
+                      <svg class="link-icon" width="18" height="18">
+                        <use
+                          href="./images/icons.svg#icon-mobil-book"
+                        ></use></svg
+                      >Read
+                    </a>
+                  </li>
+                </ul>
               </div>
-              <div class="burger-body">
-                <div class="burger-nav">
-                  <ul class="burger-links">
-                    <li class="burger-item">
-                      <a class="burger-link--current" href="./index.html">
-                        <svg class="link-icon" width="18" height="18">
-                          <use
-                            href="./images/icons.svg#icon-mobil-home"
-                          ></use></svg
-                        >Home<svg class="link-arrow" width="24" height="24">
-                          <use href="./images/icons.svg#icon-right-arrow"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li class="burger-item">
-                      <a class="burger-link" href="./partials/favorite.html">
-                        <svg class="link-icon" width="18" height="18">
-                          <use
-                            href="./images/icons.svg#icon-mobil-heart"
-                          ></use></svg
-                        >Favorite
-                      </a>
-                    </li>
-                    <li class="burger-item">
-                      <a class="burger-link" href="./partials/read.html">
-                        <svg class="link-icon" width="18" height="18">
-                          <use
-                            href="./images/icons.svg#icon-mobil-book"
-                          ></use></svg
-                        >Read
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="burger-switch">
-                  <svg class="icon-sun" width="21" height="21">
-                    <use href="./images/icons.svg#icon-sun"></use>
-                  </svg>
-                  <input
-                    type="checkbox"
-                    id="toggle-button"
-                    class="toggle-button"
-                    onclick="toggleTheme()"
-                  />
-                  <label for="toggle-button" class="text"></label>
-                  <svg class="icon-moon" width="21" height="21">
-                    <use href="./images/icons.svg#icon-moon"></use>
-                  </svg>
-                </div>
+              <div class="burger-switch">
+                <svg class="icon-sun" width="21" height="21">
+                  <use href="./images/icons.svg#icon-sun"></use>
+                </svg>
+                <input
+                  type="checkbox"
+                  id="toggle-button"
+                  class="toggle-button"
+                  onclick="toggleTheme()"
+                />
+                <label for="toggle-button" class="text"></label>
+                <svg class="icon-moon" width="21" height="21">
+                  <use href="./images/icons.svg#icon-moon"></use>
+                </svg>
               </div>
             </div>
           </div>
         </div>
+      </div>
     </header>
     <main>
       <section class="news">
