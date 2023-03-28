@@ -43,14 +43,14 @@ try {
       return response.json();
     })
     .then(response => {
-      createFilterMarkup(response, calcFilters());
+      createFilterMarkup(response);
       console.log(response);
     })
     .catch(error => {
       console.log(error);
     });
 
-  function createFilterMarkup(filters, amount) {
+  function createFilterMarkup(filters) {
     const array = filters.results;
     for (i = 0; i < calcFilters(); i += 1) {
       const category = array[i].display_name;
@@ -63,7 +63,7 @@ try {
     createOthersMarkup(filters);
   }
 
-  function createOthersMarkup(filters, amount) {
+  function createOthersMarkup(filters) {
     const array = filters.results;
     for (i = calcFilters(); i < array.length; i += 1) {
       const category = array[i].display_name;
