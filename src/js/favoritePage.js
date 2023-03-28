@@ -2,7 +2,7 @@ import moment from 'moment';
 
 import { createPopularCardMarkup } from './createPopularCardMarkup';
 import { onCardClick } from './onCardClick';
-
+import { createSeachCardMarkup } from './createSeachCardMarkup';
 import { LOCAL_STORAGE_POPULAR_FAVOURITE_KEY } from './createHomePageNews';
 import { LOCAL_STORAGE_POPULAR_READ_KEY } from './createHomePageNews';
 import { LOCAL_STORAGE_INPUT_SEARCH_READ_KEY } from './createHomePageSeachingNews';
@@ -23,8 +23,11 @@ function createFavoritePageMarkup() {
   );
 
   if (popularData === null && inputSearch === null) {
+    picture.classList.remove('visually-hidden');
     return;
-  } else if (popularData !== null && inputSearch === null) {
+  }
+
+  if (popularData) {
     parsedPopularArray = [...JSON.parse(popularData)];
     parsedPopularArray.map((news, index) => {
       const publishedDate = moment(news.published_date).format('YY/MM/YYYY');
@@ -45,17 +48,23 @@ function createFavoritePageMarkup() {
         LOCAL_STORAGE_POPULAR_FAVOURITE_KEY
       );
 
-       picture.classList.add('visually-hidden');
+      picture.classList.add('visually-hidden');
     });
-  } else {
+  }
+  if (inputSearch) {
     parsedSeachArray = [...JSON.parse(inputSearch)];
     parsedSeachArray.map((news, index) => {
-      const publishedDate = moment(news.published_date).format('YY/MM/YYYY');
-      const readMoreId = `${parsedPopularArray.length + index}`;
-      createPopularCardMarkup(
+      const publishedDate = moment(news.pub_date).format('YY/MM/YYYY');
+      let imgUrl = './images/desktop-no-news-601.png';
+      if (news.multimedia.length > 0) {
+        imgUrl = `http://www.nytimes.com/${news.multimedia[0].url}`;
+      }
+      const readMoreId = `${index}`;
+      createSeachCardMarkup(
         news,
         publishedDate,
         readMoreId,
+        imgUrl,
         homePageNews,
         'beforeend'
       );
@@ -68,4 +77,3 @@ function createFavoritePageMarkup() {
     });
   }
 }
-
