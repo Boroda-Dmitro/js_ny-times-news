@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Favorite</title>
+  <link rel="stylesheet" href="../sass/index.scss" />
 </head>
+
 <body>
   <header>
     <div class="container"></div>
@@ -14,8 +17,29 @@
     <section class="news">
       <div class="container">
         <div class="news__box"></div>
-    </div>
-  </section>
+        <div class="default-picture">
+          <p class="default-picture__text">There are no news yet</p>
+          <picture>
+            <source srcset="
+                ../images/desktop-no-news-601.png    1x,
+                ../images/desktop-no-news-601@2x.png 2x
+              " media="(min-width: 1280px)" />
+            <source srcset="
+                ../images/tablet-no-news-560.png    1x,
+                ../images/tablet-no-news-560@2x.png 2x
+              " media="(min-width: 768px)" />
+            <source srcset="
+                ../images/mobile-no-news-248.png    1x,
+                ../images/mobile-no-news-248@2x.png 2x
+              " media="(max-width: 320px)" />
+            <img src="../images/mobile-no-news-248.png" alt="Нажаль, ще немає доступних статтей" min-width="248"
+              class="default-picture__image" />
+          </picture>
+        </div>
+      </div>
+    </section>
   </main>
+  <script type="module" src="../js/favoritePage.js"></script>
 </body>
+
 </html>

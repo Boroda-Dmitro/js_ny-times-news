@@ -3,8 +3,8 @@ import { createHomePageSeachingNews } from "./js/createHomePageSeachingNews";
 import { Calendar } from './js/calendar';
 
 
-// createHomePageNews();
+createHomePageNews();
 
 
 
-createHomePageSeachingNews('cars');
+// createHomePageSeachingNews('cars');
