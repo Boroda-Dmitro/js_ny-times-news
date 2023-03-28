@@ -13,7 +13,9 @@ export function createInputSearchCardMarkupOnReadPage(parsedArray) {
     if (element.multimedia.length > 0) {
       imgUrl = `http://www.nytimes.com/${element.multimedia[0].url}`;
     }
-    review = [...accordion__label].find(el => el.textContent === publishedDate);
+    const review = [...accordion__label].find(
+      el => el.textContent === publishedDate
+    );
 
     createSeachCardMarkup(
       element,

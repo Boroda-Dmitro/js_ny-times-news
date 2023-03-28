@@ -10,7 +10,9 @@ export function createPopularCardMarkupOnReadPage(parsedArray) {
     const accordion__label = document.querySelectorAll('.accordion__label');
     const readMoreId = `${index}`;
 
-    review = [...accordion__label].find(el => el.textContent === publishedDate);
+    const review = [...accordion__label].find(
+      el => el.textContent === publishedDate
+    );
 
     createPopularCardMarkup(
       element,
