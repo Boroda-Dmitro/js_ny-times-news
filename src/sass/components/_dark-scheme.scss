@@ -93,4 +93,33 @@
 .dark .accordion__label {
     color: var(--color-background-light);
 }
+.dark .toggle-dark {
+    display: flex;
+    position: relative;
+    width: 40px;
+    height: 20px;
+    fill: #4B48DB;
+    background-color: transparent;
+    border: 0.6px solid var(--color-white);
+    border-radius: 20px;
+    // flex: none;
+    order: 0;
+    flex-grow: 0;
+    outline: none;
+}
+.dark .toggle-ball {
+    z-index: 1000;
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 22px;
+    top: 2px;
+    color: #4B48DB;
+    fill: #FFFFFF;
+}
+.dark .toggle-light {
+    display: none;
+}
+
 

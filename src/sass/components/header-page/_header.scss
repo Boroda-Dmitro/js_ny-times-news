@@ -210,9 +210,11 @@
         display: none;
 
         @media screen and(min-width:768px) {
-
+            padding-top: 17px;
+            width:98px;
+            height: 21px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             margin-left: 24px;
         }
@@ -220,7 +222,7 @@
 
     .icon-sun {
         margin-right: 8px;
-        display: inline-block;
+        display: flex;
         width: 1em;
         height: 1em;
         stroke-width: 0;
@@ -235,7 +237,7 @@
 
     .icon-moon {
         margin-left: 8px;
-        display: inline-block;
+        display: flex;
         width: 1em;
         height: 1em;
         stroke-width: 0;
@@ -278,47 +280,49 @@
         }
     }
 
-
     .toggle-button {
         position: relative;
-        display: inline-block;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
         width: 40px;
         height: 20px;
-        margin: 0;
-        vertical-align: top;
-        background: var(--color-white);
-        border: 1px solid #bbc1e1;
-        border-radius: 30px;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
         outline: none;
-        cursor: pointer;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
     }
 
-    .toggle-button::after {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        left: 2.5px;
-        top: 1px;
-        width: 16px;
-        height: 16px;
-        background-color: var(--color-brand);
-        border-radius: 50%;
-        transform: translateX(0);
-        transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
-    }
+.toggle-dark {
+    display: none;
+}
 
-    .toggle-button:checked::after {
-        transform: translateX(calc(100% + 3px));
-        background-color: var(--color-white);
-    }
-
-    .toggle-button:checked {
-        background-color: var(--color-brand);
-    }
+.toggle-light {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    fill: #FFFFFF;
+    border: 1px solid #4B48DB;
+    border-radius: 20px;
+    // flex: none;
+    order: 0;
+    outline: none;
+    // flex-grow: 0;
+}
+.toggle-ball {
+    z-index: 1000;
+    display:inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 1px;
+    top: 2px;
+    fill:#4B48DB;
+}
 
     .burger-menu {
         width: 100%;
