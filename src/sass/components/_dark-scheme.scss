@@ -1,7 +1,7 @@
 
 
 .dark{
-    background-color:#686868;
+    background-color:var(--color-background-dark);
     
 }
 .dark .header{
@@ -33,7 +33,7 @@
     color:#4440F7;
 }
 .dark .burger-menu {
-    background-color: #686868;
+    background-color: var(--color-background-dark);
 }
 .dark .burger-link{
     color:var(--color-background-light);
@@ -67,13 +67,13 @@
     color: var(--color-background-light);
 }
 .dark .markup-unit__read.article{
-    background-color: #686868;
+    background-color:var(--color-background-dark);
 }
 .dark .news__box{
-    background-color: #686868;
+    background-color:var(--color-background-dark);
 }
 .dark .page-container{
-    background-color: #686868;
+    background-color: var(--color-background-dark);
 }
 
 
