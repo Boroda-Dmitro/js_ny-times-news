@@ -1,7 +1,8 @@
 import { fetchCategories } from './fetchCategories';
-import { fetchPopularNews } from './fetchPopularNews';
-import { createPopularCardMarkup } from './createPopularCardMarkup';
+import { createHomePageSeachingNews } from './createHomePageSeachingNews';
+var debounce = require('lodash.debounce');
 
+const DESKTOP_WIDTH = 1280;
 const TABLET_WIDTH = 768;
 const MOBILE_WIDTH = 320;
 
@@ -14,16 +15,19 @@ const refs = {
 refs.filterDropdown.addEventListener('click', dropdownHandler);
 refs.filterList.addEventListener('click', filterSearch, dropdownHandler);
 refs.filterContainer.addEventListener('click', filterSearch);
+window.addEventListener('resize', debounce(calcFilters, 300));
 
+const screenWidth = window.screen.width;
 function calcFilters() {
-  const screenWidth = window.screen.width;
-
-  if (screenWidth > TABLET_WIDTH) {
-    return 6;
-  } else if (screenWidth <= TABLET_WIDTH && screenWidth > MOBILE_WIDTH) {
+  if (
+    screenWidth < MOBILE_WIDTH ||
+    (screenWidth >= MOBILE_WIDTH && screenWidth < TABLET_WIDTH)
+  ) {
+    return 0;
+  } else if (screenWidth >= TABLET_WIDTH && screenWidth < DESKTOP_WIDTH) {
     return 4;
   } else {
-    return 0;
+    return 6;
   }
 }
 
@@ -39,14 +43,14 @@ try {
       return response.json();
     })
     .then(response => {
-      createFilterMarkup(response);
+      createFilterMarkup(response, calcFilters());
       console.log(response);
     })
     .catch(error => {
       console.log(error);
     });
 
-  function createFilterMarkup(filters) {
+  function createFilterMarkup(filters, amount) {
     const array = filters.results;
     for (i = 0; i < calcFilters(); i += 1) {
       const category = array[i].display_name;
@@ -59,7 +63,7 @@ try {
     createOthersMarkup(filters);
   }
 
-  function createOthersMarkup(filters) {
+  function createOthersMarkup(filters, amount) {
     const array = filters.results;
     for (i = calcFilters(); i < array.length; i += 1) {
       const category = array[i].display_name;
@@ -76,14 +80,9 @@ try {
 
 function filterSearch(e) {
   const target = e.target.value;
-  const date = 20150101;
-
-  fetchPopularNews(target, date).then(response => {
-    console.log(response);
-    createPopularCardMarkup(response);
-  });
+  try {
+    createHomePageSeachingNews(target);
+  } catch (error) {
+    console.log(error);
+  }
 }
-
-window.addEventListener('resize', function () {
-  console.log(window.innerWidth);
-});
