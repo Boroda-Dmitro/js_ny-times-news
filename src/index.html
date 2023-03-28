@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News</title>
     <link rel="stylesheet" href="./sass/index.scss" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
   </head>
   <body>
     <header>
@@ -85,7 +86,7 @@
                       <svg class="link-icon" width="18" height="18">
                         <use
                           href="./images/icons.svg#icon-mobil-home"
-                        ></use></svg
+                        ></use></svg>
                       >Home<svg class="link-arrow" width="24" height="24">
                         <use href="./images/icons.svg#icon-right-arrow"></use>
                       </svg>
@@ -96,24 +97,18 @@
                       <svg class="link-icon" width="18" height="18">
                         <use
                           href="./images/icons.svg#icon-mobil-heart"
-                        ></use></svg
-                      >Favorite<svg class="link-arrow" width="24" height="24">
-                        <use
-                          href="./images/icons.svg#icon-right-arrow"
-                        ></use></svg
-                    ></a>
+                        ></use></svg>
+                      >Favorite
+                    </a>
                   </li>
                   <li class="burger-item">
                     <a class="burger-link" href="./partials/read.html">
                       <svg class="link-icon" width="18" height="18">
                         <use
                           href="./images/icons.svg#icon-mobil-book"
-                        ></use></svg
-                      >Read<svg class="link-arrow" width="24" height="24">
-                        <use
-                          href="./images/icons.svg#icon-right-arrow"
-                        ></use></svg
-                    ></a>
+                        ></use></svg>
+                      >Read
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -143,14 +138,99 @@
           <div class="calendar" name="calendar">
             <include src="./partials/calendar.html"></include>
           </div>
-          <ul class="news__box">
-            <li class="weather-counteiner">
-            </li>
-          </ul>
+          <ul class="news__box"><li class="weather-counteiner">
+          </li></ul>
+          <div class="default-picture visually-hidden">
+            <p class="default-picture__text">There are no news yet</p>
+            <picture>
+              <source
+                srcset="
+                  ./images/desktop-no-news-601.png    1x,
+                  ./images/desktop-no-news-601@2x.png 2x
+                "
+                media="(min-width: 1280px)"
+              />
+              <source
+                srcset="
+                  ./images/tablet-no-news-560.png    1x,
+                  ./images/tablet-no-news-560@2x.png 2x
+                "
+                media="(min-width: 768px)"
+              />
+              <source
+                srcset="
+                  ./images/mobile-no-news-248.png    1x,
+                  ./images/mobile-no-news-248@2x.png 2x
+                "
+                media="(max-width: 320px)"
+              />
+              <img
+                src="./images/mobile-no-news-248.png"
+                alt="Нажаль, ще немає доступних статтей"
+                min-width="248"
+                class="default-picture__image"
+              />
+            </picture>
+          </div>
         </div>
       </section>
     </main>
     <include src="./partials/pagination.html"></include>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer-box">
+            <div class="footer-nav">
+              <a href="./index.html" class="logo">News</a>
+            <ul class="footer-nav__list">
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="./index.html">Home</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="./partials/favorite.html">Favorite</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="./partials/read.html">Read</a>
+              </li>
+            </ul>
+            </div>
+            <div class="inner">
+              <p class="inner__text">Приєднуйтесь</p>
+              <ul class="social">
+                  <li>
+                      <a class="social__link" href="#">
+                          <svg width="14" height="14">
+                              <use href="./images/icons.svg#icon-instagram"></use>
+                          </svg>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="social__link" href="#">
+                          <svg width="14" height="14">
+                              <use href="./images/icons.svg#icon-twitter"></use>
+                          </svg>
+                      </a>    
+                  </li>
+                  <li>
+                      <a class="social__link" href="#">
+                          <svg width="14" height="14">
+                              <use href="./images/icons.svg#icon-facebook"></use>
+                          </svg>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="social__link" href="#">
+                          <svg width="14" height="14">
+                              <use href="./images/icons.svg#icon-linkedin"></use>
+                          </svg>
+                      </a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script type="module" src="./index.js"></script>
     <script src="./js/burger-menu.js"></script>
     <script src="./js/header-input.js"></script>
@@ -158,3 +238,4 @@
     <script src="./js/headerSearchForm.js"></script>
   </body>
 </html>
+

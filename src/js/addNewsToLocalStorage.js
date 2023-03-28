@@ -5,17 +5,19 @@ export function addNewsToLocalStorage(value, key) {
     localStorage.setItem(key, JSON.stringify(firstElement));
   } else {
     // потрібно придумати за якою властивістю робити перевірку (abstract для прикладу)
-    let parsedData = JSON.parse(localStorage.getItem(key));
+    let parsedData = JSON.parse(keyEl);
     const findSimilarElement = parsedData.every(
       element => element.abstract !== value.abstract
     );
 
     if (findSimilarElement) {
       parsedData.push(value);
-
-      return localStorage.setItem(key, JSON.stringify(parsedData));
+      localStorage.setItem(key, JSON.stringify(parsedData));
     } else {
-      return;
+    parsedData = parsedData.filter(
+        element => element.abstract !== value.abstract
+      );
+      localStorage.setItem(key, JSON.stringify(parsedData));
     }
   }
 }
