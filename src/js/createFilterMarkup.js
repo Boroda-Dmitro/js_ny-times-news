@@ -17,63 +17,77 @@ refs.filterList.addEventListener('click', filterSearch, dropdownHandler);
 refs.filterContainer.addEventListener('click', filterSearch);
 window.addEventListener('resize', debounce(calcFilters, 1000));
 
+calcFilters();
+
 function calcFilters() {
   const screenWidth = window.screen.width;
+  let filterAmount = 0;
+  refs.filterContainer.innerHTML = '';
+  refs.filterList.innerHTML = '';
+
   if (
     screenWidth < MOBILE_WIDTH ||
     (screenWidth >= MOBILE_WIDTH && screenWidth < TABLET_WIDTH)
   ) {
-    return 0;
+    filterAmount = 0;
+    filtersAPICall(filterAmount);
+    return;
   } else if (screenWidth >= TABLET_WIDTH && screenWidth < DESKTOP_WIDTH) {
-    return 4;
+    filterAmount = 4;
+    filtersAPICall(filterAmount);
+    return;
   } else {
-    return 6;
+    filterAmount = 6;
+    filtersAPICall(filterAmount);
+    return;
   }
 }
 
 function dropdownHandler() {
   refs.filterList.classList.toggle('categories__dropdown-container-hidden');
 }
-try {
-  fetchCategories()
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(response.status);
+
+function filtersAPICall(filtersToShow) {
+  try {
+    fetchCategories()
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(response.status);
+        }
+        return response.json();
+      })
+      .then(response => {
+        createFilterMarkup(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+    function createFilterMarkup(filters) {
+      const array = filters.results;
+      for (i = 0; i < filtersToShow; i += 1) {
+        const category = array[i].display_name;
+        const section = array[i].section;
+        const el = ` <li>
+                <button class="categories__item" value="${section}">${category}</button>
+            </li>`;
+        refs.filterContainer.insertAdjacentHTML('beforeend', el);
       }
-      return response.json();
-    })
-    .then(response => {
-      createFilterMarkup(response);
-      console.log(response);
-    })
-    .catch(error => {
-      console.log(error);
-    });
-
-  function createFilterMarkup(filters) {
-    const array = filters.results;
-    for (i = 0; i < calcFilters(); i += 1) {
-      const category = array[i].display_name;
-      const section = array[i].section;
-      const el = ` <li>
-              <button class="categories__item" value="${section}">${category}</button>
-          </li>`;
-      refs.filterContainer.insertAdjacentHTML('beforeend', el);
+      createOthersMarkup(filters);
     }
-    createOthersMarkup(filters);
-  }
 
-  function createOthersMarkup(filters) {
-    const array = filters.results;
-    for (i = calcFilters(); i < array.length; i += 1) {
-      const category = array[i].display_name;
-      const section = array[i].section;
-      const el = `<button class="categories__dropdown-item" value="${section}">${category}</button>`;
-      refs.filterList.insertAdjacentHTML('beforeend', el);
+    function createOthersMarkup(filters) {
+      const array = filters.results;
+      for (i = filtersToShow; i < array.length; i += 1) {
+        const category = array[i].display_name;
+        const section = array[i].section;
+        const el = `<button class="categories__dropdown-item" value="${section}">${category}</button>`;
+        refs.filterList.insertAdjacentHTML('beforeend', el);
+      }
     }
+  } catch (error) {
+    console.log(error);
   }
-} catch (error) {
-  console.log(error);
 }
 
 function filterSearch(e) {
