@@ -1,0 +1,90 @@
+
+
+.dark {
+    background-color:var(--color-background-dark);
+    
+}
+.dark .header {
+    border-bottom: 1px solid rgba(244, 244, 244, 0.2);
+}
+.dark .logo {
+    color:var(--color-background-light);
+}
+.dark .nav-link {
+    color:var(--color-background-light);
+}
+.dark .search-button {
+    fill:var(--color-background-light);
+}
+.dark .search-input {
+    color:var(--color-background-light);
+    border: 1px solid var(--color-background-light);
+}
+.dark .search-input::placeholder {
+    color: var(--color-background-light);
+    opacity: 0.4;
+}
+
+.dark .light-word {
+    color: var(--color-background-light);
+    opacity: 0.4;
+}
+.dark .dark-word {
+    color:#4440F7;
+}
+.dark .burger-menu {
+    background-color: var(--color-background-dark);
+}
+.dark .burger-link {
+    color:var(--color-background-light);
+}
+.dark .burger-icon {
+    stroke:var(--color-background-light);
+    fill:var(--color-background-light);
+}
+.dark .open-search {
+    fill:var(--color-background-light);
+}
+.dark .icon-sun {
+    stroke:var(--color-background-light);
+    fill:#5F6775;
+}
+.dark .icon-moon {
+    stroke: #4B48DB;
+    fill:transparent;
+}
+.dark .close-icon {
+    stroke:var(--color-background-light);
+    fill:var(--color-background-light);
+}
+.dark .link-text {
+    color:var(--color-background-light);
+}
+.dark .burger-link--current {
+    color: var(--color-background-light);
+}
+.dark .markup-unit__card-header {
+    color: var(--color-background-light);
+}
+.dark .markup-unit__card-text {
+    color: var(--color-background-light);
+}
+.dark .markup-unit__read.article {
+    background-color:var(--color-background-dark);
+}
+.dark .news__box {
+    background-color:var(--color-background-dark);
+}
+.dark .page-container {
+    background-color: var(--color-background-dark);
+}
+.dark .default-picture__text {
+    color: var(--color-background-light);
+}
+
+
+
+
+
+
+
