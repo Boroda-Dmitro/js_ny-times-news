@@ -79,5 +79,11 @@
         display: none;
       }
     }
+
+    &-item:hover,
+    &-item:focus,
+    &-item:active {
+      text-decoration: underline;
+    }
   }
 }
