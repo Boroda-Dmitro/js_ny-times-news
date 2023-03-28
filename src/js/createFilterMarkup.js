@@ -21,42 +21,29 @@ calcFilters();
 
 function calcFilters() {
   const screenWidth = window.screen.width;
-  let filterAmount = 6;
+  let filterAmount = 0;
+  refs.filterContainer.innerHTML = '';
+  refs.filterList.innerHTML = '';
 
   if (
     screenWidth < MOBILE_WIDTH ||
-    (screenWidth >= MOBILE_WIDTH && screenWidth < TABLET_WIDTH) ||
-    screenWidth !== 0
+    (screenWidth >= MOBILE_WIDTH && screenWidth < TABLET_WIDTH)
   ) {
-    cleanFilters();
     filterAmount = 0;
     filtersAPICall(filterAmount);
     return;
-  } else if (
-    (screenWidth >= TABLET_WIDTH && screenWidth < DESKTOP_WIDTH) ||
-    screenWidth !== 4
-  ) {
-    cleanFilters();
+  } else if (screenWidth >= TABLET_WIDTH && screenWidth < DESKTOP_WIDTH) {
     filterAmount = 4;
     filtersAPICall(filterAmount);
     return;
-  } else if (screenWidth !== 6) {
-    cleanFilters();
-    filterAmount = 6;
-    filtersAPICall(filterAmount);
-    return;
   } else {
-    cleanFilters();
     filterAmount = 6;
     filtersAPICall(filterAmount);
     return;
   }
 }
 
-function cleanFilters() {
-  refs.filterContainer.innerHTML = '';
-  refs.filterList.innerHTML = '';
-}
+function cleanFilters() {}
 
 function dropdownHandler() {
   refs.filterList.classList.toggle('categories__dropdown-container-hidden');
