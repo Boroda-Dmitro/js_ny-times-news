@@ -1,10 +1,7 @@
 import { createHomePageNews } from './js/createHomePageNews';
-import { createHomePageSeachingNews } from "./js/createHomePageSeachingNews";
+import { createHomePageSeachingNews } from './js/createHomePageSeachingNews';
 import { Calendar } from './js/calendar';
 
+// createHomePageNews();
 
-createHomePageNews();
-
-
-
-// createHomePageSeachingNews('cars');
+createHomePageSeachingNews('cars');
