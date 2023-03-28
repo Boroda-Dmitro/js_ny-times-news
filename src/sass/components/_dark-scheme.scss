@@ -83,13 +83,12 @@
 .dark .default-picture__text {
     color: var(--color-background-light);
 }
+
+.dark .calendar-form__input {color: var(--color-background-light); opacity: 0.4; border-color: var(--color-background-light);};
+
+.dark .accordion__label {color: var(--color-background-light)};
+
 .dark .accordion__label {
     color: var(--color-background-light);
 }
-
-
-
-
-
-
 
