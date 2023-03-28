@@ -4,9 +4,8 @@
     background-color:var(--color-background-dark);
     
 }
-.dark .header {
-    // border-bottom: 1px solid rgba(244, 244, 244, 0.2);
-    border-bottom: 1px solid #F4F4F4 0.2;
+.dark .container-header {
+    border-bottom: 1px solid rgba(244, 244, 244, 0.2);
 
 }
 .dark .logo {
@@ -83,13 +82,15 @@
 .dark .default-picture__text {
     color: var(--color-background-light);
 }
-.dark .accordion__label {
+.dark .calendar-text {
     color: var(--color-background-light);
 }
 
+.dark .calendar-form__input {color: var(--color-background-light); opacity: 0.4; border-color: var(--color-background-light);};
 
+.dark .accordion__label {color: var(--color-background-light)};
 
-
-
-
+.dark .accordion__label {
+    color: var(--color-background-light);
+}
 

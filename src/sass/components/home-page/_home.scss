@@ -34,20 +34,21 @@
   }
 }
 .markup-unit__section {
-  position: absolute;
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  color: var(--color-background-light);
-  padding: 8px 4px;
-  background: var(--color-background-card-category);
-  border-radius: 0px 4px 4px 0px;
-  width: fit-content;
-  top: 40px;
-  z-index: 9;
-}
+
+    position: absolute;
+    font-family: 'Manrope';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-background-light);
+    padding: 8px 0px;
+    background: var(--color-background-card-category);
+    border-radius: 0px 4px 4px 0px;
+    width: fit-content;
+    top: 40px;
+    // z-index: 9;
+   }
+
 
 .hidden {
   display: none;
