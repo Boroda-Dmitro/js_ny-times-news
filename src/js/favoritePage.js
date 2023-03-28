@@ -23,8 +23,10 @@ function createFavoritePageMarkup() {
   );
 
   if (popularData === null && inputSearch === null) {
+    picture.classList.remove('visually-hidden');
     return;
   }
+
   if (popularData) {
     parsedPopularArray = [...JSON.parse(popularData)];
     parsedPopularArray.map((news, index) => {
