@@ -6,7 +6,6 @@
     list-style: none;
     gap: 28px;
     margin: 0 auto;
-    margin-top: 119px;
     padding: 0px;
     background-color: var(--color-background-light);
     // background: var(--already-read-gradient);
@@ -141,6 +140,8 @@
     font-weight: 700;
     line-height: 1.38;
     letter-spacing: -0.01em;
+    width: 287px;
+    height: 99px;
     color: var(--color-black);
     margin: 0;
     padding: 0;
@@ -150,6 +151,8 @@
   }
   @media (min-width: 768px) {
     font-size: 32px;
+    width: 353px;
+    height: 132px;
   }
 }
 
@@ -159,6 +162,8 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 1.35;
+    width: 287px;
+    height: 57px;
     color: var(--color-black);
     padding: 0;
     margin: 0px;
@@ -168,6 +173,8 @@
   }
   @media (min-width: 768px) {
     font-size: 16px;
+    width: 353px;
+    height: 66px;
   }
 }
 .markup-unit__card-info {
