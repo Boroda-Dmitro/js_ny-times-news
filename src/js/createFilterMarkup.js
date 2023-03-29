@@ -1,6 +1,6 @@
 import { fetchCategories } from './fetchCategories';
 import { createHomePageSeachingNews } from './createHomePageSeachingNews';
-var debounce = require('lodash.debounce');
+// var debounce = require('lodash.debounce');
 
 const refs = {
   filterContainer: document.querySelector('.categories__container'),
