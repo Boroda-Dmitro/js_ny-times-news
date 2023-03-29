@@ -31,7 +31,7 @@ function handlePageNumberClick (e) {
 function renderArticles(pageNumber) {
   const articles = document.querySelectorAll('.article');
   let articlesPerPage = 0;
-   articlesPerPage = isMobile ? 4 : isTablet ? 7 : 8;
+   articlesPerPage = isMobile ? 5 : isTablet ? 8 : 9;
   const startIndex = (pageNumber - 1) * articlesPerPage;
   const endIndex = startIndex + articlesPerPage - 1;
   const totalArticles = articles.length;

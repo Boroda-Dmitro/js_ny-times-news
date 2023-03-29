@@ -1,7 +1,12 @@
 import { createHomePageNews } from './js/createHomePageNews';
 import { createHomePageSeachingNews } from './js/createHomePageSeachingNews';
+import { createFilterMarkup } from './js/createFilterMarkup';
+import { createHomePageSeachingNews } from './js/createHomePageSeachingNews';
 import { Calendar } from './js/calendar';
 
+// createHomePageNews();
+
+createHomePageSeachingNews('cars');
 createHomePageNews();
 
 const searchBtn = document.querySelector('.search-button svg');
