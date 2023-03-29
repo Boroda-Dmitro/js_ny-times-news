@@ -64,6 +64,9 @@
 .dark .burger-link--current {
     color: var(--color-background-light);
 }
+.dark .burger-link--current .link-arrow {
+    fill: var(--color-white);
+}
 .dark .markup-unit__card-header {
     color: var(--color-background-light);
 }
