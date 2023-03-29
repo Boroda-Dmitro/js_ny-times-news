@@ -150,23 +150,23 @@ function createFavoritePageMarkup() {
 
 const searchBtn = document.querySelector('.search-button svg');
 const input = document.querySelector('.search-input');
-const searchOnPopularArr = [];
-const searchOnSearchArr = [];
 
-searchBtn.addEventListener('click', searchInFavorid);
+searchBtn.addEventListener('click', searchInFavorite);
 
-document.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', e => {
   if (e.code !== 'Enter') {
     return;
   }
-  searchInFavorid()
+  searchInFavorite();
 });
 
-function searchInFavorid() {
+function searchInFavorite() {
   const popularData = localStorage.getItem(LOCAL_STORAGE_POPULAR_FAVOURITE_KEY);
   const inputSearch = localStorage.getItem(
     LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY
   );
+  const searchOnPopularArr = [];
+  const searchOnSearchArr = [];
 
   if (popularData === null && inputSearch === null) {
     picture.classList.remove('visually-hidden');
@@ -192,7 +192,11 @@ function searchInFavorid() {
   }
 
   if (searchOnPopularArr.length > 0 || searchOnSearchArr.length > 0) {
-    homePageNews.innerHTML = ''
+    homePageNews.innerHTML = '';
+  } else {
+    homePageNews.innerHTML = '';
+    picture.classList.remove('visually-hidden');
+    return;
   }
 
   if (searchOnSearchArr.length > 0) {
@@ -219,8 +223,6 @@ function searchInFavorid() {
       );
     });
   }
-
-  
 
   if (searchOnPopularArr.length > 0) {
     searchOnPopularArr.map((news, index) => {
