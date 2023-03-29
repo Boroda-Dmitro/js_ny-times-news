@@ -2,6 +2,8 @@ import moment from 'moment';
 import { fetchSeachNews } from './fetchSeachNews';
 import { onCardClick } from './onCardClick';
 import { createSeachCardMarkup } from './createSeachCardMarkup';
+import { createLocalStorageInputSearchCardMarkup } from './markups/createLocalStorageInputSearchCardMarkup';
+import { sortFavouriteCards } from './sortFavouriteCards';
 
 export const LOCAL_STORAGE_INPUT_SEARCH_READ_KEY = 'have read';
 export const LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY = 'favourite search news';
@@ -25,14 +27,48 @@ export const createHomePageSeachingNews = seach => {
         imgUrl = `http://www.nytimes.com/${news.multimedia[0].url}`;
       }
       const readMoreId = `${index}`;
-      createSeachCardMarkup(
-        news,
-        publishedDate,
-        readMoreId,
-        imgUrl,
-        homePageNews,
-        'beforeend'
+
+      const inputSearchData = localStorage.getItem(
+        LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY
       );
+
+      if (inputSearchData === null) {
+        console.log('inputSearchData === null');
+        createSeachCardMarkup(
+          news,
+          publishedDate,
+          readMoreId,
+          imgUrl,
+          homePageNews,
+          'beforeend'
+        );
+      } else {
+        const parsedInputSearchArray = [...JSON.parse(inputSearchData)];
+        const index = parsedInputSearchArray.findIndex(
+          element => element.headline.main === news.headline.main
+        );
+
+        if (index === -1) {
+          createSeachCardMarkup(
+            news,
+            publishedDate,
+            readMoreId,
+            imgUrl,
+            homePageNews,
+            'beforeend'
+          );
+        } else {
+          createLocalStorageInputSearchCardMarkup(
+            news,
+            publishedDate,
+            readMoreId,
+            imgUrl,
+            homePageNews,
+            'beforeend'
+          );
+        }
+      }
+
       onCardClick(
         readMoreId,
         news,
@@ -40,5 +76,6 @@ export const createHomePageSeachingNews = seach => {
         LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY
       );
     });
+    sortFavouriteCards();
   });
 };
