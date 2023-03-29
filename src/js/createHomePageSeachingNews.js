@@ -33,7 +33,6 @@ export const createHomePageSeachingNews = seach => {
       );
 
       if (inputSearchData === null) {
-        console.log('inputSearchData === null');
         createSeachCardMarkup(
           news,
           publishedDate,
