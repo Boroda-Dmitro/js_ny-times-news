@@ -60,7 +60,7 @@ function filtersAPICall(filtersToShow) {
 
     function createFilterMarkup(filters) {
       const array = filters.results;
-      for (i = 0; i < filtersToShow; i += 1) {
+      for (let i = 0; i < filtersToShow; i += 1) {
         const category = array[i].display_name;
         const section = array[i].section;
         const el = ` <li>
@@ -73,7 +73,7 @@ function filtersAPICall(filtersToShow) {
 
     function createOthersMarkup(filters) {
       const array = filters.results;
-      for (i = filtersToShow; i < array.length; i += 1) {
+      for (let i = filtersToShow; i < array.length; i += 1) {
         const category = array[i].display_name;
         const section = array[i].section;
         const el = `<button class="categories__dropdown-item" value="${section}">${category}</button>`;
