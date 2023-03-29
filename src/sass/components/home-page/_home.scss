@@ -17,7 +17,7 @@
   }
 
   @media (min-width: 1280px) {
-    gap: 32px;
+    gap: 40px;
   }
 }
 
@@ -27,10 +27,10 @@
     position: relative;
   }
   @media (min-width: 768px) {
-    width: calc((100% - (32px * 2)) / 2);
+    width: calc((100% - (30px * 2)) / 2);
   }
   @media (min-width: 1280px) {
-    width: calc((100% - (32px * 2)) / 3);
+    width: calc((100% - (40px * 2)) / 3);
   }
 }
 .markup-unit__section {
@@ -85,6 +85,7 @@
   object-fit: cover;
   width: auto;
   height: 395px;
+  margin-bottom: 20px;
   // background-image: url(/src/images/background_image.png);
   border-radius: 10px;
   // margin-right: auto;
@@ -137,15 +138,13 @@
   @media (min-width: 320px) {
     font-size: 24px;
     font-family: 'Manrope';
-    font-style: normal;
     font-weight: 700;
     line-height: 1.38;
     letter-spacing: -0.01em;
     color: var(--color-black);
-    margin-top: 20px;
     margin: 0;
     padding: 0;
-    height: 132px;
+    margin-bottom: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -157,14 +156,13 @@
 .markup-unit__card-text {
   @media (min-width: 320px) {
     font-family: 'Manrope';
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 22px;
+    line-height: 1.35;
     color: var(--color-black);
     padding: 0;
     margin: 0px;
-    height: 66px;
+    margin-bottom: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -180,15 +178,10 @@
 .markup-unit__card-date {
   @media (min-width: 320px) {
     font-family: 'Manrope';
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 22px;
+    line-height: 1.35;
     color: var(--color-gray);
-    margin: 0;
-    margin-top: 20px;
-    display: inline-block;
-    padding: 0;
   }
   @media (min-width: 768px) {
     font-size: 16px;
@@ -196,20 +189,13 @@
 }
 
 .markup-unit__read-more {
+  text-decoration: none;
   @media (min-width: 320px) {
     font-family: 'Manrope';
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 22px;
+    line-height: 1.35;
     color: var(--color-brand);
-    text-decoration: none;
-    margin: 0;
-    margin-top: 20px;
-    padding: 0;
-    text-decoration: none;
-    color: inherit;
-    display: block;
   }
   @media (min-width: 768px) {
     font-size: 16px;
