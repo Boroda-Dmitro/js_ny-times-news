@@ -381,6 +381,7 @@ function createFavoritePageMarkup() {
         news,
         LOCAL_STORAGE_INPUT_SEARCH_READ_KEY
       );
+      picture.classList.add('visually-hidden');
     });
   }
 }
