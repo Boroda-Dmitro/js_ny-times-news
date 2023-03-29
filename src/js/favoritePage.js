@@ -31,7 +31,7 @@ function test() {
         LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY
       );
 
-      if (popularData) {
+      if (popularData && !inputSearch) {
         parsedPopularArray = [...JSON.parse(popularData)];
 
         const index = parsedPopularArray.findIndex(
@@ -56,7 +56,7 @@ function test() {
             return test();
           }
         }
-      } else if (inputSearch) {
+      } else if (inputSearch && !popularData) {
         parsedPopularArray = [...JSON.parse(inputSearch)];
 
         const index = parsedPopularArray.findIndex(
@@ -74,6 +74,51 @@ function test() {
           } else {
             localStorage.setItem(
               LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY,
+              JSON.stringify(parsedPopularArray)
+            );
+            homePageNews.innerHTML = '';
+            createFavoritePageMarkup();
+            return test();
+          }
+        }
+      } else if (popularData && inputSearch) {
+        parsedPopularArray = [...JSON.parse(popularData)];
+        let parsedArray = [...JSON.parse(inputSearch)];
+        const index = parsedPopularArray.findIndex(
+          element => element.title === el.nextElementSibling.innerHTML
+        );
+
+        if (index === -1) {
+          const index2 = parsedArray.findIndex(
+            element => element.headline.main === el.nextElementSibling.innerHTML
+          );
+          parsedArray.splice(index2, 1);
+          if (parsedArray.length === 0) {
+            localStorage.removeItem(LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY);
+            homePageNews.innerHTML = '';
+            picture.classList.remove('visually-hidden');
+            createFavoritePageMarkup();
+            return test();
+          } else {
+            localStorage.setItem(
+              LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY,
+              JSON.stringify(parsedArray)
+            );
+            homePageNews.innerHTML = '';
+            createFavoritePageMarkup();
+            return test();
+          }
+        } else {
+          parsedPopularArray.splice(index, 1);
+          if (parsedPopularArray.length === 0) {
+            localStorage.removeItem(LOCAL_STORAGE_POPULAR_FAVOURITE_KEY);
+            homePageNews.innerHTML = '';
+            picture.classList.remove('visually-hidden');
+            createFavoritePageMarkup();
+            return test();
+          } else {
+            localStorage.setItem(
+              LOCAL_STORAGE_POPULAR_FAVOURITE_KEY,
               JSON.stringify(parsedPopularArray)
             );
             homePageNews.innerHTML = '';
