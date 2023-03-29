@@ -1,213 +1,225 @@
 .news__box {
-    @media (min-width: 320px) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      list-style: none;
-      gap: 28px;
-      margin: 0 auto;
-      margin-top: 119px;
-      padding: 0px;
-      background-color: var(--color-background-light);
-      // background: var(--already-read-gradient);
-    }
-  
-    @media (min-width: 768px) {
-      gap: 30px;
-    }
-  
-    @media (min-width: 1280px) {
-      gap: 40px;
-    }
+  @media (min-width: 320px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    gap: 28px;
+    margin: 0 auto;
+    padding: 0px;
+    background-color: var(--color-background-light);
+    // background: var(--already-read-gradient);
   }
-  
-  .markup-unit {
-    @media (min-width: 320px) {
-      flex-direction: column;
-      position: relative;
-    }
-    @media (min-width: 768px) {
-      width: calc((100% - (30px * 2)) / 2);
-    }
-    @media (min-width: 1280px) {
-      width: calc((100% - (40px * 2)) / 3);
-    }
+
+  @media (min-width: 768px) {
+    gap: 30px;
   }
-  .markup-unit__section {
-  
-      position: absolute;
-      font-family: 'Manrope';
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 16px;
-      color: var(--color-background-light);
-      padding: 8px 0px;
-      background: var(--color-background-card-category);
-      border-radius: 0px 4px 4px 0px;
-      width: fit-content;
-      top: 40px;
-      // z-index: 9;
-     }
-  
-  
-  .hidden {
-    display: none;
+
+  @media (min-width: 1280px) {
+    gap: 40px;
   }
-  
-  .markup-unit__already-read {
-    @media (min-width: 320px) {
-      font-family: 'Manrope';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 19px;
-      color: var(--color-green);
-      position: absolute;
-      margin: 0;
-      // display: none;
-      align-items: center;
-      top: 20px;
-      left: 167px;
-    }
-    @media (min-width: 768px) {
-      left: 225px;
-    }
-    @media (min-width: 1280px) {
-      left: 270px;
-    }
+}
+
+.markup-unit {
+  @media (min-width: 320px) {
+    flex-direction: column;
+    position: relative;
   }
-  
-  .markup-unit__icon-check {
-    margin-left: 5px;
+  @media (min-width: 768px) {
+    width: calc((100% - (30px * 2)) / 2);
   }
-  
-  .markup-unit__card-image {
-    object-fit: cover;
-    width: auto;
-    height: 395px;
-    margin-bottom: 20px;
-    // background-image: url(/src/images/background_image.png);
-    border-radius: 10px;
-    // margin-right: auto;
-    // margin-left: auto;
+  @media (min-width: 1280px) {
+    width: calc((100% - (40px * 2)) / 3);
   }
-  
-  .markup-unit__add-favorite {
-    @media (min-width: 320px) {
-      position: absolute;
-      top: 355px;
-      right: 8px;
-      z-index: 9;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding-left: 12px;
-      padding-top: 6px;
-      padding-bottom: 6px;
-      border-radius: 15px;
-      border-style: none;
-      cursor: pointer;
-    }
-    @media (min-width: 768px) {
-      right: 12px;
-    }
-  }
-  
-  .markup-unit__favorite-icon {
-    fill: var(--color-brand);
-  
-    // padding-right: 6px;
-    display: block;
-  }
-  
-  // .markup-unit__favorite-icon.markup-unit__favorite-icon--active {
-  //   fill: #4440f7;
-  // }
-  
-  .markup-unit__favorite-text {
+}
+.markup-unit__section {
+  position: absolute;
+  font-family: 'Manrope';
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-background-light);
+  padding: 8px 0px;
+  background: var(--color-background-card-category);
+  border-radius: 0px 4px 4px 0px;
+  width: fit-content;
+  top: 40px;
+  // z-index: 9;
+}
+
+.hidden {
+  display: none;
+}
+
+.markup-unit__already-read {
+  @media (min-width: 320px) {
     font-family: 'Manrope';
     font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    padding: 0;
-    color: var(--color-black);
-    margin: 0 auto;
-  }
-  
-  .markup-unit__card-header {
-    @media (min-width: 320px) {
-      font-size: 24px;
-      font-family: 'Manrope';
-      font-weight: 700;
-      line-height: 1.38;
-      letter-spacing: -0.01em;
-      color: var(--color-black);
-      margin: 0;
-      padding: 0;
-      margin-bottom: 20px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    @media (min-width: 768px) {
-      font-size: 32px;
-    }
-  }
-  
-  .markup-unit__card-text {
-    @media (min-width: 320px) {
-      font-family: 'Manrope';
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 1.35;
-      color: var(--color-black);
-      padding: 0;
-      margin: 0px;
-      margin-bottom: 20px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    @media (min-width: 768px) {
-      font-size: 16px;
-    }
-  }
-  .markup-unit__card-info {
-    display: flex;
-    justify-content: space-between;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--color-green);
+    position: absolute;
+    margin: 0;
+    // display: none;
     align-items: center;
+    top: 20px;
+    left: 167px;
   }
-  .markup-unit__card-date {
-    @media (min-width: 320px) {
-      font-family: 'Manrope';
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 1.35;
-      color: var(--color-gray);
-    }
-    @media (min-width: 768px) {
-      font-size: 16px;
-    }
+  @media (min-width: 768px) {
+    left: 225px;
   }
-  
-  .markup-unit__read-more {
-    text-decoration: none;
-    @media (min-width: 320px) {
-      font-family: 'Manrope';
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 1.35;
-      color: var(--color-brand);
-    }
-    @media (min-width: 768px) {
-      font-size: 16px;
-      color: var(--color-brand);
-    }
-    @media (max-width: 1281px) {
-      color: var(--color-brand);
-    }
+  @media (min-width: 1280px) {
+    left: 270px;
   }
-  
-  .weather-placeholder {
-    width: 394.66px;
-    height: 711px;
-    background-color: var(--color-black);
+}
+
+.markup-unit__icon-check {
+  margin-left: 5px;
+}
+
+.markup-unit__card-image {
+  object-fit: cover;
+  width: auto;
+  height: 395px;
+  margin-bottom: 20px;
+  // background-image: url(/src/images/background_image.png);
+  border-radius: 10px;
+  // margin-right: auto;
+  // margin-left: auto;
+}
+
+.markup-unit__add-favorite {
+  @media (min-width: 320px) {
+    position: absolute;
+    top: 355px;
+    right: 8px;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-left: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 15px;
+    border-style: none;
+    cursor: pointer;
   }
+  @media (min-width: 768px) {
+    right: 12px;
+  }
+}
+
+.markup-unit__favorite-icon {
+  fill: var(--color-brand);
+
+  // padding-right: 6px;
+  display: block;
+}
+
+// .markup-unit__favorite-icon.markup-unit__favorite-icon--active {
+//   fill: #4440f7;
+// }
+
+.markup-unit__favorite-text {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 0;
+  color: var(--color-black);
+  margin: 0 auto;
+}
+
+.markup-unit__card-header {
+  @media (min-width: 320px) {
+    font-size: 24px;
+    font-family: 'Manrope';
+    font-weight: 700;
+    line-height: 1.38;
+    letter-spacing: -0.01em;
+    width: 287px;
+    height: 99px;
+    color: var(--color-black);
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  @media (min-width: 768px) {
+    font-size: 32px;
+    width: 353px;
+    height: 132px;
+  }
+}
+
+.markup-unit__card-text {
+  @media (min-width: 320px) {
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.35;
+    width: 287px;
+    height: 57px;
+    color: var(--color-black);
+    padding: 0;
+    margin: 0px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  @media (min-width: 768px) {
+    font-size: 16px;
+    width: 353px;
+    height: 66px;
+  }
+}
+.markup-unit__card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.markup-unit__card-date {
+  @media (min-width: 320px) {
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.35;
+    color: var(--color-gray);
+  }
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.markup-unit__read-more {
+  text-decoration: none;
+  @media (min-width: 320px) {
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.35;
+    color: var(--color-brand);
+  }
+  @media (min-width: 768px) {
+    font-size: 16px;
+    color: var(--color-brand);
+  }
+  @media (max-width: 1281px) {
+    color: var(--color-brand);
+  }
+}
+
+.weather-placeholder {
+  width: 394.66px;
+  height: 711px;
+  background-color: var(--color-black);
+}
+
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 28px;
+}

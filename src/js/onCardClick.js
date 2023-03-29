@@ -8,6 +8,7 @@ export function onCardClick(value, news, key, key2) {
         e.target.nodeName !== 'A' &&
         e.target.nodeName !== 'BUTTON' &&
         e.target.innerHTML !== 'Add to favorite' &&
+        e.target.innerHTML !== 'Remove from favorite' &&
         e.target.classList.value !==
           'markup-unit__favorite-icon markup-unit__favorite-icon--active'
       ) {
@@ -20,6 +21,7 @@ export function onCardClick(value, news, key, key2) {
       } else if (
         e.target.nodeName === 'BUTTON' ||
         e.target.innerHTML === 'Add to favorite' ||
+        e.target.innerHTML === 'Remove from favorite' ||
         e.target.classList.value ===
           'markup-unit__favorite-icon markup-unit__favorite-icon--active'
       ) {

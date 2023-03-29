@@ -1,5 +1,5 @@
 // Header
-@import'./header-page/header';
+@import './header-page/header';
 // Home page
 @import './home-page/home';
 
@@ -9,16 +9,20 @@
 // Read page
 @import './read-page/read';
 //Theme-color
-@import'./dark-scheme';
+@import './dark-scheme';
 
+@import './home-page/pagination';
 // Calendar
 @import './home-page/calendar';
 
+// Categories
+@import './home-page/categories';
 // Footer
-@import'./footer-page/footer';
+@import './footer-page/footer';
 
 // Pagination
 @import './home-page/pagination';
 
 // Weather
 @import './home-page/weather';
+
