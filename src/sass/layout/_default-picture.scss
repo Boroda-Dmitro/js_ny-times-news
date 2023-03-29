@@ -1,13 +1,4 @@
 .default-picture {
-  margin-top: 40px;
-
-  @media screen and (min-width: 768px) {
-    margin-top: 48px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    margin-top: 60px;
-  }
 
   &__text {
     font-family: 'Manrope';
@@ -16,17 +7,34 @@
     line-height: 1.35;
     text-align: center;
     letter-spacing: -0.01em;
-
+    width: 276px;
     color: var(--color-black);
+    margin: 0 auto;
     margin-bottom: 40px;
 
     @media screen and (min-width: 768px) {
-      font-size: 40px;
+      font-size: 40px; 
+      width: 548px;
       line-height: 1.375;
+      margin-top: 40px;
+    }
+    @media screen and (min-width: 1280px) {
+      margin-top: 61px;
     }
   }
 
   &__image {
     margin: auto;
+    margin-bottom: 59px;
+    @media screen and (min-width: 768px) {
+      width: 560px;
+      height: 444px;
+      margin-bottom: 101px;
+    }
+    @media screen and (min-width: 1280px) {
+      width: 601px;
+      height: 478px;
+      margin-bottom: 226px;
+    }
   }
 }
