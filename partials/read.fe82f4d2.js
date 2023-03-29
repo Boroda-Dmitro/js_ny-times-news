@@ -1,0 +1,2 @@
+function setTheme(e){localStorage.setItem("theme",e),document.documentElement.className=e,toggleBtn.checked="dark"===e}function toggleTheme(){"dark"===localStorage.getItem("theme")?(setTheme("light"),toggleBtn.checked=!1):(setTheme("dark"),toggleBtn.checked=!0)}toggleBtn=document.querySelector(".toggle-button"),"dark"===localStorage.getItem("theme")?setTheme("dark"):setTheme("light");
+//# sourceMappingURL=read.fe82f4d2.js.map
