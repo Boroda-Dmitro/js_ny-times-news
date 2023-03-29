@@ -21,7 +21,6 @@ searchBtn.addEventListener('click', () => {
     input.value = '';
   });
 
-
   let selectedDate = '';
 const daysTag = document.querySelector('.calendar-days-list');
 daysTag.addEventListener('click', e => {
