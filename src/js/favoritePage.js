@@ -192,3 +192,106 @@ function createFavoritePageMarkup() {
     });
   }
 }
+
+const searchBtn = document.querySelector('.search-button svg');
+const input = document.querySelector('.search-input');
+
+searchBtn.addEventListener('click', searchInFavorite);
+
+document.addEventListener('keydown', e => {
+  if (e.code !== 'Enter') {
+    return;
+  }
+  searchInFavorite();
+});
+
+function searchInFavorite() {
+  const popularData = localStorage.getItem(LOCAL_STORAGE_POPULAR_FAVOURITE_KEY);
+  const inputSearch = localStorage.getItem(
+    LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY
+  );
+  const searchOnPopularArr = [];
+  const searchOnSearchArr = [];
+
+  if (popularData === null && inputSearch === null) {
+    picture.classList.remove('visually-hidden');
+    return;
+  }
+
+  if (popularData) {
+    parsedPopularArray = [...JSON.parse(popularData)];
+    parsedPopularArray.map(news => {
+      if (news.abstract.includes(input.value)) {
+        searchOnPopularArr.push(news);
+      }
+    });
+  }
+
+  if (inputSearch) {
+    parsedSeachArray = [...JSON.parse(inputSearch)];
+    parsedSeachArray.map(news => {
+      if (news.abstract.includes(input.value)) {
+        searchOnSearchArr.push(news);
+      }
+    });
+  }
+
+  if (searchOnPopularArr.length > 0 || searchOnSearchArr.length > 0) {
+    homePageNews.innerHTML = '';
+  } else {
+    homePageNews.innerHTML = '';
+    picture.classList.remove('visually-hidden');
+    return;
+  }
+
+  if (searchOnSearchArr.length > 0) {
+    searchOnSearchArr.map((news, index) => {
+      const publishedDate = moment(news.pub_date).format('YY/MM/YYYY');
+      let imgUrl = './images/desktop-no-news-601.png';
+      if (news.multimedia.length > 0) {
+        imgUrl = `http://www.nytimes.com/${news.multimedia[0].url}`;
+      }
+      const readMoreId = `${index}`;
+      createSeachCardMarkup(
+        news,
+        publishedDate,
+        readMoreId,
+        imgUrl,
+        homePageNews,
+        'beforeend'
+      );
+      onCardClick(
+        readMoreId,
+        news,
+        LOCAL_STORAGE_INPUT_SEARCH_READ_KEY,
+        LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY
+      );
+    });
+  }
+
+  if (searchOnPopularArr.length > 0) {
+    searchOnPopularArr.map((news, index) => {
+      const publishedDate = moment(news.published_date).format('YY/MM/YYYY');
+      const readMoreId = `${index}`;
+
+      createPopularCardMarkup(
+        news,
+        publishedDate,
+        readMoreId,
+        homePageNews,
+        'beforeend'
+      );
+
+      onCardClick(
+        readMoreId,
+        news,
+        LOCAL_STORAGE_POPULAR_READ_KEY,
+        LOCAL_STORAGE_POPULAR_FAVOURITE_KEY
+      );
+
+      picture.classList.add('visually-hidden');
+    });
+  }
+
+  input.value = '';
+}
