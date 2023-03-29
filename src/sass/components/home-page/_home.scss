@@ -33,21 +33,19 @@
   }
 }
 .markup-unit__section {
-
-    position: absolute;
-    font-family: 'Manrope';
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    color: var(--color-background-light);
-    padding: 8px 0px;
-    background: var(--color-background-card-category);
-    border-radius: 0px 4px 4px 0px;
-    width: fit-content;
-    top: 40px;
-    // z-index: 9;
-   }
-
+  position: absolute;
+  font-family: 'Manrope';
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-background-light);
+  padding: 8px 0px;
+  background: var(--color-background-card-category);
+  border-radius: 0px 4px 4px 0px;
+  width: fit-content;
+  top: 40px;
+  // z-index: 9;
+}
 
 .hidden {
   display: none;
@@ -217,4 +215,11 @@
   width: 394.66px;
   height: 711px;
   background-color: var(--color-black);
+}
+
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 28px;
 }
