@@ -121,5 +121,31 @@
 .dark .toggle-light {
     display: none;
 }
+.dark .switch::before {
+    margin-right: 8px;
+    display: flex;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: #4B48DB;
+    fill: transparent;
+    // fill:#4B48DB;
 
+    @media screen and(min-width:1280px) {
+        display: none;
+    }
+}
+.dark .switch::after {
+    margin-left: 8px;
+    display: flex;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: #5F6775;
+    fill: var(--color-white);
+
+    @media screen and(min-width:1280px) {
+        display: none;
+    }
+}
 

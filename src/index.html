@@ -42,10 +42,12 @@
           </svg>
         </button>
         <div class="switch">
-          <svg class="icon-sun" width="21" height="21">
-            <use href="./images/icons.svg#icon-sun"></use>
-          </svg>
-          <span class="light-word">Light</span>
+          <div class="light-sign">
+            <svg class="icon-sun" width="21" height="21">
+              <use href="./images/icons.svg#icon-sun"></use>
+            </svg>
+            <span class="light-word">Light</span>
+          </div>
           <button class="toggle-button" type="button" onclick="toggleTheme()">
             <svg class="toggle-light" width="40" height="20">
               <use href="./images/icons.svg#icon-toggle-light"></use></svg
@@ -56,10 +58,12 @@
               <use href="./images/icons.svg#icon-toggle-dark"></use>
             </svg>
           </button>
-          <svg class="icon-moon" width="21" height="21">
-            <use href="./images/icons.svg#icon-moon"></use>
-          </svg>
-          <span class="dark-word">Dark</span>
+          <div class="dark-sign">
+            <svg class="icon-moon" width="21" height="21">
+              <use href="./images/icons.svg#icon-moon"></use>
+            </svg>
+            <span class="dark-word">Dark</span>
+          </div>
         </div>
 
         <button class="burger-button" type="button">
@@ -157,12 +161,22 @@
           </div>
           <ul class="news__box"></ul>
           <div class="default-picture visually-hidden">
-            <p class="default-picture__text">We haven’t found news from this category</p>
-            <img srcset="./images/mobile-no-news-248.png 248w, ./images/mobile-no-news-248@2x.png 248w, ./images/tablet-no-news-560.png 560w,  ./images/tablet-no-news-560@2x.png 560w, ./images/desktop-no-news-601.png 601w, ./images/desktop-no-news-601@2x.png 601w"
-                src="./images/mobile-no-news-248.png"
-                alt="На жаль, ще немає доступних статтей"
-                class="default-picture__image"
-              />
+            <p class="default-picture__text">
+              We haven’t found news from this category
+            </p>
+            <img
+              srcset="
+                ./images/mobile-no-news-248.png     248w,
+                ./images/mobile-no-news-248@2x.png  248w,
+                ./images/tablet-no-news-560.png     560w,
+                ./images/tablet-no-news-560@2x.png  560w,
+                ./images/desktop-no-news-601.png    601w,
+                ./images/desktop-no-news-601@2x.png 601w
+              "
+              src="./images/mobile-no-news-248.png"
+              alt="На жаль, ще немає доступних статтей"
+              class="default-picture__image"
+            />
           </div>
         </div>
       </section>
