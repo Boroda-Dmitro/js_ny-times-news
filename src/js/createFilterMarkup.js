@@ -2,15 +2,10 @@ import { fetchCategories } from './fetchCategories';
 import { createHomePageSeachingNews } from './createHomePageSeachingNews';
 var debounce = require('lodash.debounce');
 
-const DESKTOP_WIDTH = 1280;
-const TABLET_WIDTH = 768;
-const MOBILE_WIDTH = 320;
-
 const refs = {
   filterContainer: document.querySelector('.categories__container'),
   filterDropdown: document.querySelector('.categories__dropdown-header'),
   filterList: document.querySelector('.categories__dropdown-container'),
-  // filterItem: document.querySelectorAll('.categories__item'),
 };
 
 refs.filterDropdown.addEventListener('click', dropdownHandler);
@@ -21,10 +16,9 @@ window.addEventListener('resize', debounce(calcFilters, 500));
 calcFilters();
 
 function calcFilters() {
-  const screenWidth = window.screen.width;
   let filterAmount = 0;
-  // refs.filterContainer.innerHTML = '';
-  // refs.filterList.innerHTML = '';
+  refs.filterContainer.innerHTML = '';
+  refs.filterList.innerHTML = '';
 
   if (window.matchMedia('(max-width: 767px)').matches) {
     filterAmount = 0;
@@ -37,30 +31,11 @@ function calcFilters() {
     filterAmount = 4;
     filtersAPICall(filterAmount);
     return;
-  } else if (window.matchMedia('(min-width: 1280px)').matches) {
+  } else {
     filterAmount = 6;
     filtersAPICall(filterAmount);
     return;
-  } else {
-    filterAmount = 6;
   }
-
-  // if (
-  //   screenWidth < MOBILE_WIDTH ||
-  //   (screenWidth >= MOBILE_WIDTH && screenWidth < TABLET_WIDTH)
-  // ) {
-  //   filterAmount = 0;
-  //   filtersAPICall(filterAmount);
-  //   return;
-  // } else if (screenWidth >= TABLET_WIDTH && screenWidth < DESKTOP_WIDTH) {
-  //   filterAmount = 4;
-  //   filtersAPICall(filterAmount);
-  //   return;
-  // } else {
-  //   filterAmount = 6;
-  //   filtersAPICall(filterAmount);
-  //   return;
-  // }
 }
 
 function dropdownHandler() {
@@ -82,9 +57,6 @@ function filtersAPICall(filtersToShow) {
       .catch(error => {
         console.log(error);
       });
-
-    refs.filterContainer.innerHTML = '';
-    refs.filterList.innerHTML = '';
 
     function createFilterMarkup(filters) {
       const array = filters.results;
@@ -120,9 +92,7 @@ function filterSearch(e) {
 
   filterItem.forEach(item => {
     item.classList.remove('categories__item-selected');
-    // item.disabled = false;
   });
-  // target.disabled = true;
   target.classList.add('categories__item-selected');
 
   if (
