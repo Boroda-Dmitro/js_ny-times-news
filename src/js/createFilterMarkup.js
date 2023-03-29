@@ -10,6 +10,7 @@ const refs = {
   filterContainer: document.querySelector('.categories__container'),
   filterDropdown: document.querySelector('.categories__dropdown-header'),
   filterList: document.querySelector('.categories__dropdown-container'),
+  // filterItem: document.querySelectorAll('.categories__item'),
 };
 
 refs.filterDropdown.addEventListener('click', dropdownHandler);
@@ -22,25 +23,44 @@ calcFilters();
 function calcFilters() {
   const screenWidth = window.screen.width;
   let filterAmount = 0;
-  refs.filterContainer.innerHTML = '';
-  refs.filterList.innerHTML = '';
+  // refs.filterContainer.innerHTML = '';
+  // refs.filterList.innerHTML = '';
 
-  if (
-    screenWidth < MOBILE_WIDTH ||
-    (screenWidth >= MOBILE_WIDTH && screenWidth < TABLET_WIDTH)
-  ) {
+  if (window.matchMedia('(max-width: 767px)').matches) {
     filterAmount = 0;
     filtersAPICall(filterAmount);
     return;
-  } else if (screenWidth >= TABLET_WIDTH && screenWidth < DESKTOP_WIDTH) {
+  } else if (
+    window.matchMedia('(min-width: 768px)').matches &&
+    window.matchMedia('(max-width: 1279px)').matches
+  ) {
     filterAmount = 4;
+    filtersAPICall(filterAmount);
+    return;
+  } else if (window.matchMedia('(min-width: 1280px)').matches) {
+    filterAmount = 6;
     filtersAPICall(filterAmount);
     return;
   } else {
     filterAmount = 6;
-    filtersAPICall(filterAmount);
-    return;
   }
+
+  // if (
+  //   screenWidth < MOBILE_WIDTH ||
+  //   (screenWidth >= MOBILE_WIDTH && screenWidth < TABLET_WIDTH)
+  // ) {
+  //   filterAmount = 0;
+  //   filtersAPICall(filterAmount);
+  //   return;
+  // } else if (screenWidth >= TABLET_WIDTH && screenWidth < DESKTOP_WIDTH) {
+  //   filterAmount = 4;
+  //   filtersAPICall(filterAmount);
+  //   return;
+  // } else {
+  //   filterAmount = 6;
+  //   filtersAPICall(filterAmount);
+  //   return;
+  // }
 }
 
 function dropdownHandler() {
@@ -62,6 +82,9 @@ function filtersAPICall(filtersToShow) {
       .catch(error => {
         console.log(error);
       });
+
+    refs.filterContainer.innerHTML = '';
+    refs.filterList.innerHTML = '';
 
     function createFilterMarkup(filters) {
       const array = filters.results;
@@ -91,17 +114,24 @@ function filtersAPICall(filtersToShow) {
 }
 
 function filterSearch(e) {
-  const target = e.target.value;
-  // const item = document.querySelector('.categories__item');
+  const targetValue = e.target.value;
+  const target = e.target;
+  const filterItem = document.querySelectorAll('.categories__item');
 
-  // item.classList.add('categories__item-selected');
+  filterItem.forEach(item => {
+    item.classList.remove('categories__item-selected');
+    // item.disabled = false;
+  });
+  // target.disabled = true;
+  target.classList.add('categories__item-selected');
+
   if (
     !refs.filterList.classList.contains('categories__dropdown-container-hidden')
   ) {
     refs.filterList.classList.add('categories__dropdown-container-hidden');
   }
   try {
-    createHomePageSeachingNews(target);
+    createHomePageSeachingNews(targetValue);
   } catch (error) {
     console.log(error);
   }
