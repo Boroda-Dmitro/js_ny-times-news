@@ -11,7 +11,7 @@ const refs = {
 refs.filterDropdown.addEventListener('click', dropdownHandler);
 refs.filterList.addEventListener('click', filterSearch, dropdownHandler);
 refs.filterContainer.addEventListener('click', filterSearch);
-window.addEventListener('resize', debounce(calcFilters, 500));
+// window.addEventListener('resize', debounce(calcFilters, 500));
 
 calcFilters();
 
