@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="./sass/index.scss" />
     <link rel="shortcut icon" href="./images/favicon.ico" />
   </head>
+  <svg width="0" height="0">
+    <symbol id="icon-location" viewBox="0 0 32 32">
+      <path fill="#fff" style="fill: var(--color1, #fff)"
+        d="M16 2c-6.072 0.008-10.992 4.929-10.999 11v0.001c0 0.005 0 0.011 0 0.016 0 2.485 0.833 4.776 2.234 6.609l-0.019-0.026s0.3 0.395 0.348 0.452l8.436 9.948 8.439-9.954c0.044-0.053 0.345-0.446 0.345-0.446v-0.004c1.382-1.806 2.215-4.097 2.215-6.582 0-0.005 0-0.010 0-0.015v0.001c-0.007-6.072-4.927-10.993-10.998-11.001h-0.001zM16 17.001c-2.209 0-4-1.791-4-4s1.791-4 4-4v0c2.209 0 4 1.791 4 4s-1.791 4-4 4v0z">
+      </path>
+    </symbol>
+  </svg>
   <body>
     <header>
       <div class="container container-header">
@@ -159,24 +166,36 @@
               <include src="./partials/calendar.html"></include>
             </div>
           </div>
-          <ul class="news__box"></ul>
+          <ul class="news__box "><li class="weather-counteiner article">
+          </li></ul>
           <div class="default-picture visually-hidden">
-            <p class="default-picture__text">
-              We haven’t found news from this category
-            </p>
-            <img
-              srcset="
-                ./images/mobile-no-news-248.png     248w,
-                ./images/mobile-no-news-248@2x.png  248w,
-                ./images/tablet-no-news-560.png     560w,
-                ./images/tablet-no-news-560@2x.png  560w,
-                ./images/desktop-no-news-601.png    601w,
-                ./images/desktop-no-news-601@2x.png 601w
-              "
-              src="./images/mobile-no-news-248.png"
-              alt="На жаль, ще немає доступних статтей"
-              class="default-picture__image"
-            />
+            <p class="default-picture__text">We haven’t found news from this category</p>
+            <picture>
+              <source
+                srcset="./images/image.png 1x, ./images/image@2x.png 2x"
+                media="(min-width: 1280px)"
+              />
+              <source
+                srcset="
+                  ./images/tablet-no-news-560.png    1x,
+                  ./images/tablet-no-news-560@2x.png 2x
+                "
+                media="(min-width: 768px)"
+              />
+              <source
+                srcset="
+                  ./images/mobile-no-news-248.png    1x,
+                  ./images/mobile-no-news-248@2x.png 2x
+                "
+                media="(max-width: 320px)"
+              />
+              <img
+
+          
+                src="./images/mobile-no-news-248.png"
+                alt="На жаль, ще немає доступних статтей"
+                class="default-picture__image"
+              />
           </div>
         </div>
       </section>
