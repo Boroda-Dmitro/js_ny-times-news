@@ -14,9 +14,6 @@ export function onCardClick(value, news, key, key2) {
       ) {
         return;
       } else if (e.target.nodeName === 'A') {
-        // if (key === undefined) {
-        //   return;
-        // }
         addNewsToLocalStorage(news, key);
       } else if (
         e.target.nodeName === 'BUTTON' ||

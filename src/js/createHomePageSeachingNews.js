@@ -4,12 +4,12 @@ import { onCardClick } from './onCardClick';
 import { createSeachCardMarkup } from './createSeachCardMarkup';
 import { createLocalStorageInputSearchCardMarkup } from './markups/createLocalStorageInputSearchCardMarkup';
 import { sortFavouriteCards } from './sortFavouriteCards';
-import img from '../images/desktop-no-news-601.png'
+import img from '../images/image.png';
 
 export const LOCAL_STORAGE_INPUT_SEARCH_READ_KEY = 'have read';
 export const LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY = 'favourite search news';
 export const homePageNews = document.querySelector('.news__box');
-const picture = document.querySelector('.default-picture');
+export const picture = document.querySelector('.default-picture');
 const pagination = document.querySelector('.page-container');
 
 export const createHomePageSeachingNews = seach => {
@@ -68,6 +68,12 @@ export const createHomePageSeachingNews = seach => {
           );
         }
       }
+
+      document.querySelectorAll('.markup-unit__section').forEach(el => {
+        if (el.textContent === '') {
+          el.style.display = 'none';
+        }
+      });
 
       onCardClick(
         readMoreId,

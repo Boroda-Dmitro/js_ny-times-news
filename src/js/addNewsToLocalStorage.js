@@ -4,7 +4,6 @@ export function addNewsToLocalStorage(value, key) {
     const firstElement = [value];
     localStorage.setItem(key, JSON.stringify(firstElement));
   } else {
-    // потрібно придумати за якою властивістю робити перевірку (abstract для прикладу)
     let parsedData = JSON.parse(keyEl);
     const findSimilarElement = parsedData.every(
       element => element.abstract !== value.abstract
@@ -14,7 +13,7 @@ export function addNewsToLocalStorage(value, key) {
       parsedData.push(value);
       localStorage.setItem(key, JSON.stringify(parsedData));
     } else {
-    parsedData = parsedData.filter(
+      parsedData = parsedData.filter(
         element => element.abstract !== value.abstract
       );
       localStorage.setItem(key, JSON.stringify(parsedData));
