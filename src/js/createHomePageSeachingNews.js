@@ -4,6 +4,7 @@ import { onCardClick } from './onCardClick';
 import { createSeachCardMarkup } from './createSeachCardMarkup';
 import { createLocalStorageInputSearchCardMarkup } from './markups/createLocalStorageInputSearchCardMarkup';
 import { sortFavouriteCards } from './sortFavouriteCards';
+import img from '../images/desktop-no-news-601.png'
 
 export const LOCAL_STORAGE_INPUT_SEARCH_READ_KEY = 'have read';
 export const LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY = 'favourite search news';
@@ -22,7 +23,7 @@ export const createHomePageSeachingNews = seach => {
     }
     const markupArray = response.docs.map((news, index) => {
       const publishedDate = moment(news.pub_date).format('YY/MM/YYYY');
-      let imgUrl = './images/desktop-no-news-601.png';
+      let imgUrl = img;
       if (news.multimedia.length > 0) {
         imgUrl = `http://www.nytimes.com/${news.multimedia[0].url}`;
       }

@@ -23,15 +23,18 @@ document.addEventListener('keydown', e => {
   input.value = '';
 });
 
-let selectedDate = '';
-const daysTag = document.querySelector('.calendar-days-list');
-daysTag.addEventListener('click', e => {
-  if (!e.target.classList.contains('inactive')) {
-    const day = e.target.innerText;
-    const month = months[currentMonth];
-    const year = currentYear;
-    selectedDate = `${day} ${month} ${year}`;
-  }
-  console.log(selectedDate);
-});
-console.log(selectedDate);
+// let selectedDate = '';
+// const daysTag = document.querySelector('.calendar-days-list');
+// daysTag.addEventListener('click', e => {
+//   if (!e.target.classList.contains('inactive')) {
+//     const day = e.target.innerText;
+//     const month = months[currentMonth];
+//     const year = currentYear;
+//     selectedDate = `${day} ${month} ${year}`;
+//   }
+//   console.log(selectedDate);
+// });
+// console.log(selectedDate);
+
+
+
