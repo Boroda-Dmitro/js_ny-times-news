@@ -7,7 +7,7 @@ const isTablet = window.innerWidth < 1200;
 const valuePage = {
   curPage: 1,
   numLinksTwoSide: 1,
-  totalPages: 3,
+  totalPages: 5,
 };
 
 setTimeout(() => {
