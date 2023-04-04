@@ -17,7 +17,6 @@ createMagic('accordion__label');
 
 document.querySelectorAll('.markup-unit__already-read').forEach(el => {
   el.classList.remove('visually-hidden');
-  // el.style.fontWeight = 400;
 });
 
 function createReadPageMarkup() {

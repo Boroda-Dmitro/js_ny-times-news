@@ -1,5 +1,11 @@
-import { homePageNews } from './createHomePageNews';
-export function createSeachCardMarkup(data, publishedDate, id, imgUrl, targetElement, insertMethod) {
+export function createSeachCardMarkup(
+  data,
+  publishedDate,
+  id,
+  imgUrl,
+  targetElement,
+  insertMethod
+) {
   const markup = `<li class="markup-unit markup-unit__read article" name="card" data-id = ${id}>
                     <p class="markup-unit__section">${data.section_name}</p>
                     <p class="markup-unit__already-read hidden">Already read
@@ -21,5 +27,5 @@ export function createSeachCardMarkup(data, publishedDate, id, imgUrl, targetEle
                        <a class="markup-unit__read-more" href="${data.web_url}"name="read_more"  target = "_blank">Read more</a>
                       </div>
                     </li>`;
-targetElement.insertAdjacentHTML(insertMethod, markup);
+  targetElement.insertAdjacentHTML(insertMethod, markup);
 }
