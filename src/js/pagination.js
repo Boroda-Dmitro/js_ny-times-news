@@ -7,10 +7,14 @@ const isTablet = window.innerWidth < 1200;
 const valuePage = {
   curPage: 1,
   numLinksTwoSide: 1,
-  totalPages: 5,
+  totalPages: 3,
 };
 
-renderPagination();
+setTimeout(() => {
+  renderPagination();
+}, 1000);
+
+
 
 paginationContainer.addEventListener('click', handlePageNumberClick);
 nextPageButton.addEventListener('click', handleNextPageClick);
