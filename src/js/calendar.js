@@ -1,4 +1,6 @@
 import Notiflix from 'notiflix';
+import { createHomePageSeachingNews } from '../js/createHomePageSeachingNews';
+import moment from 'moment';
 
 let dateApi = '';
 export function setDateApi(value) {
@@ -42,7 +44,9 @@ const months = [
 // зміна розмітки при закритті
 const closeModalAndResetCalendar = () => {
   calendarForm.querySelector('[data-modal]').classList.add('hidden');
-  calendarForm.querySelector('.calendar-form__input').classList.remove('isActive');
+  calendarForm
+    .querySelector('.calendar-form__input')
+    .classList.remove('isActive');
   calendarForm
     .querySelector('.calendar-form__button-down')
     .classList.remove('switched');
@@ -150,7 +154,9 @@ const render = () => {
 // --------  ФУНКЦІЯ ДЛЯ ВІДПРАВКИ ДАТИ НА API  --------
 let errorDisplayed = false; // для виводу помилки на екран
 const handleSelectedBeginDate = async () => {
-  const selectedDay = document.querySelector('.calendar-days-list .active').textContent,
+  const selectedDay = document.querySelector(
+      '.calendar-days-list .active'
+    ).textContent,
     selectedMonth = (currentMonth + 1).toString(),
     selectedYear = currentYear,
     selectedDateStr = `${selectedYear}-${selectedMonth}-${selectedDay.padStart(
@@ -237,3 +243,44 @@ switchesMonth.forEach(switchMonth => {
 });
 
 render();
+
+function getMonthNumber(month) {
+  const monthIndex = months.indexOf(month);
+  if (monthIndex !== -1) {
+    // Якщо місяць знайдений в масиві
+    return (monthIndex + 1).toString().padStart(2, '0'); // Повертаємо числовий вираз місяця з відповідним форматуванням
+  } else {
+    // Якщо місяць не знайдений в масиві
+    return 'Error: Invalid month name';
+  }
+}
+
+export let searchDate = '';
+const y = document.querySelector('.calendar-days-list');
+y.addEventListener('click', e => {
+  if (!e.target.classList.contains('inactive')) {
+    const day = e.target.innerText;
+    const month = getMonthNumber(months[currentMonth]);
+    const year = currentYear;
+    searchDate = `${year}${month}${day} `;
+  }
+  console.log(searchDate);
+});
+
+
+
+const searchBtn = document.querySelector('.search-button svg');
+const input = document.querySelector('.search-input');
+
+searchBtn.addEventListener('click', () => {
+  createHomePageSeachingNews(input.value, searchDate);
+  input.value = '';
+});
+
+document.addEventListener('keydown', e => {
+  if (e.code !== 'Enter') {
+    return;
+  }
+  createHomePageSeachingNews(input.value, searchDate);
+  input.value = '';
+});
