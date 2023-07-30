@@ -3,7 +3,8 @@ import { createSeachCardMarkup } from './createSeachCardMarkup';
 import { onCardClick } from './onCardClick';
 import { LOCAL_STORAGE_INPUT_SEARCH_READ_KEY } from './createHomePageSeachingNews';
 import { LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY } from './createHomePageSeachingNews';
-import img from '../images/desktop-no-news-601.png'
+import { createLocalStorageWithFavouriteKeySearchCardMarkup } from './markups/createLocalStorageWithFavouriteKeySearchCardMarkup';
+import img from '../images/desktop-no-news-601.png';
 
 export function createInputSearchCardMarkupOnReadPage(parsedArray) {
   const cardArrayMarkup = parsedArray.map((element, index) => {
@@ -18,14 +19,41 @@ export function createInputSearchCardMarkupOnReadPage(parsedArray) {
       el => el.textContent === publishedDate
     );
 
-    createSeachCardMarkup(
-      element,
-      publishedDate,
-      readMoreId,
-      imgUrl,
-      review.nextElementSibling,
-      'afterbegin'
+    const searchData = JSON.parse(
+      localStorage.getItem(LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY)
     );
+
+    if (searchData) {
+      const index = searchData.findIndex(
+        value => value.headline.main === element.headline.main
+      );
+      index === -1
+        ? createSeachCardMarkup(
+            element,
+            publishedDate,
+            readMoreId,
+            imgUrl,
+            review.nextElementSibling,
+            'afterbegin'
+          )
+        : createLocalStorageWithFavouriteKeySearchCardMarkup(
+            element,
+            publishedDate,
+            readMoreId,
+            imgUrl,
+            review.nextElementSibling,
+            'afterbegin'
+          );
+    } else {
+      createSeachCardMarkup(
+        element,
+        publishedDate,
+        readMoreId,
+        imgUrl,
+        review.nextElementSibling,
+        'afterbegin'
+      );
+    }
 
     onCardClick(
       readMoreId,

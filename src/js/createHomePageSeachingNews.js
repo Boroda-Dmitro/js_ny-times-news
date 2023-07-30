@@ -2,13 +2,15 @@ import moment from 'moment';
 import { fetchSeachNews } from './fetchSeachNews';
 import { onCardClick } from './onCardClick';
 import { createSeachCardMarkup } from './createSeachCardMarkup';
-import { createLocalStorageInputSearchCardMarkup } from './markups/createLocalStorageInputSearchCardMarkup';
+import { createLocalStorageWithFavouriteKeySearchCardMarkup } from './markups/createLocalStorageWithFavouriteKeySearchCardMarkup';
+import { createLocalStorageWithReadKeySearchCardMarkup } from './markups/createLocalStorageWithReadKeySearchCardMarkup';
+import { createLocalStorageWithReadAndFavouriteKeySearchCardMarkup } from './markups/createLocalStorageWithReadAndFavouriteKeySearchCardMarkup';
 import { sortFavouriteCards } from './sortFavouriteCards';
+import { homePageNews } from './createHomePageNews';
 import img from '../images/image.png';
 
 export const LOCAL_STORAGE_INPUT_SEARCH_READ_KEY = 'have read';
 export const LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY = 'favourite search news';
-export const homePageNews = document.querySelector('.news__box');
 export const picture = document.querySelector('.default-picture');
 const pagination = document.querySelector('.page-container');
 
@@ -29,11 +31,14 @@ export const createHomePageSeachingNews = seach => {
       }
       const readMoreId = `${index}`;
 
-      const inputSearchData = localStorage.getItem(
-        LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY
+      const searchData = JSON.parse(
+        localStorage.getItem(LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY)
+      );
+      const searchReadData = JSON.parse(
+        localStorage.getItem(LOCAL_STORAGE_INPUT_SEARCH_READ_KEY)
       );
 
-      if (inputSearchData === null) {
+      if (searchData === null && searchReadData === null) {
         createSeachCardMarkup(
           news,
           publishedDate,
@@ -42,13 +47,57 @@ export const createHomePageSeachingNews = seach => {
           homePageNews,
           'beforeend'
         );
-      } else {
-        const parsedInputSearchArray = [...JSON.parse(inputSearchData)];
-        const index = parsedInputSearchArray.findIndex(
+      } else if (searchData !== null && searchReadData === null) {
+        const index = searchData.findIndex(
+          element => element.headline.main === news.headline.main
+        );
+        index === -1
+          ? createSeachCardMarkup(
+              news,
+              publishedDate,
+              readMoreId,
+              imgUrl,
+              homePageNews,
+              'beforeend'
+            )
+          : createLocalStorageWithFavouriteKeySearchCardMarkup(
+              news,
+              publishedDate,
+              readMoreId,
+              imgUrl,
+              homePageNews,
+              'beforeend'
+            );
+      } else if (searchData === null && searchReadData !== null) {
+        const index = searchReadData.findIndex(
+          element => element.headline.main === news.headline.main
+        );
+        index === -1
+          ? createSeachCardMarkup(
+              news,
+              publishedDate,
+              readMoreId,
+              imgUrl,
+              homePageNews,
+              'beforeend'
+            )
+          : createLocalStorageWithReadKeySearchCardMarkup(
+              news,
+              publishedDate,
+              readMoreId,
+              imgUrl,
+              homePageNews,
+              'beforeend'
+            );
+      } else if (searchData !== null && searchReadData !== null) {
+        const index = searchData.findIndex(
+          element => element.headline.main === news.headline.main
+        );
+        const index2 = searchReadData.findIndex(
           element => element.headline.main === news.headline.main
         );
 
-        if (index === -1) {
+        if (index === -1 && index2 === -1) {
           createSeachCardMarkup(
             news,
             publishedDate,
@@ -57,8 +106,26 @@ export const createHomePageSeachingNews = seach => {
             homePageNews,
             'beforeend'
           );
-        } else {
-          createLocalStorageInputSearchCardMarkup(
+        } else if (index !== -1 && index2 === -1) {
+          createLocalStorageWithFavouriteKeySearchCardMarkup(
+            news,
+            publishedDate,
+            readMoreId,
+            imgUrl,
+            homePageNews,
+            'beforeend'
+          );
+        } else if (index === -1 && index2 !== -1) {
+          createLocalStorageWithReadKeySearchCardMarkup(
+            news,
+            publishedDate,
+            readMoreId,
+            imgUrl,
+            homePageNews,
+            'beforeend'
+          );
+        } else if (index !== -1 && index2 !== -1) {
+          createLocalStorageWithReadAndFavouriteKeySearchCardMarkup(
             news,
             publishedDate,
             readMoreId,
@@ -69,12 +136,6 @@ export const createHomePageSeachingNews = seach => {
         }
       }
 
-      document.querySelectorAll('.markup-unit__section').forEach(el => {
-        if (el.textContent === '') {
-          el.style.display = 'none';
-        }
-      });
-
       onCardClick(
         readMoreId,
         news,
@@ -82,6 +143,13 @@ export const createHomePageSeachingNews = seach => {
         LOCAL_STORAGE_INPUT_SEARCH_FAVOURITE_KEY
       );
     });
+
+    document.querySelectorAll('.markup-unit__section').forEach(el => {
+      if (el.textContent === '') {
+        el.style.display = 'none';
+      }
+    });
+
     sortFavouriteCards();
   });
 };
