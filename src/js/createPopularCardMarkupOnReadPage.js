@@ -3,6 +3,7 @@ import { createPopularCardMarkup } from './createPopularCardMarkup';
 import { onCardClick } from './onCardClick';
 import { LOCAL_STORAGE_POPULAR_READ_KEY } from './createHomePageNews';
 import { LOCAL_STORAGE_POPULAR_FAVOURITE_KEY } from './createHomePageNews';
+import { createLocalStorageWithFavouriteKeyPopularCardMarkup } from './markups/createLocalStorageWithFavouriteKeyPopularCardMarkup';
 import img from '../images/image.png';
 
 export function createPopularCardMarkupOnReadPage(parsedArray) {
@@ -21,21 +22,44 @@ export function createPopularCardMarkupOnReadPage(parsedArray) {
       el => el.textContent === publishedDate
     );
 
-    createPopularCardMarkup(
-      element,
-      publishedDate,
-      readMoreId,
-      review.nextElementSibling,
-      'afterbegin',
-      imgUrl,
-      altText
+    const popularData = JSON.parse(
+      localStorage.getItem(LOCAL_STORAGE_POPULAR_FAVOURITE_KEY)
     );
 
-    document.querySelectorAll('.markup-unit__section').forEach(el => {
-      if (el.textContent === '') {
-        el.style.display = 'none';
-      }
-    });
+    if (popularData) {
+      const index = popularData.findIndex(
+        value => value.title === element.title
+      );
+      index === -1
+        ? createPopularCardMarkup(
+            element,
+            publishedDate,
+            readMoreId,
+            review.nextElementSibling,
+            'afterbegin',
+            imgUrl,
+            altText
+          )
+        : createLocalStorageWithFavouriteKeyPopularCardMarkup(
+            element,
+            publishedDate,
+            readMoreId,
+            review.nextElementSibling,
+            'afterbegin',
+            imgUrl,
+            altText
+          );
+    } else {
+      createPopularCardMarkup(
+        element,
+        publishedDate,
+        readMoreId,
+        review.nextElementSibling,
+        'afterbegin',
+        imgUrl,
+        altText
+      );
+    }
 
     onCardClick(
       readMoreId,

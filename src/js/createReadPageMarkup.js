@@ -5,6 +5,7 @@ import { createInputSearchCardMarkupOnReadPage } from './createInputSearchCardMa
 import { createMagic } from './createMagic';
 import { LOCAL_STORAGE_POPULAR_READ_KEY } from './createHomePageNews';
 import { LOCAL_STORAGE_INPUT_SEARCH_READ_KEY } from './createHomePageSeachingNews';
+import { sortFavouriteCards } from './sortFavouriteCards';
 
 const picture = document.querySelector('.default-picture');
 const accordion = document.querySelector('.accordion');
@@ -37,6 +38,12 @@ function createReadPageMarkup() {
 
     createReadPageListMarkup(datesArray, accordion);
     createPopularCardMarkupOnReadPage(parsedArray);
+    sortFavouriteCards();
+    document.querySelectorAll('.markup-unit__section').forEach(el => {
+      if (el.textContent === '') {
+        el.style.display = 'none';
+      }
+    });
   } else if (inputSearchData !== null && popularData === null) {
     parsedArray = [...JSON.parse(inputSearchData)];
 
@@ -46,6 +53,12 @@ function createReadPageMarkup() {
 
     createReadPageListMarkup(datesArray, accordion);
     createInputSearchCardMarkupOnReadPage(parsedArray);
+    sortFavouriteCards();
+    document.querySelectorAll('.markup-unit__section').forEach(el => {
+      if (el.textContent === '') {
+        el.style.display = 'none';
+      }
+    });
   } else if (inputSearchData !== null && popularData !== null) {
     parsedArray = [...JSON.parse(popularData), ...JSON.parse(inputSearchData)];
     let popularCardsArray = [];
@@ -64,5 +77,11 @@ function createReadPageMarkup() {
     createReadPageListMarkup(datesArray, accordion);
     createInputSearchCardMarkupOnReadPage(inputSearchCardsArray);
     createPopularCardMarkupOnReadPage(popularCardsArray);
+    sortFavouriteCards();
+    document.querySelectorAll('.markup-unit__section').forEach(el => {
+      if (el.textContent === '') {
+        el.style.display = 'none';
+      }
+    });
   }
 }
